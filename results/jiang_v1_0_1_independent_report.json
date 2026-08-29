@@ -1,0 +1,19 @@
+{
+  "classification_mismatches": 0,
+  "classification_set_comparisons": 4780,
+  "driver_sha256": "3fa236e75768280faf4cce1d87026d3c0750933f6ce83d9e4f201630b0af3994",
+  "elapsed_seconds": 0.39765679999254644,
+  "implementation_sha256": "d7ba1c520dc6991e78cb8bae609a598e6bbf950da03c1eac9ba4d30d1efff231",
+  "maximum_comparisons": 217,
+  "maximum_family_counts": {
+    "all_labelled_m2_orders_1_to_4": 75,
+    "all_labelled_m3_orders_1_to_3": 11,
+    "all_labelled_trees_order_5_m2": 125,
+    "named_boundary_cases": 6
+  },
+  "maximum_mismatches": 0,
+  "platform": "Windows-11-10.0.26100-SP0",
+  "python_implementation": "CPython",
+  "python_version": "3.13.5",
+  "schema_version": 1
+}

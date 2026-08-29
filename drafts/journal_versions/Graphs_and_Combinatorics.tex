@@ -1,0 +1,1140 @@
+% Initial-submission candidate for Graphs and Combinatorics, 29 August 2026.
+% Derived from the frozen-content local v4 candidate without changing any
+% theorem, proof, computation, citation, author statement, or limitation.
+% Requires Springer's official SVJour3 package and the smallextended option.
+% This file still requires external human review and compile/log/page audit.
+\RequirePackage{fix-cm}
+\documentclass[smallextended]{svjour3}
+\smartqed
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{longtable,booktabs,array}
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{\usepackage{url}}
+\IfFileExists{needspace.sty}{\usepackage{needspace}}{}
+\providecommand{\Needspace}[1]{}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Dual General Position in the Join of a Complete Graph and a Tree},
+  pdfauthor={Yi Yuteng},
+  hidelinks,
+  pdfcreator={LaTeX}}
+\urlstyle{same}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setcounter{secnumdepth}{3}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\numberwithin{equation}{section}
+
+\title{Dual General Position in the Join of a Complete Graph and a Tree}
+\titlerunning{Dual General Position in a Complete-Graph--Tree Join}
+\author{Yi Yuteng}
+\authorrunning{Yi Yuteng}
+\institute{Yi Yuteng \at
+  Independent Researcher, Shanghai, China \\
+  \email{yiyuteng29@163.com}}
+\date{}
+\journalname{Graphs and Combinatorics}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+Let \(r\ge 1\) and let \(T\) be a tree of order at least three. We
+classify the dual general-position sets of the mixed join \(K_r+T\)
+according to whether they meet the universal clique. The apex-meeting
+branch is governed by partitions of \(T\) into two induced cliques,
+while the apex-avoiding branch is governed by a tree parameter
+\(\beta(T)\), where
+\(\beta(T)=\max\{|X|:X\subseteq V(T),\ \Delta(T[X])\le 1,
+|N_T(x)\setminus X|\le 1\text{ for every }x\in X\}\). This gives
+
+\[
+\operatorname{gp}_d(K_r+T)=
+\begin{cases}
+r+2,&T\in\{P_3,P_4\},\\
+\beta(T),&\text{otherwise}.
+\end{cases}
+\]
+
+We characterize every \(\beta\)-feasible set by the degrees and labels
+of neighboring vertices, and give a linear-time, linear-space
+rooted-tree dynamic program that reconstructs a maximum set. Worked
+families include stars, once-subdivided stars, and paths. Two bounded
+computations with distinct checking logic test the implementation against
+exhaustive local search and a definition-first shortest-path checker; these
+calculations are supporting evidence, not proof.
+\keywords{dual general position \and graph join \and tree \and
+graph convexity \and dynamic programming}
+\subclass{05C12 (primary) \and 05C05 \and 05C69 \and 05C76 \and 05C85}
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+A set of vertices of a connected graph is in \emph{dual general
+position} if it is in general position and its complement is convex.
+Equivalently, no geodesic contains three selected vertices, and every
+geodesic between two unselected vertices stays outside the selected set.
+Tian and Klav\v{z}ar introduced and developed this variant of the
+general-position problem and proved the criterion that combines these
+two conditions~\cite{tian-klavzar-variety}. For a recent overview of
+general-position problems and their variants, see~\cite{chandran-et-al-survey}.
+
+The standard general-position problem has also been studied under graph
+operations. In particular, Ghorbani et al.~\cite{ghorbani-et-al-operations}
+determined the standard general-position number for joins and several
+other operations. Those results concern standard general position and do
+not determine the dual general-position number considered here.
+
+The behavior of dual general position under graph products was
+subsequently studied by Dokyeesun, Klav\v{z}ar, Kuziak, and Tian~\cite{dokyeesun-et-al-products}. In
+particular, their work posed the problem of determining the dual general
+position number of lexicographic products with a complete first factor.
+Jiang's 2026 preprint~\cite[Theorem 3.2]{jiang-complete-first-factor} gives the formula
+
+\[
+\operatorname{gp}_d(K_m\circ G)=m q_2(G), \qquad m\ge 2,
+\]
+
+for every nonempty finite simple graph \(G\), where \(q_2(G)\) is the
+largest size of one class in a partition of \(V(G)\) into two sets that
+each induce a clique; set \(q_2(G)=0\) if no such partition exists. The
+same preprint~\cite[Theorem 5.1]{jiang-complete-first-factor} also treats
+complete joins whose factors are all nonempty and noncomplete. Its Theorem 5.1 explicitly
+does not classify joins containing both a complete and a noncomplete
+factor. Thus the mixed join \(K_r+T\), with \(T\) a noncomplete tree,
+lies outside that theorem; it is also different from the lexicographic
+product \(K_m\circ T\).
+
+One subfamily of the mixed-join problem is already known. The fan graph
+is \(F_n=K_1+P_n\), and Tian, Dokyeesun, and Klav\v{z}ar~\cite[arXiv v2]{tian-et-al-removal}
+proved, for \(n\ge 4\), that
+
+\nopagebreak[4]
+\[
+\operatorname{gp}_d(F_n)
+=\left\lfloor\frac{2(n+1)}{3}\right\rfloor
+=\left\lceil\frac{2n}{3}\right\rceil.
+\]
+
+Consequently, the fan case is prior work and is used here only as a
+consistency check. The formula above is the one displayed in arXiv v2
+of~\cite{tian-et-al-removal}; no argument below relies on the different
+rounding convention displayed in an earlier author-hosted version.
+
+This paper studies \(K_r+T\) for \(r\ge 1\) and for trees \(T\) of order
+at least three. For a tree \(T\), define
+
+\[
+\beta(T)=\max\bigl\{|X|:\ \Delta(T[X])\le 1
+\text{ and } |N_T(x)\setminus X|\le 1\text{ for every }x\in X\bigr\}.
+\]
+
+The main structural argument separates dual general-position sets that
+meet the universal clique \(V(K_r)\) from those that avoid it. The first
+branch is controlled by a two-clique partition of the tree, while the
+second is exactly the optimization problem defining \(\beta(T)\). This
+yields
+
+\[
+\operatorname{gp}_d(K_r+T)=
+\begin{cases}
+r+2, & T\in\{P_3,P_4\},\\
+\beta(T), & \text{otherwise}.
+\end{cases}
+\]
+
+Sections~\ref{sec:structure}--\ref{sec:algorithm} give a self-contained proof of both branches, a local
+characterization of the \(\beta\)-feasible sets, and a linear-time
+dynamic program that reconstructs a maximum set. Section~\ref{sec:examples} gives worked
+families, and Section~\ref{sec:computation} records two bounded checks with
+distinct verification logic. The computations are supporting evidence rather
+than proof. The precise comparison with the closest product, join, and fan
+results is given above; no claim about graph classes outside the stated scope
+is needed for the results proved below.
+
+\section{Preliminaries}\label{sec:preliminaries}
+
+All graphs in this paper are finite and simple. For a graph \(G\), its
+vertex and edge sets are denoted by \(V(G)\) and \(E(G)\). If
+\(X\subseteq V(G)\), then \(G[X]\) is the subgraph induced by \(X\), and
+\(G-X\) abbreviates \(G[V(G)\setminus X]\). The open neighborhood of a
+vertex \(x\) is \(N_G(x)\), and \(\Delta(G)\) denotes the maximum degree
+of \(G\); by convention, the empty graph has maximum degree zero. A
+complete graph of order \(r\) is denoted by \(K_r\), and
+\(P_n\) denotes the path of order \(n\).
+
+Let \(G\) be connected. The distance \(d_G(u,v)\) is the minimum length
+of a \(u,v\)-path, where length means the number of edges. A path of
+length \(d_G(u,v)\) is a \emph{\(u,v\)-geodesic}. There may be more than
+one geodesic between the same two vertices. The interval between \(u\)
+and \(v\) is
+
+\[
+I_G(u,v)=\{w\in V(G):w\text{ lies on some }u,v\text{-geodesic}\}.
+\]
+
+A set \(Y\subseteq V(G)\) is \emph{convex} if \(I_G(u,v)\subseteq Y\)
+for every \(u,v\in Y\); equivalently, every geodesic between two
+vertices of \(Y\) lies entirely in \(G[Y]\).
+
+For \(X\subseteq V(G)\), a pair \(u,v\in V(G)\) is called
+\emph{\(X\)-positionable} if
+
+\[
+I_G(u,v)\cap X\subseteq\{u,v\}.
+\]
+
+Thus no internal vertex of any \(u,v\)-geodesic belongs to \(X\). The
+set \(X\) is a \emph{general-position set} if every pair of vertices in
+\(X\) is \(X\)-positionable. Equivalently, no three distinct vertices of
+\(X\) lie on a common geodesic.
+
+A set \(X\subseteq V(G)\) is a \emph{dual general-position set} if every
+pair whose two endpoints both lie in \(X\), or both lie in
+\(V(G)\setminus X\), is \(X\)-positionable. The first family of pairs
+says exactly that \(X\) is a general-position set. By Tian and Klav\v{z}ar
+\cite[Theorem 3.1]{tian-klavzar-variety}, the second family is equivalently expressed by
+convexity of the complement. We will therefore use the following
+criterion throughout:
+
+\nopagebreak[4]
+\[
+X\text{ is dual general position in }G
+\quad\Longleftrightarrow\quad
+X\text{ is general position and }G-X\text{ is convex}.
+\]
+
+\Needspace{6\baselineskip}
+The \emph{dual general position number} is
+
+\[
+\operatorname{gp}_d(G)=
+\max\{|X|:X\subseteq V(G)\text{ is a dual general-position set}\}.
+\]
+
+For vertex-disjoint graphs \(G\) and \(F\), their \emph{complete join}
+\(G+F\) is obtained from their disjoint union by adding every edge with
+one endpoint in \(V(G)\) and the other in \(V(F)\). In the rest of the
+note, \(r\ge 1\), \(T\) is a tree of order at least three, and
+
+\[
+C=V(K_r),\qquad H=K_r+T.
+\]
+
+Every vertex of \(C\) is adjacent to every other vertex of \(H\). Two
+vertices on the tree side are adjacent in \(H\) exactly when they are
+adjacent in \(T\). Because such a tree is noncomplete, \(H\) has
+diameter two.
+
+We use two parameters on the tree side. First, define
+
+\[
+q_2(T)=\max\{|A|:V(T)=A\mathbin{\dot\cup}B,
+\ T[A]\text{ and }T[B]\text{ are complete}\},
+\]
+
+and put \(q_2(T)=0\) if no such partition exists. The two classes may be
+interchanged, so \(q_2(T)\) records the largest possible class in a
+partition of the tree into two induced cliques. Second, define
+
+\[
+\beta(T)=\max\bigl\{|X|:X\subseteq V(T),\ \Delta(T[X])\le 1,
+\ |N_T(x)\setminus X|\le 1\text{ for every }x\in X\bigr\}.
+\]
+
+The first constraint in the definition of \(\beta(T)\) says that a
+selected vertex has at most one selected tree neighbor. The second says
+that it also has at most one unselected tree neighbor. These are
+conditions on the tree \(T\), not on the additional edges of the join
+\(H\).
+
+\section{The two-branch structural theorem}\label{sec:structure}
+
+We first classify dual general-position sets that contain at least one
+vertex of the universal clique \(C\). This is the \emph{apex-meeting
+branch}.
+
+\subsection{Sets meeting the universal clique}\label{sec:apex-meeting}
+
+\begin{lemma}\label{lem:apex-meeting}
+Let \(X\subseteq V(H)\) satisfy
+\(X\cap C\ne\varnothing\), and put
+
+\[
+S=X\cap V(T).
+\]
+
+Then \(X\) is a dual general-position set of \(H\) if and only if both
+\(T[S]\) and \(T[V(T)\setminus S]\) are complete.
+\end{lemma}
+
+\begin{proof}
+Choose a vertex \(c\in X\cap C\). Suppose first that
+\(X\) is a dual general-position set. If two vertices \(u,v\in S\) were
+nonadjacent in \(T\), then they would also be nonadjacent in \(H\).
+Since \(c\) is adjacent to every vertex of \(H\), the path \(u,c,v\)
+would be a \(u,v\)-geodesic of length two containing three vertices of
+\(X\). This would contradict the general-position property of \(X\).
+Hence \(T[S]\) is complete.
+
+Now suppose that two vertices \(u,v\in V(T)\setminus S\) were
+nonadjacent in \(T\). Again \(u,c,v\) would be a \(u,v\)-geodesic of
+length two. Its endpoints would lie in \(H-X\), whereas its internal
+vertex \(c\) would lie in \(X\). Consequently \(H-X\) would not be
+convex, a contradiction. Thus \(T[V(T)\setminus S]\) is complete.
+
+Conversely, suppose that both induced tree subgraphs are complete. The
+set \(X\) is then a clique: its vertices in \(C\) are pairwise adjacent,
+its tree part \(S\) induces a clique, and every vertex of \(C\) is
+adjacent to every vertex of \(T\). Therefore \(X\) is in general
+position. The complement \(H-X\) is also a clique, because
+\(C\setminus X\) is a clique, \(T[V(T)\setminus S]\) is a clique, and
+all edges between these two parts are present. Every clique is convex,
+so the criterion from Section~\ref{sec:preliminaries} shows that \(X\) is a dual
+general-position set. This proves the equivalence.
+\end{proof}
+
+The converse also covers the allowed boundary case \(X\cap C=C\),
+equivalently \(C\setminus X=\varnothing\). In the
+present scope, \(T\) is noncomplete, so the two tree parts in Lemma~\ref{lem:apex-meeting}
+cannot be empty in a feasible apex-meeting set: otherwise the other tree
+part would induce all of \(T\).
+
+\begin{corollary}\label{cor:apex-meeting-maximum}
+A dual general-position set meeting \(C\) exists
+if and only if \(q_2(T)>0\). When this branch exists, its maximum
+cardinality is
+
+\[
+r+q_2(T).
+\]
+\end{corollary}
+
+\begin{proof}
+By Lemma~\ref{lem:apex-meeting}, the tree part \(S\) of such a set and its
+complement form a partition of \(V(T)\) into two induced cliques. Thus
+the branch can exist only if \(q_2(T)>0\). Conversely, if
+\(V(T)=A\mathbin{\dot\cup}B\) is a partition into two induced cliques,
+then Lemma~\ref{lem:apex-meeting} shows that \(C\cup A\) is a dual general-position set
+meeting \(C\). This proves the existence equivalence.
+
+For every set in this branch, \(|X\cap C|\le r\) and \(|S|\le q_2(T)\),
+so \(|X|\le r+q_2(T)\). Choose a two-clique partition whose larger
+designated class has size \(q_2(T)\) and include that class together
+with all \(r\) vertices of \(C\). Lemma~\ref{lem:apex-meeting} gives a dual
+general-position set of size \(r+q_2(T)\), proving that the bound is
+attained.
+\end{proof}
+
+\subsection{Sets avoiding the universal clique}\label{sec:apex-avoiding}
+
+We next consider sets contained entirely in the tree side. In this
+branch the whole universal clique belongs to the complement.
+
+\begin{lemma}\label{lem:apex-avoiding}
+Let \(X\subseteq V(T)\), equivalently
+\(X\cap C=\varnothing\). Then \(X\) is a dual general-position set of
+\(H\) if and only if
+
+\[
+\Delta(T[X])\le 1
+\]
+
+and
+
+\[
+|N_T(x)\setminus X|\le 1\qquad\text{for every }x\in X.
+\]
+\end{lemma}
+
+\begin{proof}
+Recall that \(H\) has diameter two. We first examine the
+general-position condition. Suppose that some \(x\in X\) has two
+distinct neighbors \(u,v\in X\) in the tree. Since a tree contains no
+triangle, \(u\) and \(v\) are nonadjacent. Hence \(u,x,v\) is a
+\(u,v\)-geodesic of length two in \(H\), and all three of its vertices
+belong to \(X\). Thus \(X\) is not in general position.
+
+Conversely, suppose that \(X\) is not in general position. Then some
+geodesic contains three distinct vertices of \(X\). Because \(H\) has
+diameter two, these three vertices must occur as \(u,x,v\) on a
+length-two \(u,v\)-geodesic, with \(x\) as its internal vertex. All
+three lie in \(V(T)\), and adjacency between two tree-side vertices in
+\(H\) is the same as adjacency in \(T\). Therefore \(u\) and \(v\) are
+two selected tree neighbors of \(x\). We have proved that \(X\) is in
+general position if and only if no selected vertex has two selected tree
+neighbors, which is exactly the condition \(\Delta(T[X])\le 1\).
+
+It remains to characterize convexity of the complement. Put
+\(Y=V(H)\setminus X\). Since \(X\subseteq V(T)\), the entire clique
+\(C\) lies in \(Y\). Any pair of vertices of \(Y\) with at least one
+endpoint in \(C\) is adjacent. Likewise, two tree-side vertices of \(Y\)
+that are adjacent in \(T\) are adjacent in \(H\). Such adjacent pairs
+have geodesics of length one and cannot witness a failure of convexity.
+Consequently \(Y\) can fail to be convex only when two nonadjacent
+unselected tree vertices have a geodesic of length two whose internal
+vertex lies in \(X\).
+
+Because every vertex of \(X\) is on the tree side, such a geodesic
+exists exactly when some \(x\in X\) has two distinct neighbors
+\(u,v\in V(T)\setminus X\). Indeed, if such \(u\) and \(v\) exist, then
+they are nonadjacent because \(T\) has no triangle, so \(u,x,v\) is a
+length-two geodesic with endpoints in \(Y\) and internal vertex outside
+\(Y\). Conversely, every length-two geodesic witnessing nonconvexity has
+a selected internal vertex adjacent in \(T\) to its two unselected
+endpoints. It follows that \(Y\) is convex if and only if
+\(|N_T(x)\setminus X|\le 1\) for every \(x\in X\).
+
+Combining the general-position and convexity equivalences with the
+criterion from Section~\ref{sec:preliminaries} proves the lemma.
+\end{proof}
+
+\begin{corollary}\label{cor:apex-avoiding-maximum}
+The maximum cardinality of a dual
+general-position set that avoids \(C\) is \(\beta(T)\).
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{lem:apex-avoiding} says that the dual general-position sets in
+this branch are exactly the subsets of \(V(T)\) satisfying the two
+constraints in the definition of \(\beta(T)\). Taking the maximum of
+their cardinalities gives \(\beta(T)\).
+\end{proof}
+
+\subsection{Combining the two branches}\label{sec:combining}
+
+\begin{theorem}\label{thm:two-branch}
+For every \(r\ge 1\) and every tree \(T\) of order
+at least three,
+
+\[
+\operatorname{gp}_d(K_r+T)=
+\begin{cases}
+\beta(T),&q_2(T)=0,\\
+\max\{\beta(T),r+q_2(T)\},&q_2(T)>0.
+\end{cases}
+\]
+\end{theorem}
+
+\begin{proof}
+Every vertex set \(X\subseteq V(H)\) either meets \(C\)
+or avoids \(C\), and the two cases are disjoint. If \(q_2(T)=0\),
+Corollary~\ref{cor:apex-meeting-maximum} says that the apex-meeting branch is empty, while
+Corollary~\ref{cor:apex-avoiding-maximum} gives an attainable maximum of \(\beta(T)\) in the
+apex-avoiding branch. If \(q_2(T)>0\), both branches exist: their
+attainable maxima are respectively \(r+q_2(T)\) by Corollary~\ref{cor:apex-meeting-maximum} and
+\(\beta(T)\) by Corollary~\ref{cor:apex-avoiding-maximum}. Taking the larger of these two values
+proves the formula.
+\end{proof}
+
+For trees, the occurrence of the second line of Theorem~\ref{thm:two-branch} has a
+particularly short classification.
+
+\begin{lemma}\label{lem:q2-trees}
+If \(T\) is a tree of order at least three, then
+
+\[
+q_2(T)=
+\begin{cases}
+2,&T\in\{P_3,P_4\},\\
+0,&\text{otherwise}.
+\end{cases}
+\]
+\end{lemma}
+
+\begin{proof}
+A tree contains no triangle. Hence every clique in \(T\)
+has at most two vertices. If \(V(T)\) can be partitioned into two sets
+that each induce a clique, then \(|V(T)|\le 4\).
+
+There is only one tree of order three up to isomorphism, namely \(P_3\).
+Its two adjacent vertices and its remaining vertex form a two-clique
+partition, so \(q_2(P_3)=2\).
+
+At order four, both classes in a two-clique partition must have size two
+and therefore must be edges. Thus the two classes form a perfect
+matching. The two trees of order four are \(P_4\) and \(K_{1,3}\). The
+path \(P_4\) has a perfect matching, obtained by taking its first and
+last edges, whereas two disjoint edges cannot occur in \(K_{1,3}\)
+because every edge contains its center. Consequently \(q_2(P_4)=2\) and
+\(q_2(K_{1,3})=0\). Trees of larger order cannot admit such a partition,
+proving the lemma.
+\end{proof}
+
+\Needspace{6\baselineskip}
+We also need the two corresponding values of \(\beta\).
+
+\begin{lemma}\label{lem:beta-small-paths}
+We have \(\beta(P_3)=2\) and \(\beta(P_4)=3\).
+\end{lemma}
+
+\begin{proof}
+Let the vertices of \(P_3\) occur in the order
+\(v_1,v_2,v_3\). The set \(\{v_1,v_3\}\) is \(\beta\)-feasible: it is
+independent, and each of its vertices has only the neighbor \(v_2\)
+outside the set. Hence \(\beta(P_3)\ge 2\). The full vertex set is not
+feasible because its induced subgraph has maximum degree two. Since it
+is the only set of size three, \(\beta(P_3)=2\).
+
+Now let \(v_1,v_2,v_3,v_4\) be the vertices of \(P_4\) in path order.
+The set \(\{v_1,v_2,v_4\}\) is \(\beta\)-feasible: its induced graph
+consists of the edge \(v_1v_2\) and the isolated vertex \(v_4\), while
+\(v_2\) and \(v_4\) each have exactly one neighbor outside the set and
+\(v_1\) has none. Thus \(\beta(P_4)\ge 3\). The full vertex set is not
+feasible because its induced subgraph has maximum degree two, so
+\(\beta(P_4)\le 3\). Therefore \(\beta(P_4)=3\).
+\end{proof}
+
+Combining Theorem~\ref{thm:two-branch} with Lemmas~\ref{lem:q2-trees}
+and~\ref{lem:beta-small-paths} yields the announced form.
+
+\begin{corollary}\label{cor:main-formula}
+For every \(r\ge 1\) and every tree \(T\) of
+order at least three,
+
+\[
+\operatorname{gp}_d(K_r+T)=
+\begin{cases}
+r+2,&T\in\{P_3,P_4\},\\
+\beta(T),&\text{otherwise}.
+\end{cases}
+\]
+\end{corollary}
+
+\begin{proof}
+If \(T\notin\{P_3,P_4\}\), Lemma~\ref{lem:q2-trees} gives \(q_2(T)=0\),
+so the first line of Theorem~\ref{thm:two-branch} yields
+\(\operatorname{gp}_d(K_r+T)=\beta(T)\). For \(T\in\{P_3,P_4\}\), the
+second line gives
+
+\[
+\operatorname{gp}_d(K_r+T)=\max\{\beta(T),r+2\}.
+\]
+
+Here \(\beta(P_3)=2\) and \(\beta(P_4)=3\) by Lemma~\ref{lem:beta-small-paths}, while
+\(r+2\ge 3\). Thus the displayed maximum is \(r+2\) in both cases.
+\end{proof}
+
+\section{The tree parameter \texorpdfstring{$\beta(T)$}{beta(T)}}\label{sec:beta}
+
+Call a set \(X\subseteq V(T)\) \emph{\(\beta\)-feasible} if it satisfies
+the two constraints in the definition of \(\beta(T)\). Those constraints
+admit the following equivalent description using only the degrees in the
+original tree and the labels of the immediate neighbors.
+
+\begin{proposition}\label{prop:local-characterization}
+A set \(X\subseteq V(T)\) is
+\(\beta\)-feasible if and only if both of the following conditions hold:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  no vertex of degree at least three in \(T\) belongs to \(X\); and
+\item
+  every vertex \(x\in X\) of degree two in \(T\) has exactly one
+  neighbor in \(X\).
+\end{enumerate}
+
+Selected vertices of degree zero or one have no additional restriction.
+In particular, the statement includes these boundary degrees even though
+a degree-zero vertex does not occur under the standing assumption that
+\(T\) has order at least three.
+\end{proposition}
+
+\begin{proof}
+For each selected vertex \(x\in X\), put
+
+\[
+s_X(x)=|N_T(x)\cap X|,
+\qquad
+u_X(x)=|N_T(x)\setminus X|.
+\]
+
+Then
+
+\[
+s_X(x)+u_X(x)=\deg_T(x).
+\]
+
+The condition \(\Delta(T[X])\le 1\) says exactly that \(s_X(x)\le 1\)
+for every \(x\in X\), while the second constraint in the definition of
+\(\beta(T)\) says that \(u_X(x)\le 1\). Hence a selected vertex can have
+degree at most two in \(T\). If its degree is two, the two nonnegative
+integers \(s_X(x)\) and \(u_X(x)\) sum to two and are both at most one,
+so they must both equal one. This proves the necessity of conditions 1
+and 2.
+
+Conversely, assume conditions 1 and 2. If \(x\in X\) has degree two,
+then it has one selected and one unselected neighbor, so
+\(s_X(x)=u_X(x)=1\). If \(x\in X\) has degree zero or one, then both
+neighbor counts are automatically at most one. Condition 1 excludes
+every other degree for a selected vertex. Thus \(s_X(x)\le 1\) and
+\(u_X(x)\le 1\) for every \(x\in X\), which are precisely the two
+defining constraints of a \(\beta\)-feasible set.
+\end{proof}
+
+This equivalence concerns every feasible set, not only the maximum ones.
+One immediate consequence gives a useful general lower bound.
+
+\begin{corollary}\label{cor:leaves}
+If \(L(T)\) is the set of leaves of a tree
+\(T\), then \(L(T)\) is \(\beta\)-feasible. Consequently,
+
+\[
+\beta(T)\ge |L(T)|.
+\]
+\end{corollary}
+
+\begin{proof}
+Every vertex in \(L(T)\) has degree one. Proposition~\ref{prop:local-characterization}
+therefore imposes no additional condition on the set consisting of all
+leaves. The inequality follows from the definition of \(\beta(T)\).
+\end{proof}
+
+The first constraint \(\Delta(T[X])\le 1\) alone defines a weaker
+maximum-degree-one problem. Every \(\beta\)-feasible set satisfies that
+constraint, but the converse is false. In \(K_{1,3}\), for example, the
+center together with one leaf induces a single edge and satisfies the
+weaker constraint. It is not \(\beta\)-feasible, because the selected
+center has two unselected neighbors. Thus a result or algorithm for the
+weaker problem cannot simply be substituted for \(\beta(T)\) without
+enforcing the additional outside-neighbor constraint. The
+bounded literature audit did not identify an established name for this
+stricter parameter; this paper makes no claim that the parameter itself
+is new.
+
+\section{Linear-time computation and reconstruction}\label{sec:algorithm}
+
+We now give a dynamic program that computes \(\beta(T)\) and
+reconstructs an attaining set. Root \(T\) at an arbitrary vertex
+\(\rho\). For a vertex \(v\), let \(T_v\) be the subtree induced by
+\(v\) and all its descendants, and let \(\operatorname{Ch}(v)\) be the
+set of children of \(v\). We use the label \(1\) for a selected vertex
+and \(0\) for an unselected vertex.
+
+For a nonroot vertex \(v\) and labels \(a,b\in\{0,1\}\), define
+\(F_v(a,b)\) as the largest number of selected vertices in \(T_v\) among
+all labelings with the following properties:
+
+\begin{itemize}
+\tightlist
+\item
+  \(v\) has label \(a\);
+\item
+  the parent of \(v\) has label \(b\); and
+\item
+  every selected vertex in \(T_v\) satisfies the two constraints
+  defining a \(\beta\)-feasible set, where the specified parent label is
+  used when checking the constraint at \(v\).
+\end{itemize}
+
+For the root, write \(F_\rho(a,\bot)\), where \(\bot\) records that no
+parent exists. An impossible state has value \(-\infty\).
+
+Fix a state at \(v\) and assign a proposed label \(t_u\in\{0,1\}\) to
+every child \(u\in\operatorname{Ch}(v)\). Put
+
+\[
+s=\sum_{u\in\operatorname{Ch}(v)}t_u,
+\qquad
+d=|\operatorname{Ch}(v)|+\mathbf 1_{\{v\ne\rho\}},
+\]
+
+and define
+
+\[
+p=
+\begin{cases}
+0,&v=\rho,\\
+b,&v\ne\rho.
+\end{cases}
+\]
+
+Thus \(d=\deg_T(v)\), while \(p+s\) is the number of selected neighbors
+of \(v\). If \(a=1\), the proposed child labels are admissible exactly
+when
+
+\nopagebreak[4]
+\begin{equation}\label{eq:local-state-constraint}
+p+s\le 1
+\qquad\text{and}\qquad
+d-(p+s)\le 1.
+\end{equation}
+
+The first inequality bounds the selected neighbors of \(v\) and the
+second bounds its unselected neighbors. If \(a=0\), there is no
+constraint at \(v\) itself, because the definition of \(\beta\) imposes
+the two neighbor bounds only on selected vertices.
+
+The recurrence is therefore
+
+\begin{equation}\label{eq:dp-recurrence}
+F_v(a,b)
+=a+
+\max_{(t_u:u\in\operatorname{Ch}(v))}
+\sum_{u\in\operatorname{Ch}(v)}F_u(t_u,a),
+\end{equation}
+
+where all child-label vectors are allowed when \(a=0\), and only the
+vectors satisfying \eqref{eq:local-state-constraint} are allowed when \(a=1\). For the root, the
+same formula is used with \(b=\bot\) and \(p=0\). If the admissible
+family is empty or a proposed vector uses an impossible child state, its
+contribution is \(-\infty\). The answer is
+
+\begin{equation}\label{eq:dp-answer}
+\beta(T)=\max\{F_\rho(0,\bot),F_\rho(1,\bot)\}.
+\end{equation}
+
+\begin{theorem}\label{thm:dp-correctness}
+The recurrence \eqref{eq:dp-recurrence} computes the exact values of
+all states, and \eqref{eq:dp-answer} equals \(\beta(T)\). If one maximizing child-label
+vector is stored for every finite state, a maximum \(\beta\)-feasible
+set can be reconstructed.
+\end{theorem}
+
+\begin{proof}
+We prove the state claim by induction on the height of
+\(v\) in the rooted tree. If \(v\) is a leaf, it has no child subtrees.
+When \(v\) is selected, \eqref{eq:local-state-constraint} checks exactly the label of its parent, if
+one exists; when \(v\) is unselected, it has no constraint of its own.
+Thus \eqref{eq:dp-recurrence} lists exactly the feasible labelings of the one-vertex
+subtree and counts its selected vertex by the term \(a\).
+
+Now assume that the claim holds for every child of \(v\). Fix the label
+\(a\) of \(v\) and, if \(v\) is not the root, the parent label \(b\).
+Once the child labels are fixed, different child subtrees have no edges
+between them. By the induction hypothesis, \(F_u(t_u,a)\) is the exact
+largest contribution from \(T_u\) under its two boundary labels.
+Therefore the best total contribution from the child subtrees is the sum
+appearing in \eqref{eq:dp-recurrence}.
+
+It remains only to check the constraint at \(v\). If \(a=0\), no such
+constraint exists, so every combination of feasible child states is
+allowed. If \(a=1\), then \(p+s\) and \(d-(p+s)\) are exactly the
+selected- and unselected-neighbor counts of \(v\). Hence \eqref{eq:local-state-constraint} accepts
+precisely the combinations for which \(v\) satisfies the two \(\beta\)
+constraints. The recurrence thus neither omits a feasible labeling nor
+includes an infeasible one, and the additional term \(a\) counts \(v\)
+exactly once. This proves the state claim by induction.
+
+At the root, every labeling of the whole tree has exactly one of the two
+root labels, so taking the maximum in \eqref{eq:dp-answer} gives precisely
+\(\beta(T)\). To reconstruct an attaining set, choose a maximizing root
+label. At each visited state, add \(v\) to the set if \(a=1\), read its
+stored maximizing child-label vector, and continue to each child \(u\)
+in state \((t_u,a)\). These boundary labels are compatible by
+construction, and the preceding induction shows that every stored child
+state attains its recorded value. The resulting set is therefore
+\(\beta\)-feasible and has cardinality \(\beta(T)\).
+\end{proof}
+
+\begin{proposition}\label{prop:dp-complexity}
+The value computation and the reconstruction
+can both be implemented in \(O(|V(T)|)\) time using \(O(|V(T)|)\) space.
+\end{proposition}
+
+\begin{proof}
+In a state with \(a=0\), the child labels are
+independent, so for each child \(u\) we choose the larger of
+\(F_u(0,0)\) and \(F_u(1,0)\). The work is therefore proportional to the
+number of children. In a state with \(a=1\), \eqref{eq:local-state-constraint} is impossible when
+\(d\ge 3\), because the two bounded neighbor counts sum to \(d\). Every
+remaining selected state has at most two children, so at most four
+child-label vectors need to be examined. There are only constantly many
+states per vertex. Summing the child counts over all vertices gives
+\(|V(T)|-1\), and hence the bottom-up computation takes linear time.
+
+Storing a constant number of state values per vertex and one chosen
+label for each relevant parent--child state uses linear space. The
+top-down reconstruction visits every vertex once and therefore also
+takes linear time.
+\end{proof}
+
+\section{Known subfamilies and worked examples}\label{sec:examples}
+
+The examples below illustrate the local structure of \(\beta(T)\) and
+the two different branches of the main theorem. Their values are derived
+from the preceding proofs; no computation is being used as proof.
+
+\subsection{Stars and the preserved counterexample}\label{sec:stars}
+
+Let \(T=K_{1,k}\) with center \(z\) and \(k\ge 3\) leaves.
+Proposition~\ref{prop:local-characterization} forces \(z\) to be
+unselected because \(\deg_T(z)=k\ge 3\). On the
+other hand, the set of all \(k\) leaves is \(\beta\)-feasible. It
+follows that
+
+\[
+\beta(K_{1,k})=k.
+\]
+
+The star \(K_{1,k}\) is neither \(P_3\) nor \(P_4\) when \(k\ge 3\), so
+Corollary~\ref{cor:main-formula} gives
+
+\begin{equation}\label{eq:star-family}
+\operatorname{gp}_d(K_r+K_{1,k})=k
+\qquad (r\ge 1,\ k\ge 3).
+\end{equation}
+
+Thus the value is independent of the size of the universal clique. In
+particular,
+
+\[
+\operatorname{gp}_d(K_r+K_{1,3})=3
+\]
+
+for every \(r\ge 1\). This is the counterexample retained from the
+feasibility stage: \(q_2(K_{1,3})=0\), so the unsupported extrapolation
+\(r+q_2(T)\) would give \(4\) when \(r=4\), whereas the correct value is
+\(3\). The maximum set in the apex-avoiding branch consists of the three
+leaves.
+
+\subsection{Once-subdivided stars}\label{sec:subdivided-stars}
+
+Let \(S_k\) be obtained from \(K_{1,k}\) by subdividing every edge
+exactly once, where \(k\ge 3\). Write \(z\) for the center, \(u_i\) for
+the degree-two vertex on the \(i\)th arm, and \(v_i\) for the
+corresponding leaf. Again \(z\) is forced to be unselected. The set
+
+\[
+X=\{u_i,v_i:1\le i\le k\}=V(S_k)\setminus\{z\}
+\]
+
+is \(\beta\)-feasible: every selected \(u_i\) has the selected neighbor
+\(v_i\) and the unselected neighbor \(z\), while each \(v_i\) has degree
+one. Since the only remaining vertex is the forced-unselected center,
+this set is maximum and
+
+\[
+\beta(S_k)=2k.
+\]
+
+The tree \(S_k\) has order \(2k+1\ge 7\), so \(q_2(S_k)=0\) by
+Lemma~\ref{lem:q2-trees}. Hence
+
+\begin{equation}\label{eq:subdivided-star-family}
+\operatorname{gp}_d(K_r+S_k)=2k
+\qquad (r\ge 1,\ k\ge 3).
+\end{equation}
+
+This family also has a value independent of \(r\), but unlike an
+ordinary star its maximum set contains both leaves and degree-two
+vertices.
+
+\subsection{Paths and the known fan subfamily}\label{sec:paths}
+
+We first determine \(\beta\) on paths directly from Proposition~\ref{prop:local-characterization}.
+
+\begin{proposition}\label{prop:beta-path}
+For every \(n\ge 3\),
+
+\[
+\beta(P_n)=\left\lceil\frac{2n}{3}\right\rceil.
+\]
+\end{proposition}
+
+\begin{proof}
+List the path vertices in order as \(v_1,\ldots,v_n\). A
+\(\beta\)-feasible set cannot contain three consecutive vertices: the
+middle one would be a selected degree-two vertex with two selected
+neighbors, contrary to Proposition~\ref{prop:local-characterization}. Partitioning the path order into
+consecutive blocks of three, followed by a remainder of size zero, one,
+or two, therefore gives
+
+\[
+|X|\le
+\begin{cases}
+2q,&n=3q,\\
+2q+1,&n=3q+1,\\
+2q+2,&n=3q+2.
+\end{cases}
+\]
+
+These three bounds equal \(\lceil 2n/3\rceil\). They are attained by the
+binary selection words
+
+\[
+(110)^q,\qquad (110)^q1,\qquad (110)^q11,
+\]
+
+respectively, where a \(1\) means that the corresponding path vertex is
+selected. In each word, every selected internal vertex has exactly one
+selected neighbor, while the two endpoints have degree one.
+Proposition~\ref{prop:local-characterization} therefore shows that the
+indicated sets are \(\beta\)-feasible.
+\end{proof}
+
+Corollary~\ref{cor:main-formula} now yields, for every \(r\ge 1\) and \(n\ge 3\),
+
+\begin{equation}\label{eq:path-family}
+\operatorname{gp}_d(K_r+P_n)=
+\begin{cases}
+r+2,&n\in\{3,4\},\\
+\left\lceil\dfrac{2n}{3}\right\rceil,&n\ge 5.
+\end{cases}
+\end{equation}
+
+When \(r=1\), the graph \(K_1+P_n\) is the fan \(F_n\). For \(n=4\), the
+first line of \eqref{eq:path-family} gives \(3=\lceil 8/3\rceil\), and for \(n\ge 5\) the
+second line applies. Thus, for every \(n\ge 4\), the present theorem
+recovers
+
+\[
+\operatorname{gp}_d(F_n)
+=\left\lceil\frac{2n}{3}\right\rceil
+=\left\lfloor\frac{2(n+1)}{3}\right\rfloor.
+\]
+
+The equality of the ceiling and floor expressions follows immediately by
+considering \(n\) modulo three. This is exactly the formula stated in arXiv
+v2 of~\cite{tian-et-al-removal}, so the fan calculation is a consistency
+check and not a novelty claim. Formula \eqref{eq:path-family} additionally makes clear
+that for paths of order at least five, the value stays unchanged when
+the single fan apex is replaced by an arbitrary clique \(K_r\); the
+exceptional paths \(P_3\) and \(P_4\) belong to the apex-meeting branch
+and retain their \(r+2\) dependence.
+
+\section{Computational verification and reproducibility}\label{sec:computation}
+
+The proofs in Sections~\ref{sec:structure}--\ref{sec:examples} do not depend on computation. The
+calculations reported here test the implementation and search for small
+counterexamples; finite agreement is supporting evidence and is not a
+proof of any theorem.
+
+\subsection{Two verification routes}\label{sec:independent-checks}
+
+The project keeps the following two main comparisons separate. They use
+distinct checking logic but share the audit driver and NetworkX-generated
+tree instances.
+
+First, \path{src/mixed_join_tree.py} implements the rooted-tree
+recurrence from Section~\ref{sec:algorithm} and reconstructs one maximizing set. It does
+not import the shortest-path checker. The audit compares its value with
+a separate exhaustive search over all subsets satisfying the two
+defining local constraints of \(\beta(T)\). The comparison covers every
+nonisomorphic tree of orders 3 through 12 generated by NetworkX, a total
+of 985 trees. For each tree, the audit also checks that the
+reconstructed set has the reported size and satisfies the two local
+constraints. Finally, it recomputes the value with every possible root
+to test root invariance.
+
+Second, \path{src/dual_gp_independent.py} provides a
+definition-first checker that does not use the mixed-join theorem, the
+\(\beta\) characterization, or the tree DP. It constructs \(K_r+T\)
+explicitly, computes all-pairs distances by fresh breadth-first
+searches, enumerates vertex subsets, and tests general position together
+with convexity of the complement. The audit compares the maximum found
+by this checker with the formula implemented from Corollary~\ref{cor:main-formula}. It
+covers all 46 nonisomorphic trees of orders 3 through 8 and
+\(r\in\{1,2,3,4\}\), giving 184 comparisons.
+
+\Needspace{8\baselineskip}
+The archived report \path{results/mixed_join_dp_audit.json}
+records:
+
+\begin{longtable}[]{@{}L{0.25\textwidth}L{0.40\textwidth}rr@{}}
+\toprule
+Check & Scope & Number checked & Failures \\
+\midrule
+\endhead
+DP value versus exhaustive subset search & all nonisomorphic trees,
+orders 3--12 & 985 & 0 \\
+root-invariance comparison & every possible root of the same 985 trees &
+11,003 & 0 \\
+reconstructed maximum set & one reconstruction for each of the 985 trees
+& 985 & 0 \\
+mixed-join formula versus shortest-path definition & all nonisomorphic
+trees, orders 3--8, and \(r=1,2,3,4\) & 184 & 0 \\
+\bottomrule
+\end{longtable}
+
+The earlier target-selection screen in
+\path{results/extension_feasibility_audit.json} contains 92
+overlapping small mixed-join comparisons and the explicitly retained
+\(K_{1,3}\) data. Those historical checks are not added to the table
+totals, because doing so would double-count instances from the larger
+audit.
+
+\subsection{Environment and commands}\label{sec:environment}
+
+The archived matrix was produced under CPython 3.13.5 and NetworkX
+3.6.1. A fresh rerun on 29 August 2026 used Windows 11 build 26100,
+CPython 3.13.5, NetworkX 3.6.1, and pytest 9.1.1. From the repository
+root, the relevant PowerShell commands are
+
+\begin{verbatim}
+.\.venv\Scripts\python.exe -m pip install -r .\requirements.txt
+.\.venv\Scripts\python.exe -m pytest -q .\tests
+.\.venv\Scripts\python.exe .\experiments\audit_mixed_join_dp.py `
+  --output .\results\mixed_join_dp_audit.json
+\end{verbatim}
+
+The fresh test run returned \texttt{29\ passed}. In addition to the
+bounded matrices, the tests cover named values, invalid inputs,
+reconstruction feasibility, and a path of order 2,500 to ensure that
+reconstruction does not rely on Python recursion. The fresh audit rerun
+reproduced all four zero-failure rows in the table above.
+
+\Needspace{7\baselineskip}
+For exact artifact identification, the SHA-256 hashes recorded on 29
+August 2026 are:
+
+\begin{longtable}[]{@{}L{0.42\textwidth}L{0.53\textwidth}@{}}
+\toprule
+Artifact & SHA-256 \\
+\midrule
+\endhead
+\path{src/mixed_join_tree.py} &
+\texttt{D3DDAB46\allowbreak 510B217B\allowbreak F9C442CC\allowbreak
+57302953\allowbreak C4D0C29F\allowbreak 208DD7AD\allowbreak
+E06381F2\allowbreak D90A8B9D} \\
+\path{src/dual_gp_independent.py} &
+\texttt{D7BA1C52\allowbreak 0DC6991E\allowbreak 78CB8BAE\allowbreak
+609A598E\allowbreak 6BBF950D\allowbreak A03C1EAC\allowbreak
+9BA4D30D\allowbreak 1EFFF231} \\
+\path{experiments/}\newline\path{audit_extension_candidates.py} &
+\texttt{A463CE20\allowbreak 2995000F\allowbreak 324BDB7F\allowbreak
+90D2821B\allowbreak 1B97AB38\allowbreak 911E3E89\allowbreak
+41DFFC38\allowbreak 1F8393F6} \\
+\path{experiments/}\newline\path{audit_mixed_join_dp.py} &
+\texttt{93BA42DB\allowbreak 963CAB3F\allowbreak 2EE34DAC\allowbreak
+9CF36511\allowbreak FF6332A8\allowbreak 4543F44A\allowbreak
+22ACD48B\allowbreak BB974D44} \\
+\path{results/}\newline\path{mixed_join_dp_audit.json} &
+\texttt{C4489D2A\allowbreak 7202AD14\allowbreak 13EED2FB\allowbreak
+C551E6CB\allowbreak DFEB6FC5\allowbreak BB10FF32\allowbreak
+F4899B74\allowbreak 7C3F4E90} \\
+\bottomrule
+\end{longtable}
+
+The \path{requirements.txt} file lists the required packages but does
+not pin exact versions. The explicit versions and hashes above are
+therefore part of the reproducibility record. None of these finite
+checks establishes correctness beyond the stated test ranges.
+
+\section{Conclusion and limitations}\label{sec:conclusion}
+
+For \(r\ge 1\) and a tree \(T\) of order at least three, dual
+general-position sets in \(K_r+T\) split into two exhaustive classes. A
+set meeting the universal clique exists precisely when the tree can be
+partitioned into two induced cliques, and the maximum in that branch is
+\(r+q_2(T)\). A set avoiding the universal clique is dual general
+position precisely when it satisfies the two local constraints defining
+\(\beta(T)\), and the maximum in that branch is \(\beta(T)\). Since a
+tree in the present scope has a two-clique partition only when it is
+\(P_3\) or \(P_4\), the combined formula is
+
+\[
+\operatorname{gp}_d(K_r+T)=
+\begin{cases}
+r+2,&T\in\{P_3,P_4\},\\
+\beta(T),&\text{otherwise}.
+\end{cases}
+\]
+
+The local characterization of \(\beta\) excludes selected vertices of
+degree at least three and requires every selected degree-two vertex to
+have exactly one selected neighbor. The rooted-tree dynamic program
+turns this characterization into a linear-time, linear-space algorithm
+that also reconstructs a maximum set. Stars, once-subdivided stars, and
+paths illustrate the resulting structure. For \(r=1\), the path
+calculation recovers the formula stated in arXiv v2 of
+\cite{tian-et-al-removal}; that subfamily is prior work and is not presented as
+a new result.
+
+Several limitations are essential. Jiang's closest general result
+\cite{jiang-complete-first-factor} was available as preprint v1.0.1 at the
+literature cutoff of 29 August 2026. The bounded computations in
+Section~\ref{sec:computation} support the implementation but do not prove the
+theorem. The comparison with the known fan formula uses the display in arXiv
+v2 of~\cite{tian-et-al-removal}, which has the rounding convention consistent
+with formula~\eqref{eq:path-family}.
+
+Finally, this paper treats only \(K_r+T\) with \(r\ge 1\) and
+\(|V(T)|\ge 3\). It does not classify joins with an arbitrary first
+factor, general mixed complete joins with several factors, or
+lexicographic products \(P_n\circ T\). Those directions are outside the
+present scope, and no claim about their resolution or novelty is made
+here.
+
+\begin{acknowledgements}
+The author acknowledges the assistance of OpenAI Codex in the roles described
+below.
+\end{acknowledgements}
+
+\section*{Use of AI-assisted tools}
+OpenAI Codex was used as an AI-assisted tool for literature organization,
+proof drafting, code development, computational checking, manuscript drafting,
+and editorial revision. Codex is not an author. The author assumes full
+responsibility for the final manuscript, including verification of the
+mathematical claims, citations, code, and text.
+
+\begin{thebibliography}{9}
+
+\bibitem{tian-klavzar-variety}
+J. Tian and S. Klav\v{z}ar, ``Variety of general position problems
+in graphs,'' \emph{Bulletin of the Malaysian Mathematical Sciences
+Society} 48 (2025), Article 5,
+\href{https://doi.org/10.1007/s40840-024-01788-z}{doi:10.1007/s40840-024-\mbox{01788-z}}.
+
+\bibitem{chandran-et-al-survey}
+S. V. Ullas Chandran, S. Klav\v{z}ar, and J. Tuite, ``The General
+Position Problem: A Survey,'' arXiv:2501.19385v5 (16 August 2026),
+\href{https://doi.org/10.48550/arXiv.2501.19385}{doi:10.48550/arXiv.2501.19385}.
+
+\bibitem{ghorbani-et-al-operations}
+M. Ghorbani, H. R. Maimani, M. Momeni, F. R. Mahid, S. Klav\v{z}ar,
+and G. Rus, ``The general position problem on Kneser graphs and on some
+graph operations,'' \emph{Discussiones Mathematicae Graph Theory} 41
+(2021), 1199--1213,
+\href{https://doi.org/10.7151/dmgt.2269}{doi:10.7151/dmgt.2269}.
+
+\bibitem{dokyeesun-et-al-products}
+P. Dokyeesun, S. Klav\v{z}ar, D. Kuziak, and J. Tian, ``General
+position problems in strong and lexicographic products of graphs,''
+\emph{Computational and Applied Mathematics} 45 (2026), Article 97,
+\href{https://doi.org/10.1007/s40314-025-03547-7}{doi:10.1007/s40314-025-03547-7}.
+
+\bibitem{jiang-complete-first-factor}
+W. Jiang, ``Dual General Position in Lexicographic Products with
+a Complete First Factor,'' Zenodo preprint v1.0.1 (27 August 2026),
+\href{https://doi.org/10.5281/zenodo.22116770}{doi:10.5281/zenodo.22116770}.
+
+\bibitem{tian-et-al-removal}
+J. Tian, P. Dokyeesun, and S. Klav\v{z}ar, ``On the variety of
+general position problems under vertex and edge removal,''
+\emph{Discrete Applied Mathematics} 388 (2026), 56--64,
+\href{https://doi.org/10.1016/j.dam.2026.02.044}{doi:10.1016/j.dam.2026.02.044};
+\href{https://arxiv.org/abs/2510.01294v2}{arXiv:2510.01294v2}.
+
+\end{thebibliography}
+
+\section*{Statements and Declarations}
+
+\noindent\textbf{Funding.}
+The author received no funding for this work.
+
+\medskip
+\noindent\textbf{Competing interests.}
+The author declares no competing interests.
+
+\medskip
+\noindent\textbf{Author contributions.}
+Yi Yuteng is the sole author and assumes responsibility for the study, the
+reported mathematical arguments and computations, and the final manuscript.
+
+\medskip
+\noindent\textbf{Data and code availability.}
+The code and machine-readable audit outputs supporting the computational
+checks are available from the corresponding author on reasonable request.
+
+\end{document}

@@ -1,0 +1,79 @@
+{
+  "audit_date": "2026-08-28",
+  "environment": {
+    "networkx": "3.6.1",
+    "python": "3.13.5"
+  },
+  "mixed_join_Kr_plus_tree": {
+    "comparisons": 92,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "star_counterexample": {
+      "beta": 3,
+      "q2": 0,
+      "tree": "K_1,3",
+      "values": [
+        {
+          "direct_dual_gp_number": 3,
+          "r": 1
+        },
+        {
+          "direct_dual_gp_number": 3,
+          "r": 2
+        },
+        {
+          "direct_dual_gp_number": 3,
+          "r": 3
+        },
+        {
+          "direct_dual_gp_number": 3,
+          "r": 4
+        }
+      ]
+    },
+    "summaries": [
+      {
+        "beta_max": 2,
+        "beta_min": 2,
+        "nonisomorphic_tree_count": 1,
+        "q2_positive_count": 1,
+        "tree_order": 3
+      },
+      {
+        "beta_max": 3,
+        "beta_min": 3,
+        "nonisomorphic_tree_count": 2,
+        "q2_positive_count": 1,
+        "tree_order": 4
+      },
+      {
+        "beta_max": 4,
+        "beta_min": 4,
+        "nonisomorphic_tree_count": 3,
+        "q2_positive_count": 0,
+        "tree_order": 5
+      },
+      {
+        "beta_max": 5,
+        "beta_min": 4,
+        "nonisomorphic_tree_count": 6,
+        "q2_positive_count": 0,
+        "tree_order": 6
+      },
+      {
+        "beta_max": 6,
+        "beta_min": 4,
+        "nonisomorphic_tree_count": 11,
+        "q2_positive_count": 0,
+        "tree_order": 7
+      }
+    ]
+  },
+  "path_first_lexicographic_product": {
+    "comparisons": 17,
+    "nonzero_case_count": 0,
+    "nonzero_cases": []
+  },
+  "schema_version": 1,
+  "status": "computational feasibility evidence, not proof"
+}
