@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-08-29 (manual GitHub upload folder prepared and independently tested; remote remains empty)
+Last updated: 2026-08-29 (public GitHub repository verified; public-facing README and duplicate-upload cleanup prepared)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -126,13 +126,14 @@ $$
 - 使用用户安装的 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 对 v6 三遍真实编译。最终原生日志无 warning/error/overfull/underfull/未定义引用/引文/缺字/rerun，输出 14 页 A4 PDF。全部字体嵌入，邮件/DOI/arXiv 链接可枚举，14 页渲染逐页核验无裁切、重叠、断表、黑块、缺字或异常分页。当前 TeX/PDF/log 的大小和 SHA-256 已记录在当前阶段、版本历史和 GLM 裁决笔记中。
 - 在用户准备实际投稿时重新读取 DMGT 2026 官网、作者指南、注册、登录与编辑部联系页。确认 DMGT 仍是当前稿的首选：scope 包含 structural graph results、无 APC，首投稿只公开要求通讯作者信息、摘要、关键词、2020 MSC 和不超过 10 MB 的单栏逐行编号 PDF；`dmgt` class、TeX source 和附加文件在录用后要求。当前 470,046-byte v6 PDF 完全符合公开首投文件要求。登录后的 supplement 字段不可公开查看，若不存在则应联系 `dmgt@wmie.uz.zgora.pl` 询问 ZIP 附件方式，不能假称已经随稿提供或因此强制先公开 GitHub。
 - 按用户要求建立 `github_upload/` 手动上传包：根目录含中文 `README.md`、复现说明和依赖文件；`paper/` 保存冻结 v6 TeX/PDF；`docs/` 保存合作者导读、证明说明和文献定位；`src/`、`experiments/`、`tests/`、`results/` 保留可运行的原相对结构；`release/` 保存固定补充 ZIP。没有纳入 v2--v5、期刊格式旧稿、第三方论文、本地环境、缓存或 AI 原始回复。TeX、PDF、ZIP 与 canonical v6 的 SHA-256 全部一致，从该文件夹直接运行测试得到 `30 passed in 0.30s`。README 已说明 GitHub 网页端逐步上传、目录关联、上传后核验、private/public 与 license 边界；本轮没有改动或上传远端仓库。
+- 用户已通过 GitHub Desktop 将 `main` 推送，并把 `Star5Dust/dual-general-position-mixed-joins` 改为 public；GitHub REST API 于 2026-08-29 读回 `visibility=public`、`default_branch=main`、无 license。公开审计未发现常见 token/private-key 模式。根 README 已改为面向公开读者的英文首页，直接给出主结果、论文/PDF/证明/复现包链接、运行命令、证据边界和无 license 的真实状态。误提交的 `回复/` 已在后续提交从当前树移除并加入 `.gitignore`；其历史副本仍存在于早期 commit。重复的 `github_upload/` 现准备从 Git 跟踪中移除但保留本地，并加入 `.gitignore`。冻结 v6 未覆盖；若论文要加入公开 URL，必须新建 v7。
 
 尚未开始：
 
 - 外部合格人类数学审阅仍未取得；用户目前不认识合适审阅者，已选择用多模型 AI 筛查作为现实替代，但该流程不等于人类同行评审。尚需权限的订阅数据库与 fan VOR 正文核验也未完成；
 - 原生纯文本 v3 `.log` 的归档尚未取得；现有 PDF 打印件已完整保留可见日志内容，但不能证明原始日志字节或外部编译输入源码哈希；
 - version-of-record fan 公式的正文比对，以及只有在获得权限时才能做的 MathSciNet/Scopus/Web of Science 最终查重；
-- private GitHub repository 已创建，审计后的初次提交已在本地保留，但远端推送因 VPN/认证回传故障延后；尚待决定 license、公开时点与可选 Zenodo DOI。在公共 URL 实际可用并读回核验前，不得把 private URL 提前写入论文；
+- public GitHub repository 已建立并读回核验；尚待作者决定代码与文稿的 license、是否精简公开历史、是否建立带版本号的 GitHub Release/Zenodo DOI，以及是否在新建 v7 中加入仓库 URL；
 - GPT 审稿提出的任意非完全第二因子 $K_r+G$ 局部团邻域推广已经有直接证明机制，但尚未完成专门的系统文献、命名参数和计算审计；它不属于 v5，不能作为本文已确立 novelty；
 - 任意 first factor $F$ 的一般理论；$P_n\circ T$ 候选保持 dormant，不并行启动。
 
@@ -359,7 +360,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 ### After that — 暂不执行
 
-提交后只处理编辑或审稿人的实际来信；任何内容改动必须从冻结 v6 新建 v7，不得覆盖 v3--v6。若获得人类数学同行的审阅，单独记录并裁决。private GitHub repository 的 license、公开时点和可选 Zenodo DOI 可在作者决定后另做；只有公共链接实际存在并读回核验后，才把 availability statement 改为 repository URL/DOI。$K_r+G$ 一般推广另立研究阶段，不与本次投稿并行。
+提交后只处理编辑或审稿人的实际来信；任何内容改动必须从冻结 v6 新建 v7，不得覆盖 v3--v6。若获得人类数学同行的审阅，单独记录并裁决。public GitHub repository 已实际存在并读回核验，但 license、可选 GitHub Release/Zenodo DOI 以及是否在新建 v7 中加入 repository URL 仍由作者决定；不得原位覆盖 v6。$K_r+G$ 一般推广另立研究阶段，不与本次投稿并行。
 
 ## 10. Canonical notes
 
@@ -406,12 +407,12 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 ## 11. Repository and environment status
 
 - Git repository：已初始化，当前分支为 `main`，本地 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
-- 当前 Git 状态：43 个审计后文件已纳入首次提交 `e274fd3`；四模型审稿裁决、v5 及配套交接文件已纳入题为 `Adjudicate AI reviews and prepare v5` 的本地提交；GLM 5.3 裁决、v6、补充包和原生 PDF/log 已纳入题为 `Prepare submission-ready v6 package` 的本地提交。尚未推送远端。
-- GitHub repository：已在 `Star5Dust` 下创建 private repository `dual-general-position-mixed-joins`，`origin` 已配置为 `https://github.com/Star5Dust/dual-general-position-mixed-joins.git`。上传前审计确认 `.venv/`、缓存、`tmp/`、`papers_local/`、`paper_local/` 和本地 scratch export `v4.txt` 均不会上传，且未发现密钥或令牌。GitHub 设备页曾显示授权成功，但凭据管理器因 VPN/网络错误未收到回传，故 `git push` 未完成，远端仍为空。仓库仍为 private，未添加 license，也未建立 DOI。现已另备妥本地 `github_upload/`，可按其中 README 在网页端手动上传；尚未声称已上传。
+- 当前 Git 状态：`main` 已推送并跟踪 `origin/main`；公开审计开始时 `HEAD` 与远端均为 `d6ff6fb`。本轮公开首页和去重修改尚待作者在 GitHub Desktop 中复核、提交并 push。
+- GitHub repository：`https://github.com/Star5Dust/dual-general-position-mixed-joins` 已由 GitHub REST API 读回为 public，默认分支为 `main`，当前无 license、无 topics、无 Zenodo DOI。`origin` 指向该 URL。常见 token/private-key 模式扫描为零命中；公开树仍包含作者在论文中主动列出的通讯邮箱以及若干内部研究/投稿交接说明，是否进一步精简历史由作者决定。
 - `papers_local/`：已加入 `.gitignore`；不要提交其中 PDF。
 - Python virtual environment：`.venv` 已创建，Python 3.13.5。
 - 文档工具：Pandoc 2.12 可用；本机 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 已找到并用于 v6 三遍编译。v6 原生 `.log`、14 页 PDF、字体/链接信息和逐页渲染均已验收；v4/v5 与五份 v4 期刊衍生稿仍未真实编译，不能套用 v6 结论。
-- 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、PDF、补充 ZIP 与最小复现依赖已复制到本地 `github_upload/`，但尚未公开存档、手动上传或推送 GitHub；原生编译 log 仍只保存在主工作区，没有放入最小 GitHub 包。
+- 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、PDF、补充 ZIP、代码、测试和审计结果已在 public GitHub repository 可读。原生编译 log 也在完整仓库树中；本地 `github_upload/` 仅保留为不跟踪的手动上传备份，不应再出现在公开树中。
 - `requirements.txt` 已列出 `networkx`、`numpy`、`pandas`、`sympy`、`pytest`、`matplotlib`。
 - 上述 packages 已安装并核对：NetworkX 3.6.1、NumPy 2.5.2、pandas 3.0.5、SymPy 1.14.0、pytest 9.1.1、Matplotlib 3.11.1。
 - 项目独立实现、extension audit 与 mixed-join DP 测试：v6 验收时为 `30 passed in 0.33s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。新增 184 次 DP 重构树侧集合的 definition-first dual-GP 可行性检查，全部零失败；这些有限实验是验证，不构成证明或全范围 exhaustive claim。

@@ -36,3 +36,6 @@ papers_local/
 paper_local/
 
 回复/
+
+# Local staging folder used only for manual GitHub upload
+github_upload/

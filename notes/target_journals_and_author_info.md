@@ -220,14 +220,14 @@ frozen v4/v5, current v6, and all five v4-derived journal-name files:
   consent to being identified.
 - V6 provides the fixed archive `mixed_join_v6_reproducibility.zip` as
   submission supplementary material. The availability statement names this
-  archive and its SHA-256; no public repository is claimed.
-- **Deferred GitHub release item:** the linked GitHub identity was verified as
-  `Star5Dust`; a private repository named
-  `dual-general-position-mixed-joins` exists and the local `origin` is
-  configured, but authentication/network failure left the remote empty. The
-  author still needs to decide the curated public file set, license, release
-  date, and whether to archive a release on Zenodo. No repository URL belongs
-  in the manuscript until public access has actually been created and checked.
+  archive and its SHA-256 but, because v6 is frozen, does not yet name the
+  subsequently published repository.
+- **Verified GitHub release state:** the repository
+  `https://github.com/Star5Dust/dual-general-position-mixed-joins` is publicly
+  readable on 29 August 2026 and contains the v6 source, PDF, fixed archive,
+  code, tests, and audit output. No license or Zenodo DOI has yet been selected.
+  If the public URL is added to the manuscript, the change must be made in a
+  new v7 rather than by overwriting frozen v6.
 - OpenAI Codex is acknowledged as an AI-assisted tool, not as an author. The
   disclosure lists its actual roles in literature organization, proof drafting,
   code development, computational checking, manuscript drafting, and editorial

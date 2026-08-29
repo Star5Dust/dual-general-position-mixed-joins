@@ -1,7 +1,0 @@
-networkx
-numpy
-pandas
-sympy
-pytest
-matplotlib
-

@@ -2451,3 +2451,37 @@ scope.
   novelty claim was made.  The research-stage next step remains the author's
   complete reading and approval of v6; the prepared README supplies the
   separate manual-upload procedure when the author chooses to perform it.
+
+## 2026-08-29: public GitHub repository audit and README cleanup
+
+- The author reported that
+  `https://github.com/Star5Dust/dual-general-position-mixed-joins` had been made
+  public and requested a review of README and other exposed files. GitHub's
+  public REST API returned `visibility=public`, `default_branch=main`, and no
+  detected license. The local branch was clean and synchronized with
+  `origin/main` at `d6ff6fb` before this cleanup.
+- Confirmed that the earlier `回复/` directory is absent from the current tree
+  and ignored locally, although its four raw AI-response files remain reachable
+  in the earlier public commit history unless history is rewritten. A scan of
+  the working tree found no common private-key, GitHub-token, OpenAI-key, or AWS
+  access-key pattern. The public tree intentionally contains the corresponding
+  email already printed in the manuscript.
+- Found that `github_upload/` had been committed as a nested duplicate of the
+  real repository. It repeated the v6 TeX/PDF, fixed ZIP, code, tests, result,
+  proof, literature note, reading guide, and dependency files, while its README
+  still described an empty private repository and first-upload procedure.
+  Prepared removal of that directory from Git tracking while preserving the
+  local staging copy, and added `github_upload/` to the root `.gitignore`.
+- Replaced the root README with a public-facing research overview containing
+  the exact mixed-join theorem, direct links to v6 PDF/TeX, proof and bounded
+  literature notes, the fixed supplement, reproducibility commands, repository
+  map, archived hashes, and explicit proof/computation/peer-review/novelty
+  boundaries. It also accurately states that no license has yet been selected.
+- Updated the current repository state in `PROJECT_STATUS.md` and the journal
+  planning note. Frozen v6 was not overwritten. Its existing supplementary
+  material statement remains true, but adding the subsequently verified public
+  repository URL to the manuscript would require a new v7.
+- No mathematical code, theorem, experiment, result JSON, frozen manuscript,
+  remote repository, license, release, or DOI was changed in this local cleanup.
+  The author must review the GitHub Desktop change list, commit, and push before
+  the public page reflects these corrections.
