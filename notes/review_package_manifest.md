@@ -10,17 +10,19 @@ digests are SHA-256, computed on the files as stored in this workspace.
 
 ## Current verification status
 
-- V6 is the current DMGT-style initial-submission candidate. Pandoc parsed it
+- V7 is the current DMGT-style initial-submission candidate. It changes only
+  the availability wording by naming the verified public GitHub repository;
+  no mathematical content changed from v6. Pandoc parsed it
   successfully. Static checks found 35 unique labels, 50 resolved
   `ref`/`eqref` uses, 13 resolved citation keys, six bibliography entries, 13
   theorem-like statements, 13 proofs, a correctly nested environment stack,
   and zero submission placeholders.
-- The most recent test run returned `30 passed in 0.33s` with no warning.
+- The most recent test run returned `30 passed in 0.36s` with no warning.
 - The archived mixed-join audit contains 985 DP/subset comparisons, 11,003
   root-invariance comparisons, 985 local reconstruction checks, 184
   formula/definition comparisons, and 184 definition-first checks of the
   reconstructed tree-side sets, with zero failures in every category.
-- MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 compiled v6 through three passes to 14
+- MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 compiled v7 through three passes to 14
   A4 pages. The retained native log contains no error, warning,
   overfull/underfull box, undefined reference/citation, missing character, or
   rerun request.
@@ -28,27 +30,27 @@ digests are SHA-256, computed on the files as stored in this workspace.
   enumerated, text extraction contains no unresolved marker, and all 14 pages
   were rendered and inspected without finding clipping, overlap, broken
   tables, black boxes, missing glyphs, orphan headings, or abnormal pagination.
-- The v6 compiler PDF is copied byte-for-byte into `output/pdf/`; the native
-  log and unmodified compiler PDF remain in `artifacts/v6_build/`.
+- The v7 compiler PDF is copied byte-for-byte into `output/pdf/`; the native
+  log and unmodified compiler PDF remain in `artifacts/v7_build/`.
 
 ## Core review files
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
-| `README.md` | 3,407 | `C9D8F0042AF050D9D773384FF5DB64355BB3BE52FCC6ED7186D925ADBC236AC7` |
-| `notes/collaborator_reading_guide.md` | 9,217 | `B8E89FF894E9607C6E16B09C3C98EA8FAFB75ED11F466477799511FC91C74F8A` |
-| `drafts/mixed_join_research_note_v6.tex` | 49,825 | `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE` |
-| `output/pdf/mixed_join_research_note_v6.pdf` | 470,046 | `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44` |
-| `artifacts/v6_build/mixed_join_research_note_v6.log` | 27,395 | `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1` |
+| `README.md` | 3,514 | `CB044FE4C074E24BE472A69EAF14E39A11BCE450A36A8F3D23009AD50CD1747D` |
+| `notes/collaborator_reading_guide.md` | 9,364 | `85363352DF3DB0B4671F460073628C85C2FDD1F807CDEDF9CE62F12C0F30E2C9` |
+| `drafts/mixed_join_research_note_v7.tex` | 50,063 | `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992` |
+| `output/pdf/mixed_join_research_note_v7.pdf` | 470,873 | `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500` |
+| `artifacts/v7_build/mixed_join_research_note_v7.log` | 27,395 | `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2` |
 | `artifacts/mixed_join_v6_reproducibility.zip` | 21,868 | `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33` |
 | `notes/glm_5_3_review_adjudication.md` | 7,209 | `B812A198C15E0760E160D66686C632FBE8EA0C4BC5C2A5DEE15833D24F095D45` |
-| `drafts/TEX_VERSION_HISTORY.md` | 8,928 | `BF2CA512F5175C2BB1FE634870D578CDD53787DE986B35172D5CE03EF4B1DA14` |
+| `drafts/TEX_VERSION_HISTORY.md` | 10,291 | `B11AACA7A3C1E44584BF7D80C875B237E5449B3212D0169CE47FDE9A42F7DB11` |
 | `proofs/mixed_join_tree.md` | 10,400 | `65D23FAD3BA238FC068AD97963C1E136C8E5DD5C9DAEC29B76F84FC9A3D06409` |
 | `notes/mixed_join_literature_positioning.md` | 19,931 | `0C1224F133C40ED22FC7BE828575D683384602233DEB8183CD9000D558A53D97` |
 
-Recommended reading order is the collaborator guide, v6 TeX/PDF, GLM 5.3 and
+Recommended reading order is the collaborator guide, v7 TeX/PDF, GLM 5.3 and
 earlier AI adjudication notes, reproducibility archive, version history,
-proof-development note, and literature-positioning note. V2--v5 remain frozen
+proof-development note, and literature-positioning note. V2--v6 remain frozen
 historical versions. The five v4-derived journal-name files remain format
 references only and must not be submitted.
 
@@ -141,9 +143,9 @@ From the repository root in PowerShell:
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q .\tests
 .\.venv\Scripts\python.exe .\experiments\audit_mixed_join_dp.py --output .\results\mixed_join_dp_audit.json
-& pandoc .\drafts\mixed_join_research_note_v6.tex --from=latex --to=native | Out-Null
+& pandoc .\drafts\mixed_join_research_note_v7.tex --from=latex --to=native | Out-Null
 Get-ChildItem .\drafts\journal_versions\*.tex | ForEach-Object { & 'E:\Anaconda\Scripts\pandoc.exe' $_.FullName --from=latex --to=native | Out-Null; if ($LASTEXITCODE -ne 0) { throw "Pandoc failed: $($_.Name)" } }
-& 'C:\Users\yyt\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe' --enable-installer --interaction=nonstopmode --halt-on-error --file-line-error --output-directory=.\artifacts\v6_build .\drafts\mixed_join_research_note_v6.tex
+& 'C:\Users\yyt\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe' --enable-installer --interaction=nonstopmode --halt-on-error --file-line-error --output-directory=.\artifacts\v7_build .\drafts\mixed_join_research_note_v7.tex
 ```
 
 The first command most recently returned 30 passing tests. The second command
@@ -152,13 +154,13 @@ the canonical JSON path, so a reviewer who wants to preserve the archived file
 should provide a different `--output` path and compare the two JSON objects.
 The third command returned exit code zero and is only a Pandoc reader/static
 syntax check. The final command was run three times; its last native log and
-compiler PDF are preserved under `artifacts/v6_build/`.
+compiler PDF are preserved under `artifacts/v7_build/`.
 
-V6 has completed the source, computation, compile, native-log, font/link, and
+V7 has completed the source, computation, compile, native-log, font/link, and
 14-page visual checks recorded above. The initial four web-AI attempts and the
 later GLM 5.3 adversarial report have been adjudicated. This is not human peer
-review. Any later content revision must start v7 rather than overwrite the
-preserved v3, v4, v5, or v6 files.
+review. Any later content revision must start v8 rather than overwrite the
+preserved v3--v7 files.
 
 ## Claim boundary
 

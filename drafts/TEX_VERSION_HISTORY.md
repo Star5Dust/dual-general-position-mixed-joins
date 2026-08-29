@@ -24,7 +24,8 @@ or inferred.
 | v3 | `drafts/mixed_join_research_note_v3.tex` | `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6` | Frozen compiled/reviewed baseline. The layout-only changes reserve space for two lead-ins and narrow the first reproducibility table. pdfTeX 1.40.27 / TeX Live 2025 produced 13 pages; the supplied complete displayed log contains no error, warning, overfull/underfull box, undefined reference/citation, missing character, or rerun request. All 13 pages passed structural and visual review, including the three v2 regression targets. |
 | v4 | `drafts/mixed_join_research_note_v4.tex` | `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF` | Frozen first-submission content baseline sent independently to four web AI review attempts. It adds one-column line numbering, the verified sole-author metadata and declarations, keywords, 2020 MSC codes, two verified positioning references, and a transparent Codex-use disclosure; it removes the internal-draft banner and rewrites internal `UNKNOWN` markers as publication-facing limitations without resolving the underlying project `UNKNOWN` items. Pandoc and structural checks pass with zero submission placeholders. V4 remains uncompiled and unchanged. |
 | v5 | `drafts/mixed_join_research_note_v5.tex` | `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2` | Frozen first AI-review-adjudicated candidate. It changes no theorem value or experimental claim. It replaces potentially misleading apex terminology by designated-factor `C` terminology, states the empty-class convention for `q_2`, records the `P_4,r=1` branch tie, and clarifies the local and DP boundary/storage wording. Pandoc parsing and structural checks passed; v5 itself was not run through a TeX engine and is not peer reviewed. |
-| v6 | `drafts/mixed_join_research_note_v6.tex` | `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE` | Current DMGT-style initial-submission candidate. It adjudicates the GLM 5.3 report, strengthens the separation from the weaker induced-degree problem, removes internal project language, clarifies the two computational routes and the `F_3`/small-tree boundaries, adds a locked environment and fixed supplementary archive, and records 184 definition-first checks of reconstructed tree-side sets. No theorem value or proof dependency changed. Static checks pass with 35 unique labels, 50 resolved references, six bibliography entries, 13 citation keys, 13 theorem-like statements, 13 proofs, balanced environments, and zero placeholders; tests return 30 passed. MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 produced a warning-free 14-page PDF through three passes. The native log, embedded fonts, hyperlinks, and all 14 rendered pages passed review. V6 is not human peer reviewed. |
+| v6 | `drafts/mixed_join_research_note_v6.tex` | `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE` | Frozen DMGT-style candidate. It adjudicates the GLM 5.3 report, strengthens the separation from the weaker induced-degree problem, removes internal project language, clarifies the two computational routes and the `F_3`/small-tree boundaries, adds a locked environment and fixed supplementary archive, and records 184 definition-first checks of reconstructed tree-side sets. No theorem value or proof dependency changed. Static checks pass with 35 unique labels, 50 resolved references, six bibliography entries, 13 citation keys, 13 theorem-like statements, 13 proofs, balanced environments, and zero placeholders; tests return 30 passed. MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 produced a warning-free 14-page PDF through three passes. The native log, embedded fonts, hyperlinks, and all 14 rendered pages passed review. V6 is not human peer reviewed. |
+| v7 | `drafts/mixed_join_research_note_v7.tex` | `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992` | Current DMGT initial-submission candidate. It changes only the reproducibility-location wording by naming the verified public GitHub repository and its fixed v6 archive; no theorem, proof, numerical result, citation, or computational claim changed. Pandoc returns zero and the unchanged test suite reports 30 passed. Three MiKTeX-pdfTeX passes produced a 14-page A4 PDF whose native log has zero errors, warnings, box warnings, undefined references/citations, missing characters, or rerun requests. All fonts are embedded, the repository URI is present, extracted text has no unresolved submission marker, and all pages passed visual review. V7 is not human peer reviewed. |
 
 The v6 compiler PDF is retained at
 `artifacts/v6_build/mixed_join_research_note_v6.pdf` and copied without byte
@@ -33,6 +34,14 @@ with SHA-256
 `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`.
 The native log is 27,395 bytes with SHA-256
 `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`.
+
+The v7 compiler PDF is retained at
+`artifacts/v7_build/mixed_join_research_note_v7.pdf` and copied without byte
+change to `output/pdf/mixed_join_research_note_v7.pdf`; both are 470,873 bytes
+with SHA-256
+`B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`.
+The native v7 log is 27,395 bytes with SHA-256
+`EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`.
 
 ## Journal-name derivatives of v4
 
@@ -72,6 +81,9 @@ recorded in `drafts/journal_versions/README.md`.
 - v6 is intentionally local-only. No Drive folder or file was created, read,
   or changed while adjudicating GLM 5.3, preparing the supplement, or compiling
   v6.
+- v7 is intentionally local-only with respect to Google Drive. It cites the
+  already-public GitHub repository; no Drive folder or file was created, read,
+  or changed while preparing or compiling v7.
 - All five journal-name derivatives are also intentionally local-only. No Drive
   folder or file was created, read, or changed while producing them.
 

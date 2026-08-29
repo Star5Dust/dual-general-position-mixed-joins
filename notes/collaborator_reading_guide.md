@@ -4,7 +4,7 @@ Date: 29 August 2026
 
 ## Purpose and claim status
 
-The manuscript `drafts/mixed_join_research_note_v6.tex` gives a self-contained
+The manuscript `drafts/mixed_join_research_note_v7.tex` gives a self-contained
 classification and algorithm for the mixed join `K_r+T`, where `r>=1` and `T`
 is a tree of order at least three. The result is internally proved and its
 implementation has passed two bounded checks with different verification
@@ -14,7 +14,9 @@ from four external web-AI attempts; v6 additionally adjudicates the GLM 5.3
 adversarial report and closes its valid reproducibility and exposition issues.
 The two evidence records are `notes/external_ai_review_adjudication.md` and
 `notes/glm_5_3_review_adjudication.md`. AI review does not substitute for human
-peer review. V6 was compiled locally through three MiKTeX-pdfTeX passes. Its
+peer review. V7 changes only the availability wording by naming the verified
+public repository; the mathematics is unchanged from v6. V7 was compiled
+locally through three MiKTeX-pdfTeX passes. Its
 native log is warning-free, all fonts are embedded, and all 14 rendered pages
 passed visual inspection.
 
@@ -147,15 +149,15 @@ Primary reproducibility files are:
   by the main audit);
 - `results/mixed_join_dp_audit.json`;
 - `tests/`, `requirements-lock.txt`, and `REPRODUCIBILITY.md`;
-- `artifacts/mixed_join_v6_reproducibility.zip` (the fixed submission
-  supplement).
+- `artifacts/mixed_join_v6_reproducibility.zip` (the fixed archive available
+  through the public repository).
 
 ## Delivery set and unresolved checks
 
 Read in this order:
 
-1. `drafts/mixed_join_research_note_v6.tex`, its compiler PDF at
-   `output/pdf/mixed_join_research_note_v6.pdf`, and the native log identified
+1. `drafts/mixed_join_research_note_v7.tex`, its compiler PDF at
+   `output/pdf/mixed_join_research_note_v7.pdf`, and the native log identified
    in `drafts/TEX_VERSION_HISTORY.md`;
 2. `notes/glm_5_3_review_adjudication.md` and
    `notes/external_ai_review_adjudication.md`;
@@ -170,7 +172,7 @@ For a complete internal handoff, also include `PROJECT_STATUS.md` and
 `results/extension_feasibility_audit.json`; it is optional unless the earlier
 target-selection path or retained counterexample provenance is being audited.
 
-V6 passes Pandoc parsing and static environment/reference checks: 35 labels are
+V7 passes Pandoc parsing and static environment/reference checks: 35 labels are
 unique, 50 `ref`/`eqref` uses and 13 citation keys resolve, 13 theorem-like
 statements match 13 proofs, the environment stack is balanced, and no
 submission placeholder remains. MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 generated

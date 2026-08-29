@@ -34,14 +34,15 @@ linear-time dynamic program that reconstructs a maximum feasible set.
 
 ## Read the manuscript
 
-- [Compiled v6 manuscript (PDF)](output/pdf/mixed_join_research_note_v6.pdf)
-- [Frozen v6 LaTeX source](drafts/mixed_join_research_note_v6.tex)
+- [Compiled v7 manuscript (PDF)](output/pdf/mixed_join_research_note_v7.pdf)
+- [Current v7 LaTeX source](drafts/mixed_join_research_note_v7.tex)
 - [Proof-development note](proofs/mixed_join_tree.md)
 - [Literature positioning and search limits](notes/mixed_join_literature_positioning.md)
 - [Collaborator reading guide](notes/collaborator_reading_guide.md)
 
-V6 is frozen. Any later mathematical or editorial revision must use a new
-version number rather than overwrite the archived source.
+V6 is frozen. V7 changes only the reproducibility-location wording by naming
+this public repository; it does not change the mathematics. Any later revision
+must use a new version number rather than overwrite an archived source.
 
 ## Reproducibility
 
@@ -84,10 +85,10 @@ claim of global novelty or priority, and the manuscript has not undergone
 human peer review. The exact literature and verification boundaries are
 recorded in the manuscript and supporting notes.
 
-The archived v6 artifacts have the following SHA-256 digests:
+The current v7 manuscript artifacts have the following SHA-256 digests:
 
-- TeX: `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`
-- PDF: `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`
+- TeX: `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`
+- PDF: `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`
 - ZIP: `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`
 
 ## License

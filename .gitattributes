@@ -1,2 +1,2 @@
-# Preserve the compiler's native log bytes and treat generated logs as artifacts.
-artifacts/v6_build/*.log -diff
+# Preserve compiler-native log bytes and treat generated logs as artifacts.
+artifacts/v*_build/*.log -diff

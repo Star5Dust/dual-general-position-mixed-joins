@@ -15,7 +15,7 @@ Only one journal may consider the manuscript at a time.
 ### Primary target: Discussiones Mathematicae Graph Theory (DMGT)
 
 **Recommendation:** best topical fit for the present manuscript and the target
-used for the frozen v4/v5 and current v6 first-submission candidates.
+used for the frozen v4--v6 and current v7 first-submission candidates.
 
 Why it fits:
 
@@ -26,7 +26,7 @@ Why it fits:
   operations, so the intended readership already knows the surrounding topic.
 - The paper is well below DMGT's requested maximum of 30 journal-style pages.
 
-Current official first-submission requirements relevant to v6:
+Current official first-submission requirements relevant to v7:
 
 - no submission fee or APC;
 - English used consistently;
@@ -119,7 +119,7 @@ Two reasonable, mutually exclusive strategies are:
    DMGT.
 
 The fit-first sequence is the current recommendation because the manuscript is
-a specialized 13-page graph-theory paper and global novelty is still
+a specialized 14-page graph-theory paper and global novelty is still
 `UNKNOWN`. This is a risk assessment, not a statement that DMGT will accept the
 paper.
 
@@ -151,9 +151,10 @@ links are recorded in `drafts/journal_versions/README.md` and
 All five files passed Pandoc parsing and a common static scan: 35 unique
 labels, 47 resolved cross-references, six bibliography entries, 13 resolved
 cite commands, balanced environments, 13 theorem-like statements, 13 proofs,
-zero submission placeholders, and confirmed author/email fields. They have not
-been compiled because no TeX engine is installed locally. No Google Drive file
-or folder was created, read, or changed for this work.
+zero submission placeholders, and confirmed author/email fields. These obsolete
+v4-derived files remain uncompiled even though a local TeX engine is now
+available; no Google Drive file or folder was created, read, or changed for
+this work.
 
 ## Information needed from the author(s)
 
@@ -189,8 +190,8 @@ For every author:
     - public repository plus persistent URL/DOI;
     - files supplied as journal supplementary material; or
     - availability from the corresponding author on reasonable request.
-    The current project is local-only, so no public-repository statement may be
-    inserted until the author deliberately chooses and performs that release.
+    The public-repository option is now used in v7. The repository and fixed
+    archive were anonymously read back before the statement was added.
 11. The accurate disclosure of AI-assisted tools required by the selected
     journal. AI tools cannot be authors; the human author(s) must personally
     verify and take responsibility for the mathematics, text, citations, and
@@ -206,7 +207,7 @@ For every author:
 ## Author response recorded on 29 August 2026
 
 The following information and working decisions have now been applied to the
-frozen v4/v5, current v6, and all five v4-derived journal-name files:
+frozen v4--v6, current v7, and all five v4-derived journal-name files:
 
 - Sole author and corresponding author: **Yi Yuteng**. The Chinese name
   `易宇腾` is retained in this internal note but is not added to the English
@@ -218,16 +219,15 @@ frozen v4/v5, current v6, and all five v4-derived journal-name files:
 - No human acknowledgement was requested. Acknowledgements are not arbitrary:
   they must describe genuine assistance, and a named person should normally
   consent to being identified.
-- V6 provides the fixed archive `mixed_join_v6_reproducibility.zip` as
-  submission supplementary material. The availability statement names this
-  archive and its SHA-256 but, because v6 is frozen, does not yet name the
-  subsequently published repository.
+- V6 preserved the fixed archive `mixed_join_v6_reproducibility.zip` and
+  described it as submission supplementary material. V7 instead names the
+  public repository and the archive path there, so a separate ZIP upload or
+  email to the editorial office is not needed for the stated availability.
 - **Verified GitHub release state:** the repository
   `https://github.com/Star5Dust/dual-general-position-mixed-joins` is publicly
   readable on 29 August 2026 and contains the v6 source, PDF, fixed archive,
   code, tests, and audit output. No license or Zenodo DOI has yet been selected.
-  If the public URL is added to the manuscript, the change must be made in a
-  new v7 rather than by overwriting frozen v6.
+  The public URL is now included in v7; v6 remains frozen.
 - OpenAI Codex is acknowledged as an AI-assisted tool, not as an author. The
   disclosure lists its actual roles in literature organization, proof drafting,
   code development, computational checking, manuscript drafting, and editorial
@@ -269,24 +269,22 @@ https://msc2020.org/MSC_2020.pdf
 ## Submission gates still open
 
 The five v4-derived journal-specific files are superseded format references
-and must not be submitted. The compiled v6 ordinary-`article` route is the
+and must not be submitted. The compiled v7 ordinary-`article` route is the
 current DMGT initial-submission package. Before any submission:
 
-1. personally read and approve v6; if a qualified human review later becomes
+1. personally read and approve v7; if a qualified human review later becomes
    available, preserve and adjudicate it rather than treating the multi-model
    AI screen as equivalent;
 2. check on the submission date whether Jiang's v1.0.1 preprint has changed or
    acquired a journal version;
 3. reconfirm the filled author metadata, declarations, and AI-use disclosure;
 4. DMGT's public guide currently asks for only the line-numbered PDF at first
-   submission and requests TeX source after acceptance. If the authenticated
-   submission form offers a supplementary-file field, also upload
-   `mixed_join_v6_reproducibility.zip`; otherwise ask the editorial office how
-   to attach it before leaving the manuscript's “provided with this manuscript”
-   statement unchanged. Do not upload v6 TeX at first submission unless the
-   authenticated form explicitly asks for it;
+   submission and requests TeX source after acceptance. Upload v7 PDF only;
+   the public GitHub URL in v7 supplies the code and fixed archive, so no ZIP
+   attachment or email is needed. Do not upload v7 TeX at first submission
+   unless the authenticated form explicitly asks for it;
 5. retain DMGT as the working first target unless the author deliberately
-   changes it; v6 has already completed real MiKTeX compilation, native-log
+   changes it; v7 has already completed real MiKTeX compilation, native-log
    review, and 14-page inspection, but the live journal instructions should
    still be rechecked on the submission date;
 6. confirm that the manuscript is not simultaneously under consideration by

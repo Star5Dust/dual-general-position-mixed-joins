@@ -19,9 +19,9 @@ dist/
 # Temporary analysis and rendering files
 tmp/
 
-# Disposable LaTeX intermediates from the preserved v6 build
-artifacts/v6_build/*.aux
-artifacts/v6_build/*.out
+# Disposable LaTeX intermediates from preserved versioned builds
+artifacts/v*_build/*.aux
+artifacts/v*_build/*.out
 
 # Local editor and operating-system files
 .idea/

@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-08-29 (public GitHub repository verified; public-facing README and duplicate-upload cleanup prepared)
+Last updated: 2026-08-29 (v7 compiled and verified with public GitHub availability)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -44,7 +44,7 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3、v4、v5 均已冻结且哈希保持不变；最新不可覆盖稿为 `drafts/mixed_join_research_note_v6.tex`，49,825 bytes，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`。GLM 5.3 新对抗性报告已按定义、canonical proof、源码、独立 checker 和原文引用逐项裁决：它没有发现数学错误；C2 主要是审稿人未取得来源导致的 `UNKNOWN`，而非稿件引文错误；C1 的公开/随稿复现弱点、D1--D7 中成立的自含性和表述意见已进入 v6。主定理、所有定理值和证明依赖均未改变。新增 `requirements-lock.txt`、复现说明和 21,868-byte 固定补充包 `artifacts/mixed_join_v6_reproducibility.zip`（SHA-256 `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`）；补充包在干净目录解压后得到 `30 passed`，并逐字节复现主 JSON。主审计原有 985 次 DP/子集、11,003 次换根、985 次回溯和 184 次公式/定义比较继续零失败，另新增 184 次 DP 重构树侧集合的 definition-first dual-GP 检查，也为零失败。Pandoc 返回 0；35 个 labels 唯一、50 个 `ref/eqref`、13 个 cite keys 和 6 个 bibliography entries 全解析，13 条定理类陈述、13 个证明、环境栈与 0 投稿占位通过。用户安装的 MiKTeX 已找到；MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 对 v6 连续三遍编译成功。原生 `.log` 为 27,395 bytes、SHA-256 `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`，无 error、warning、overfull/underfull、未定义引用/引文、missing character 或 rerun request。编译器原始 PDF 为 14 页 A4、470,046 bytes、SHA-256 `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`；字体全部嵌入，外部链接已枚举，14 页全部渲染目视通过，并已原字节复制到 `output/pdf/mixed_join_research_note_v6.pdf`。五份期刊名稿仍是 v4 衍生格式参考，不能投稿。DMGT 2026 公开指南确认首投稿只明确要求不超过 10 MB 的单栏逐行编号 PDF，当前 v6 PDF 符合；TeX source 在录用后提交。补充 ZIP 若登录表单有相应字段则同时上传，否则应先邮件询问编辑部附加方式。多模型 AI 审查仍不等于人类同行评审，全领域 novelty/priority/publishability 仍为 `UNKNOWN`。唯一直接下一步是作者本人完整通读并批准 v6，然后注册/登录 DMGT、只向该期刊提交 v6 PDF，并保证补充材料表述与实际附件一致。**
+当前处于：**mixed join $K_r+T$ 的 v3--v6 均已冻结；最新不可覆盖稿为 `drafts/mixed_join_research_note_v7.tex`，50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`。v7 只把经匿名访问核验的公开仓库 `https://github.com/Star5Dust/dual-general-position-mixed-joins` 及其中固定 archive 路径写入复现和 data/code availability 段落，没有改变定理、证明、数值、引文或计算主张。公开仓库的 v6 PDF、固定 ZIP 与主 JSON 已分别与本地 canonical 文件逐字节匹配；TeX 在忽略行尾差异后内容相同。Pandoc 返回 0，测试重跑为 `30 passed in 0.36s`。MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 三遍编译得到 14 页 A4、470,873-byte PDF，SHA-256 `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`；27,395-byte 原生日志 SHA-256 为 `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`，扫描为零 error/warning/box warning/未定义引用引文/缺字/rerun。字体全部嵌入，PDF 中仓库 URI 可枚举，文本抽取无未解决投稿标记，14 页已渲染目检通过。DMGT 首投只需当前 v7 PDF；公开仓库已经提供代码与固定 ZIP，所以不再需要另附 ZIP 或发邮件。多模型 AI 审查仍不等于人类同行评审，全领域 novelty/priority/publishability 仍为 `UNKNOWN`。唯一直接下一步是作者删除投稿草稿中的 v6 PDF，上传并预览 v7 PDF，然后完成最终提交。**
 
 已经完成：
 
@@ -127,13 +127,14 @@ $$
 - 在用户准备实际投稿时重新读取 DMGT 2026 官网、作者指南、注册、登录与编辑部联系页。确认 DMGT 仍是当前稿的首选：scope 包含 structural graph results、无 APC，首投稿只公开要求通讯作者信息、摘要、关键词、2020 MSC 和不超过 10 MB 的单栏逐行编号 PDF；`dmgt` class、TeX source 和附加文件在录用后要求。当前 470,046-byte v6 PDF 完全符合公开首投文件要求。登录后的 supplement 字段不可公开查看，若不存在则应联系 `dmgt@wmie.uz.zgora.pl` 询问 ZIP 附件方式，不能假称已经随稿提供或因此强制先公开 GitHub。
 - 按用户要求建立 `github_upload/` 手动上传包：根目录含中文 `README.md`、复现说明和依赖文件；`paper/` 保存冻结 v6 TeX/PDF；`docs/` 保存合作者导读、证明说明和文献定位；`src/`、`experiments/`、`tests/`、`results/` 保留可运行的原相对结构；`release/` 保存固定补充 ZIP。没有纳入 v2--v5、期刊格式旧稿、第三方论文、本地环境、缓存或 AI 原始回复。TeX、PDF、ZIP 与 canonical v6 的 SHA-256 全部一致，从该文件夹直接运行测试得到 `30 passed in 0.30s`。README 已说明 GitHub 网页端逐步上传、目录关联、上传后核验、private/public 与 license 边界；本轮没有改动或上传远端仓库。
 - 用户已通过 GitHub Desktop 将 `main` 推送，并把 `Star5Dust/dual-general-position-mixed-joins` 改为 public；GitHub REST API 于 2026-08-29 读回 `visibility=public`、`default_branch=main`、无 license。公开审计未发现常见 token/private-key 模式。根 README 已改为面向公开读者的英文首页，直接给出主结果、论文/PDF/证明/复现包链接、运行命令、证据边界和无 license 的真实状态。误提交的 `回复/` 已在后续提交从当前树移除并加入 `.gitignore`；其历史副本仍存在于早期 commit。重复的 `github_upload/` 现准备从 Git 跟踪中移除但保留本地，并加入 `.gitignore`。冻结 v6 未覆盖；若论文要加入公开 URL，必须新建 v7。
+- 对 public repository 做匿名只读审计：`main`/`HEAD` 为 `6f60b4d006943b9fdab83f364b37139a5891213d`，v6 PDF、固定复现 ZIP 和主 JSON 与本地 canonical 文件 SHA-256 完全相同，TeX 仅有 Git 行尾归一化造成的字节差异且规范化文本相同。按不可覆盖规则建立 v7，只加入 repository URL/固定 archive 路径，三遍编译、日志、字体、URI、文本、14 页视觉和 30 项测试全部通过。该公开 URL 取代单独 ZIP 上传或邮件询问。
 
 尚未开始：
 
 - 外部合格人类数学审阅仍未取得；用户目前不认识合适审阅者，已选择用多模型 AI 筛查作为现实替代，但该流程不等于人类同行评审。尚需权限的订阅数据库与 fan VOR 正文核验也未完成；
 - 原生纯文本 v3 `.log` 的归档尚未取得；现有 PDF 打印件已完整保留可见日志内容，但不能证明原始日志字节或外部编译输入源码哈希；
 - version-of-record fan 公式的正文比对，以及只有在获得权限时才能做的 MathSciNet/Scopus/Web of Science 最终查重；
-- public GitHub repository 已建立并读回核验；尚待作者决定代码与文稿的 license、是否精简公开历史、是否建立带版本号的 GitHub Release/Zenodo DOI，以及是否在新建 v7 中加入仓库 URL；
+- public GitHub repository 已建立、读回核验并写入 v7；尚待作者决定代码与文稿的 license、是否精简公开历史，以及是否建立带版本号的 GitHub Release/Zenodo DOI；
 - GPT 审稿提出的任意非完全第二因子 $K_r+G$ 局部团邻域推广已经有直接证明机制，但尚未完成专门的系统文献、命名参数和计算审计；它不属于 v5，不能作为本文已确立 novelty；
 - 任意 first factor $F$ 的一般理论；$P_n\circ T$ 候选保持 dormant，不并行启动。
 
@@ -352,15 +353,17 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 2026-08-29 的 GLM 5.3 二次审稿裁决、v6、锁定补充包和本机 MiKTeX 验收关闭了本地复现与排版 gate，但没有把 AI 审查变成人类同行评审。Jiang 的定理范围和 fan 预印本的 $n\ge4$ 边界已按原文复核；这只确认稿件对既有来源的使用，没有证明全领域 novelty 或 priority。新增的 184 次重构集合 definition-first 检查和深度 2 完全二叉树分离例均为有限计算/边界验证，不替代证明。订阅数据库覆盖、fan version of record、期刊编辑判断、publishability、acceptance 和一般 $K_r+G$ 推广仍为 `UNKNOWN` 或本稿范围外。
 
+2026-08-29 的 public repository 匿名审计与 v7 只关闭交付一致性问题：仓库及固定 archive 已可公开访问，稿件不再需要声称 ZIP 随稿附加。此改动没有新增数学、实验或文献事实，也不构成人类同行评审；publishability、acceptance、全领域 novelty/priority、订阅数据库覆盖和 fan version of record 等 `UNKNOWN` 全部保持不变。
+
 ## 9. 当前任务队列
 
 ### Next — 只做这一项
 
-作者本人完整通读并批准 `drafts/mixed_join_research_note_v6.tex` 或其 14 页 PDF，重点确认主定理、姓名/affiliation/email、Codex 使用披露、funding 与 competing-interests 声明，以及补充材料/数据可得性表述。若全部认可，注册并登录 DMGT，只向该期刊提交 v6 PDF；公开指南没有要求首投 TeX。若登录后的表单提供 supplement 字段则上传固定 ZIP，否则先邮件询问编辑部如何附加，再确保 availability statement 与实际交付一致。五份 v4 期刊衍生稿不得提交。
+在 DMGT 投稿草稿中删除当前 v6 PDF，上传 `output/pdf/mixed_join_research_note_v7.pdf` 并打开预览，确认文件名、14 页正文和 GitHub availability statement 正确，然后完成最终提交。首投不另附 ZIP、不发邮件、不上传 TeX；五份 v4 期刊衍生稿不得提交。
 
 ### After that — 暂不执行
 
-提交后只处理编辑或审稿人的实际来信；任何内容改动必须从冻结 v6 新建 v7，不得覆盖 v3--v6。若获得人类数学同行的审阅，单独记录并裁决。public GitHub repository 已实际存在并读回核验，但 license、可选 GitHub Release/Zenodo DOI 以及是否在新建 v7 中加入 repository URL 仍由作者决定；不得原位覆盖 v6。$K_r+G$ 一般推广另立研究阶段，不与本次投稿并行。
+提交后只处理编辑或审稿人的实际来信；任何内容改动必须从冻结 v7 新建 v8，不得覆盖 v3--v7。若获得人类数学同行的审阅，单独记录并裁决。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。$K_r+G$ 一般推广另立研究阶段，不与本次投稿并行。
 
 ## 10. Canonical notes
 
@@ -380,20 +383,22 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - `drafts/mixed_join_research_note_v3.tex`：当前最新的已编译/逐页审阅 submission-style 基线；只修两处分页和首张复现表总宽度，Pandoc/结构/引用检查及真实 pdfTeX/显示日志/13 页验收全部通过，SHA-256 为 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`；不得覆盖。
 - `drafts/mixed_join_research_note_v4.tex`：从冻结 v3 建立、现已冻结的四模型 AI 审稿输入基线；含逐行编号、已确认的单作者/通讯作者元数据、无 funding/competing-interests 声明、code/audit availability-on-request、透明 Codex 使用披露、关键词、2020 MSC 和两条新增已核验引文。静态检查通过且投稿占位为 0，但未真实编译；46,222 bytes、1,147 行，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，不得覆盖。
 - `drafts/mixed_join_research_note_v5.tex`：从冻结 v4 建立的四模型 AI-review-adjudicated 基线；47,256 bytes、1,162 行，SHA-256 `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`，不得覆盖。
-- `drafts/mixed_join_research_note_v6.tex`：当前唯一投稿内容候选；裁决 GLM 5.3 意见、强化边界和复现说明，但未改变主定理值或证明依赖。Pandoc/结构检查、`30 passed`、三遍 MiKTeX 编译、原生日志、字体/链接检查及 14 页逐页验收均通过；49,825 bytes、1,203 行，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`。仍需作者本人完整通读批准。
+- `drafts/mixed_join_research_note_v6.tex`：冻结的 GLM 5.3 意见裁决与复现强化基线；49,825 bytes、1,203 行，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`，不得覆盖。
+- `drafts/mixed_join_research_note_v7.tex`：当前唯一投稿内容候选；只在 v6 上加入经核验的 public repository URL 与固定 archive 路径，没有改变数学内容。Pandoc、`30 passed`、三遍 MiKTeX、原生日志、字体/URI/文本与 14 页视觉检查全部通过；50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`。
 - `notes/external_ai_review_adjudication.md`：四份网页 AI 原始报告的字节数/哈希、有效意见、误报、无效审稿、v5 变更与 $K_r+G$ scope candidate 的证据级裁决；9,095 bytes，SHA-256 `FF81C5CCEC231092A5532C9DE91F1A41E50FC949C03C9F038ACA7F037239DA3D`。
 - `notes/glm_5_3_review_adjudication.md`：GLM 5.3 报告逐项裁决、原文引用复核、深度 2 二叉树分离例、v6 修改和不接受事项的证据记录；7,209 bytes，SHA-256 `B812A198C15E0760E160D66686C632FBE8EA0C4BC5C2A5DEE15833D24F095D45`。
-- `drafts/TEX_VERSION_HISTORY.md`：TeX 不可覆盖版本规则、本地/Drive 映射、v2--v6 与五份 v4 期刊格式衍生稿的哈希、编译状态和制品溯源边界；8,928 bytes，SHA-256 `BF2CA512F5175C2BB1FE634870D578CDD53787DE986B35172D5CE03EF4B1DA14`。
+- `drafts/TEX_VERSION_HISTORY.md`：TeX 不可覆盖版本规则、本地/Drive 映射、v2--v7 与五份 v4 期刊格式衍生稿的哈希、编译状态和制品溯源边界。
 - `drafts/journal_versions/README.md`：五份 v4 期刊名 TeX 的路径、class/引用路线、官方说明链接、SHA-256、共同正文一致性和未编译边界；已明确全部被 v6 supersede，只作格式参考；4,149 bytes，SHA-256 `7297CF46CFB324510EC26DB240ACF6EA9F84E4BEA43C3A327EC38556970C72A5`。
 - `drafts/journal_versions/*.tex`：DMGT、Graphs and Combinatorics、Discrete Mathematics、Discrete Applied Mathematics、Computational and Applied Mathematics 五份 v4 本地格式参考；只分流 preamble/front matter/declarations/reference presentation，Introduction--Conclusion 与 v4 逐字节一致，但均已被 v6 内容 supersede，不得直接投稿。精确逐文件哈希见该目录 README 和版本历史。
 - `drafts/mixed_join_research_note.tex`：遗留的无版本号文件，当前与 v2 字节相同；不再作为编辑目标。
-- `notes/collaborator_reading_guide.md`：当前 v6 人工审阅入口，列出证明依赖、复现路线、30 项测试、编译证据和必须保留的限制；9,217 bytes，SHA-256 `B8E89FF894E9607C6E16B09C3C98EA8FAFB75ED11F466477799511FC91C74F8A`。
-- `notes/target_journals_and_author_info.md`：目标期刊分层、作者信息/声明清单、独立研究者 affiliation、Codex 披露、补充包、MSC 和提交 gate；已按 DMGT 2026 公开首投流程复核；15,109 bytes，SHA-256 `CFC621B3370D14614C07CFEE917903FCEA4AC47112F18509529B899DE60A5393`。
-- `notes/review_package_manifest.md`：v6 内部审阅/投稿包的非自引用制品、大小、哈希、依赖和编译状态清单；manifest 自身及持续变化的状态/日志故意不自哈希。
+- `notes/collaborator_reading_guide.md`：当前 v7 人工审阅入口，列出证明依赖、复现路线、30 项测试、编译证据和必须保留的限制。
+- `notes/target_journals_and_author_info.md`：目标期刊分层、作者信息/声明清单、独立研究者 affiliation、Codex 披露、public repository、MSC 和提交 gate；已按 DMGT 2026 公开首投流程复核；14,924 bytes，SHA-256 `4F44652DA2F728D8FDCEB62B5BED55F2682C64233D45918D0351021B6526F01D`。
+- `notes/review_package_manifest.md`：v7 内部审阅/投稿包的非自引用制品、大小、哈希、依赖和编译状态清单；manifest 自身及持续变化的状态/日志故意不自哈希。
 - `REPRODUCIBILITY.md`：从全新环境复现实验、测试和主 JSON 的命令；1,442 bytes，SHA-256 `C287D53518F003976243CEFB00B29E4E41881F32D4FFA6AD1F51F8937DFF0E36`。
 - `requirements-lock.txt`：v6 补充包的锁定 Python 环境；340 bytes，SHA-256 `4811AEA9E5C13E192FB5865D7095ECBA19A33887ACC1D567AB5368E1D31DDE5E`。
 - `artifacts/mixed_join_v6_reproducibility.zip`：固定随稿复现包；干净目录得到 `30 passed` 且主 JSON 字节一致；21,868 bytes，SHA-256 `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`。
 - `artifacts/v6_build/mixed_join_research_note_v6.pdf` 与 `.log`：MiKTeX 三遍编译的原生制品；PDF 470,046 bytes、SHA-256 `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`，log 27,395 bytes、SHA-256 `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`。相同 PDF 已复制到 `output/pdf/`。
+- `artifacts/v7_build/mixed_join_research_note_v7.pdf` 与 `.log`：MiKTeX 三遍编译的当前制品；PDF 470,873 bytes、SHA-256 `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`，log 27,395 bytes、SHA-256 `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`。相同 PDF 已复制到 `output/pdf/`。
 - `results/jiang_v1_0_1_supplement_report.json`：supplement 实际运行报告。
 - `results/jiang_v1_0_1_independent_report.json`：项目第二套实现的实际运行报告。
 - `experiments/audit_extension_candidates.py`：只用于目标选择的最小可复现筛选脚本。
@@ -407,15 +412,15 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 ## 11. Repository and environment status
 
 - Git repository：已初始化，当前分支为 `main`，本地 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
-- 当前 Git 状态：`main` 已推送并跟踪 `origin/main`；公开审计开始时 `HEAD` 与远端均为 `d6ff6fb`。本轮公开首页和去重修改尚待作者在 GitHub Desktop 中复核、提交并 push。
+- 当前 Git 状态：`main` 已推送并跟踪 `origin/main`；本轮 v7 工作开始时本地 `HEAD` 与远端均为 `6f60b4d`。v7 和本轮文档更新尚未 push；这不影响 v7 所引用的 public v6 archive 已经可用。
 - GitHub repository：`https://github.com/Star5Dust/dual-general-position-mixed-joins` 已由 GitHub REST API 读回为 public，默认分支为 `main`，当前无 license、无 topics、无 Zenodo DOI。`origin` 指向该 URL。常见 token/private-key 模式扫描为零命中；公开树仍包含作者在论文中主动列出的通讯邮箱以及若干内部研究/投稿交接说明，是否进一步精简历史由作者决定。
 - `papers_local/`：已加入 `.gitignore`；不要提交其中 PDF。
 - Python virtual environment：`.venv` 已创建，Python 3.13.5。
-- 文档工具：Pandoc 2.12 可用；本机 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 已找到并用于 v6 三遍编译。v6 原生 `.log`、14 页 PDF、字体/链接信息和逐页渲染均已验收；v4/v5 与五份 v4 期刊衍生稿仍未真实编译，不能套用 v6 结论。
-- 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、PDF、补充 ZIP、代码、测试和审计结果已在 public GitHub repository 可读。原生编译 log 也在完整仓库树中；本地 `github_upload/` 仅保留为不跟踪的手动上传备份，不应再出现在公开树中。
+- 文档工具：Pandoc 2.12 可用；本机 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 已用于 v6 和 v7 三遍编译。v7 原生 `.log`、14 页 PDF、字体/URI/文本和逐页渲染均已验收；v4/v5 与五份 v4 期刊衍生稿仍未真实编译，不能套用 v7 结论。
+- 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、PDF、固定 ZIP、代码、测试和审计结果已在 public GitHub repository 可读并完成匿名一致性审计。v7 PDF 直接引用该仓库，因此 DMGT 首投不需要另附 ZIP 或发邮件；本地 v7 源/PDF尚未 push 也不影响链接有效性。
 - `requirements.txt` 已列出 `networkx`、`numpy`、`pandas`、`sympy`、`pytest`、`matplotlib`。
 - 上述 packages 已安装并核对：NetworkX 3.6.1、NumPy 2.5.2、pandas 3.0.5、SymPy 1.14.0、pytest 9.1.1、Matplotlib 3.11.1。
-- 项目独立实现、extension audit 与 mixed-join DP 测试：v6 验收时为 `30 passed in 0.33s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。新增 184 次 DP 重构树侧集合的 definition-first dual-GP 可行性检查，全部零失败；这些有限实验是验证，不构成证明或全范围 exhaustive claim。
+- 项目独立实现、extension audit 与 mixed-join DP 测试：v7 验收时为 `30 passed in 0.36s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。184 次 DP 重构树侧集合的 definition-first dual-GP 可行性检查仍全部零失败；这些有限实验是验证，不构成证明或全范围 exhaustive claim。
 
 ## 12. 每轮结束时的更新规则
 

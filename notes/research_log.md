@@ -2485,3 +2485,61 @@ scope.
   remote repository, license, release, or DOI was changed in this local cleanup.
   The author must review the GitHub Desktop change list, commit, and push before
   the public page reflects these corrections.
+
+## 2026-08-29: anonymous public-repository audit and v7 availability revision
+
+- Rechecked `https://github.com/Star5Dust/dual-general-position-mixed-joins`
+  without relying on a signed-in GitHub session. The repository returned HTTP
+  200 and its public `main`/`HEAD` resolved to commit
+  `6f60b4d006943b9fdab83f364b37139a5891213d`. A read-only shallow clone
+  contained the manuscript, source, fixed reproducibility archive, code,
+  tests, and machine-readable results linked by the README.
+- Compared public files with the canonical workspace. The public v6 PDF had
+  SHA-256
+  `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`,
+  the fixed archive had
+  `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`,
+  and the main result JSON had
+  `1FBCD77D2457F5EED9CC1ED518E47D097145EF0DF36648A3F21BA36D9AC1B7F9`;
+  each matched the corresponding local file byte for byte. The public TeX
+  differed in raw bytes only because Git normalized line endings; an
+  ignore-end-of-line diff and normalized-text comparison both found no content
+  difference. These checks establish delivery identity, not mathematical
+  correctness or novelty.
+- Followed the immutable-draft rule by copying frozen v6 to
+  `drafts/mixed_join_research_note_v7.tex`. The only substantive text change
+  names the verified public repository and its path
+  `artifacts/mixed_join_v6_reproducibility.zip` in the computation and
+  data/code-availability passages. One local page-enlargement instruction keeps
+  the declarations and references in the established 14-page layout. No
+  theorem, proof, numerical value, citation, algorithm, test, or evidence claim
+  changed.
+- Final v7 TeX is 50,063 bytes with SHA-256
+  `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`.
+  Pandoc returned zero. The unchanged project test suite returned
+  `30 passed in 0.36s`.
+- Ran MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 for three passes. The retained native
+  log is 27,395 bytes with SHA-256
+  `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`
+  and contains no LaTeX/package warning, overfull/underfull box, undefined
+  reference/citation, missing character, rerun request, or fatal error. The
+  compiler PDF is 14 A4 pages and 470,873 bytes with SHA-256
+  `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`;
+  it was copied byte for byte to `output/pdf/`.
+- PDF inspection found every listed font embedded and subset, enumerated the
+  public repository URI twice where it appears in the manuscript, and found no
+  unresolved marker or obsolete “provided with this manuscript” / “reasonable
+  request” wording in extracted text. All 14 rendered pages were inspected;
+  the declarations and references remain legible without clipping or overlap.
+- Operational consequence: DMGT can receive v7 PDF as the sole initial file.
+  The public repository already supplies the fixed archive and expanded
+  reproducibility files, so no separate ZIP attachment and no email to the
+  editorial office are needed. The current local v7 documentation has not been
+  pushed; this does not affect the availability claim because the cited public
+  v6 archive is already present and verified.
+- Evidence boundary is unchanged: AI review is not human peer review, finite
+  checks are not proofs, and global novelty, priority, publishability,
+  acceptance, subscription-index coverage, and the fan version of record
+  remain `UNKNOWN`. The unique next step is to replace the v6 PDF in the DMGT
+  draft submission with the v7 PDF, preview it, and submit only after the
+  author confirms the displayed file.
