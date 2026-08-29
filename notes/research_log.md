@@ -2413,3 +2413,41 @@ scope.
   Graphs and Combinatorics remains a stretch alternative, and Discrete
   Mathematics remains the broader fallback after a final decision at a later
   stage.  No paper, email, account, or submission was created in this check.
+
+## 2026-08-29: manual GitHub upload package
+
+- The author asked whether the key project material could be uploaded through
+  GitHub's web interface and requested a separate, documented upload folder.
+  Created `github_upload/` without modifying the frozen v6 source or any
+  canonical code/result file.
+- Selected a minimum mixed-join review and reproducibility package.  It keeps
+  the runnable relative layout: `src/`, `experiments/`, `tests/`, and
+  `results/`.  The manuscript source and compiled reading copy are under
+  `paper/`; proof-development, collaborator-reading, and bounded literature
+  notes are under `docs/`; the fixed supplement archive is under `release/`.
+  Root-level dependency and reproducibility files are included.
+- Intentionally excluded v2--v5, the five v4-derived journal-format drafts,
+  third-party paper snapshots, local virtual environments, temporary files,
+  caches, native build intermediates/log, and raw web-AI replies.  The native
+  log remains available in the canonical workspace but is not required to run
+  or review the minimum public/shareable package.
+- Added a Chinese `github_upload/README.md` explaining the directory tree,
+  Python import relationships, why the fixed ZIP overlaps the expanded source,
+  how to upload the folder contents so README is at repository root, how to
+  verify the result, and how to reproduce the checks.  It also preserves the
+  boundaries that the current repository is private, no license has been
+  chosen, and the manuscript availability statement must not claim a public
+  URL before one exists and is verified.
+- Hash verification inside the prepared folder matched all three frozen v6
+  delivery artifacts: TeX
+  `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`,
+  PDF `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`,
+  and supplement ZIP
+  `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`.
+  Running the copied suite from `github_upload/` with the project interpreter
+  returned `30 passed in 0.30s`.
+- No GitHub upload, remote commit, repository visibility change, license
+  selection, DOI creation, manuscript change, new mathematical experiment, or
+  novelty claim was made.  The research-stage next step remains the author's
+  complete reading and approval of v6; the prepared README supplies the
+  separate manual-upload procedure when the author chooses to perform it.

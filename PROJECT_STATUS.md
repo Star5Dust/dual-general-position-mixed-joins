@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-08-29 (GLM 5.3 review adjudicated; immutable v6, locked supplement, native log, and 14-page PDF completed and verified)
+Last updated: 2026-08-29 (manual GitHub upload folder prepared and independently tested; remote remains empty)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -125,6 +125,7 @@ $$
 - 扩展 `experiments/audit_mixed_join_dp.py`：在 46 棵 3--8 阶非同构树与 $r=1,2,3,4$ 的 184 个 mixed joins 上，将 DP 重构出的树侧集合直接交给 shortest-path dual-GP checker，184/184 可行；原四类比较仍全为零失败。新增回归测试后得到 `30 passed in 0.33s`。新增锁定环境、`REPRODUCIBILITY.md` 和可随稿上传的固定 ZIP；ZIP 在干净目录解压后测试通过并逐字节复现 `results/mixed_join_dp_audit.json`。
 - 使用用户安装的 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 对 v6 三遍真实编译。最终原生日志无 warning/error/overfull/underfull/未定义引用/引文/缺字/rerun，输出 14 页 A4 PDF。全部字体嵌入，邮件/DOI/arXiv 链接可枚举，14 页渲染逐页核验无裁切、重叠、断表、黑块、缺字或异常分页。当前 TeX/PDF/log 的大小和 SHA-256 已记录在当前阶段、版本历史和 GLM 裁决笔记中。
 - 在用户准备实际投稿时重新读取 DMGT 2026 官网、作者指南、注册、登录与编辑部联系页。确认 DMGT 仍是当前稿的首选：scope 包含 structural graph results、无 APC，首投稿只公开要求通讯作者信息、摘要、关键词、2020 MSC 和不超过 10 MB 的单栏逐行编号 PDF；`dmgt` class、TeX source 和附加文件在录用后要求。当前 470,046-byte v6 PDF 完全符合公开首投文件要求。登录后的 supplement 字段不可公开查看，若不存在则应联系 `dmgt@wmie.uz.zgora.pl` 询问 ZIP 附件方式，不能假称已经随稿提供或因此强制先公开 GitHub。
+- 按用户要求建立 `github_upload/` 手动上传包：根目录含中文 `README.md`、复现说明和依赖文件；`paper/` 保存冻结 v6 TeX/PDF；`docs/` 保存合作者导读、证明说明和文献定位；`src/`、`experiments/`、`tests/`、`results/` 保留可运行的原相对结构；`release/` 保存固定补充 ZIP。没有纳入 v2--v5、期刊格式旧稿、第三方论文、本地环境、缓存或 AI 原始回复。TeX、PDF、ZIP 与 canonical v6 的 SHA-256 全部一致，从该文件夹直接运行测试得到 `30 passed in 0.30s`。README 已说明 GitHub 网页端逐步上传、目录关联、上传后核验、private/public 与 license 边界；本轮没有改动或上传远端仓库。
 
 尚未开始：
 
@@ -406,11 +407,11 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 - Git repository：已初始化，当前分支为 `main`，本地 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
 - 当前 Git 状态：43 个审计后文件已纳入首次提交 `e274fd3`；四模型审稿裁决、v5 及配套交接文件已纳入题为 `Adjudicate AI reviews and prepare v5` 的本地提交；GLM 5.3 裁决、v6、补充包和原生 PDF/log 已纳入题为 `Prepare submission-ready v6 package` 的本地提交。尚未推送远端。
-- GitHub repository：已在 `Star5Dust` 下创建 private repository `dual-general-position-mixed-joins`，`origin` 已配置为 `https://github.com/Star5Dust/dual-general-position-mixed-joins.git`。上传前审计确认 `.venv/`、缓存、`tmp/`、`papers_local/`、`paper_local/` 和本地 scratch export `v4.txt` 均不会上传，且未发现密钥或令牌。GitHub 设备页曾显示授权成功，但凭据管理器因 VPN/网络错误未收到回传，故 `git push` 未完成，远端仍为空。仓库仍为 private，未添加 license，也未建立 DOI。
+- GitHub repository：已在 `Star5Dust` 下创建 private repository `dual-general-position-mixed-joins`，`origin` 已配置为 `https://github.com/Star5Dust/dual-general-position-mixed-joins.git`。上传前审计确认 `.venv/`、缓存、`tmp/`、`papers_local/`、`paper_local/` 和本地 scratch export `v4.txt` 均不会上传，且未发现密钥或令牌。GitHub 设备页曾显示授权成功，但凭据管理器因 VPN/网络错误未收到回传，故 `git push` 未完成，远端仍为空。仓库仍为 private，未添加 license，也未建立 DOI。现已另备妥本地 `github_upload/`，可按其中 README 在网页端手动上传；尚未声称已上传。
 - `papers_local/`：已加入 `.gitignore`；不要提交其中 PDF。
 - Python virtual environment：`.venv` 已创建，Python 3.13.5。
 - 文档工具：Pandoc 2.12 可用；本机 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 已找到并用于 v6 三遍编译。v6 原生 `.log`、14 页 PDF、字体/链接信息和逐页渲染均已验收；v4/v5 与五份 v4 期刊衍生稿仍未真实编译，不能套用 v6 结论。
-- 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、原生 PDF/log 和补充 ZIP 当前仅在本地工作区，尚未公开存档或推送 GitHub。
+- 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、PDF、补充 ZIP 与最小复现依赖已复制到本地 `github_upload/`，但尚未公开存档、手动上传或推送 GitHub；原生编译 log 仍只保存在主工作区，没有放入最小 GitHub 包。
 - `requirements.txt` 已列出 `networkx`、`numpy`、`pandas`、`sympy`、`pytest`、`matplotlib`。
 - 上述 packages 已安装并核对：NetworkX 3.6.1、NumPy 2.5.2、pandas 3.0.5、SymPy 1.14.0、pytest 9.1.1、Matplotlib 3.11.1。
 - 项目独立实现、extension audit 与 mixed-join DP 测试：v6 验收时为 `30 passed in 0.33s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。新增 184 次 DP 重构树侧集合的 definition-first dual-GP 可行性检查，全部零失败；这些有限实验是验证，不构成证明或全范围 exhaustive claim。
