@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-08-29 (five local journal-format TeX candidates prepared; external human review remains next)
+Last updated: 2026-08-29 (local initial commit preserved; private GitHub push deferred after network/authentication failure; external human review remains next)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -44,7 +44,7 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3 仍是冻结的、已完成真实编译和 13 页逐页核验的数学/排版基线，SHA-256 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`，不得覆盖；本地 v4 仍是含已确认单作者元数据和声明的内容基线，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，也未被覆盖。现已在 `drafts/journal_versions/` 建立五份以期刊名命名的本地 TeX 候选：DMGT（v4 精确副本）、Graphs and Combinatorics（`svjour3/smallextended`）、Discrete Mathematics 与 Discrete Applied Mathematics（`elsarticle/preprint`）、Computational and Applied Mathematics（`sn-jnl/sn-mathphys-ay`）。五份均通过 Pandoc 和结构检查，各有 35 个唯一 label、47 个已解析交叉引用、6 个 bibliography entries、13 个已解析 cite commands、13 条定理类陈述、13 个证明、0 个投稿占位；从 Introduction 到 Conclusion 的正文均与 v4 逐字节一致。格式转换没有改变定理、证明、实验、引用事实或限制。作者均为 Yi Yuteng，`Independent Researcher, Shanghai, China`，邮箱 `yiyuteng29@163.com`，代码声明仍为 reasonable request。本机无 TeX engine，因此五份均未真实编译、未审日志或逐页 PDF，不得直接投稿。GitHub private repository `Star5Dust/dual-general-position-mixed-joins` 已由用户创建，并已开始经审计的初次上传；它尚非公开仓库，也未选定 license 或 Zenodo DOI。唯一直接下一步仍是外部人类数学、文献和投稿审阅；之后只选择一个目标做最终编译与投稿，禁止同时投稿**。
+当前处于：**mixed join $K_r+T$ 的 v3 仍是冻结的、已完成真实编译和 13 页逐页核验的数学/排版基线，SHA-256 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`，不得覆盖；本地 v4 仍是含已确认单作者元数据和声明的内容基线，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，也未被覆盖。现已在 `drafts/journal_versions/` 建立五份以期刊名命名的本地 TeX 候选：DMGT（v4 精确副本）、Graphs and Combinatorics（`svjour3/smallextended`）、Discrete Mathematics 与 Discrete Applied Mathematics（`elsarticle/preprint`）、Computational and Applied Mathematics（`sn-jnl/sn-mathphys-ay`）。五份均通过 Pandoc 和结构检查，各有 35 个唯一 label、47 个已解析交叉引用、6 个 bibliography entries、13 个已解析 cite commands、13 条定理类陈述、13 个证明、0 个投稿占位；从 Introduction 到 Conclusion 的正文均与 v4 逐字节一致。格式转换没有改变定理、证明、实验、引用事实或限制。作者均为 Yi Yuteng，`Independent Researcher, Shanghai, China`，邮箱 `yiyuteng29@163.com`，代码声明仍为 reasonable request。本机无 TeX engine，因此五份均未真实编译、未审日志或逐页 PDF，不得直接投稿。GitHub private repository `Star5Dust/dual-general-position-mixed-joins` 已由用户创建；审计后的 43 文件上传集已保存为本地首次提交 `e274fd3`，但 HTTPS 认证回传因 VPN/网络故障未完成，远端仍为空，推送已安全延后。仓库尚非公开，也未选定 license 或 Zenodo DOI。唯一直接下一步仍是外部人类数学、文献和投稿审阅；之后只选择一个目标做最终编译与投稿，禁止同时投稿**。
 
 已经完成：
 
@@ -125,7 +125,7 @@ $$
 - 五份期刊候选（或最终选中的唯一一份）的真实 LaTeX 编译、完整日志审阅和逐页 PDF 验收；当前只有静态检查，不能称为已编译；
 - 原生纯文本 v3 `.log` 的归档尚未取得；现有 PDF 打印件已完整保留可见日志内容，但不能证明原始日志字节或外部编译输入源码哈希；
 - version-of-record fan 公式的正文比对，以及只有在获得权限时才能做的 MathSciNet/Scopus/Web of Science 最终查重；
-- private GitHub repository 已创建，审计后的初次上传已授权；尚待决定 license、公开时点与可选 Zenodo DOI。在公共 URL 实际可用并读回核验前，不得把 private URL 提前写入论文；
+- private GitHub repository 已创建，审计后的初次提交已在本地保留，但远端推送因 VPN/认证回传故障延后；尚待决定 license、公开时点与可选 Zenodo DOI。在公共 URL 实际可用并读回核验前，不得把 private URL 提前写入论文；
 - 任意 first factor $F$ 的一般理论；$P_n\circ T$ 候选保持 dormant，不并行启动。
 
 ## 5. 本地论文与可靠读取状态
@@ -384,16 +384,16 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 ## 11. Repository and environment status
 
-- Git repository：已初始化。
-- 当前 Git 状态：项目文件尚未创建首次 commit。
-- GitHub integration：认证身份为 `Star5Dust`，但 installed accounts 与 accessible repositories 当前均为空；本机未安装 `gh` CLI。尚未创建远端仓库或上传任何项目文件，代码公开步骤已推迟到用户回家使用电脑后。
+- Git repository：已初始化，当前分支为 `main`，本地 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
+- 当前 Git 状态：43 个审计后文件已纳入首次提交；本轮的 status/log 收尾将作为后续本地提交保留。
+- GitHub repository：已在 `Star5Dust` 下创建 private repository `dual-general-position-mixed-joins`，`origin` 已配置为 `https://github.com/Star5Dust/dual-general-position-mixed-joins.git`。上传前审计确认 `.venv/`、缓存、`tmp/`、`papers_local/`、`paper_local/` 和本地 scratch export `v4.txt` 均不会上传，且未发现密钥或令牌。GitHub 设备页曾显示授权成功，但凭据管理器因 VPN/网络错误未收到回传，故 `git push` 未完成，远端仍为空。仓库仍为 private，未添加 license，也未建立 DOI。
 - `papers_local/`：已加入 `.gitignore`；不要提交其中 PDF。
 - Python virtual environment：`.venv` 已创建，Python 3.13.5。
 - 文档工具：Pandoc 2.12 可用；本机仍未找到 `pdflatex`、`xelatex`、`lualatex`、`latexmk`、`tectonic`、`latex` 或 `texify`。用户提供的 v2 和 v3 日志内容均证明外部 pdfTeX 1.40.27 / TeX Live 2025 成功输出 13 页；v3 显示日志为 PDF 打印件而非原生 `.log`，但其可见内容完整且 typesetting audit 已通过。v4 与五份期刊候选只完成 Pandoc、结构和正文一致性静态检查，不能套用 v3 的真实编译结论。
 - 外部制品交付：Google Drive `ai4math/v2/`（文件夹 ID `1QjW44nhUeXm45qBMRMCBVkJllfNebPjO`）保留 43,773-byte 编译基线，文件 ID `1SVkC2udd2568CXOuzXFYp-23tUrR_M81`；没有覆盖。44,087-byte v3 保存在 `ai4math/v3/`（文件夹 ID `1JKUCmJoC7E18skB_FmfbwxtTqG_GvXx_`），文件 ID `1A2MepYtCLU80SR9pb011T-lM7iyU2X8M`，MIME type `application/x-tex`；元数据和文件夹列表双重读回一致。本地 v3 SHA-256 为 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`。本轮外部 PDF 为 347,402 bytes、SHA-256 `566A99646FFEA83983445A1F2BEBEE44B122911061304AC4DBCC839A948D2712`；日志打印件为 45,700 bytes、SHA-256 `9E1A279A710538140F70403CD50EC921A9A17B91A0B27E26BC8F54589C60CC5D`，未复制进 workspace stable-file 表。v4 与五份期刊衍生稿按用户要求仅保存在本地，本轮没有创建、读取或更新任何 Drive 文件。
 - `requirements.txt` 已列出 `networkx`、`numpy`、`pandas`、`sympy`、`pytest`、`matplotlib`。
 - 上述 packages 已安装并核对：NetworkX 3.6.1、NumPy 2.5.2、pandas 3.0.5、SymPy 1.14.0、pytest 9.1.1、Matplotlib 3.11.1。
-- 项目独立实现、extension audit 与 mixed-join DP 测试：最近一次仍为 `29 passed in 0.44s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。本轮只修改投稿格式 TeX 与交接文档，没有修改任何数学实现，故未把旧测试结果伪写成新重跑；原有 `.pytest_cache` 不可写 warning 不影响测试结果或数学结论。
+- 项目独立实现、extension audit 与 mixed-join DP 测试：上传前于 2026-08-29 重跑为 `29 passed in 0.28s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。本轮未修改任何数学实现，测试只验证初次提交前的既有实现状态，不构成新证明或扩大实验范围。
 
 ## 12. 每轮结束时的更新规则
 

@@ -2122,3 +2122,12 @@ scope.
   baseline. After review, choose exactly one journal, regenerate from v5 if
   content changes, and perform that target's real compile/log/page audit before
   submission. Simultaneous submission is prohibited.
+
+## 2026-08-29 — Private GitHub initial-commit audit and deferred push
+
+- The user created the private repository `Star5Dust/dual-general-position-mixed-joins` and authorized a checked initial upload.
+- Audited `.gitignore`, all untracked paths, largest files, and common credential/key patterns. Local environments, caches, temporary outputs, locally stored research papers, and the unregistered root `v4.txt` scratch export were excluded. No credential, token, private key, or API-key pattern was found in the upload set.
+- Reran the existing test suite before committing: `29 passed in 0.28s`. Staged 43 audited files, created local root commit `e274fd3` with message `Initial research code and reproducibility package`, renamed the branch from `master` to `main`, and configured `origin` as `https://github.com/Star5Dust/dual-general-position-mixed-joins.git`.
+- HTTPS authentication was attempted through Git Credential Manager with browser and device-code flows. GitHub displayed a successful device connection, but the local credential-manager polling did not receive the callback while Codex reported `Reconnecting... waiting for network` and `error sending request`. No push completed; the remote remains empty and the waiting process was terminated safely.
+- GitHub is not a prerequisite for the mathematics, tests, or external review. It is an optional remote-backup, collaboration, and later-publication channel. The full audited snapshot remains preserved locally; pushing is deferred until networking is stable.
+- This administrative work changed no theorem, proof, experiment, conjecture, counterexample, literature fact, or `UNKNOWN` item. The unique research next step remains external human mathematical, literature, and submission review.
