@@ -28,12 +28,14 @@
 - `results/`：实验输出与整理后的结果。
 - `proofs/`：证明草稿与证明检查记录。
 - `drafts/`：research note 工作稿；最新已编译并逐页审阅的基线是
-  `drafts/mixed_join_research_note_v3.tex`。冻结的 v4 已分别交给四个网页 AI
+  `drafts/mixed_join_research_note_v6.tex`。冻结的 v4 已分别交给四个网页 AI
   审查，逐条裁决见 `notes/external_ai_review_adjudication.md`；吸收有效小修订
-  后的当前内容候选为 `drafts/mixed_join_research_note_v5.tex`。五个计划投稿
+  后的 v5 已冻结。GLM 5.3 的后续对抗审稿、逐项裁决和有效修订形成当前
+  v6，详见 `notes/glm_5_3_review_adjudication.md`。五个计划投稿
   期刊的本地格式版本位于 `drafts/journal_versions/`，文件名即期刊名；它们
-  仍基于 v4，现只作格式参考，不能直接投稿。v5 尚未真实编译或逐页审阅，
-  多模型 AI 审查也不等于人类同行评审。`v2`、`v3` 和 `v4` 均冻结保留，
+  仍基于 v4，现只作格式参考，不能直接投稿。v6 已由 MiKTeX-pdfTeX
+  真实编译并完成原生日志和 14 页逐页验收；多模型 AI 审查仍不等于人类
+  同行评审。`v2` 至 `v5` 均冻结保留，
   内容同步的 Markdown 版本为 `drafts/mixed_join_research_note.md`。编号 TeX
   一经后续版本取代即不得覆盖；详细映射与格式依赖见
   `drafts/TEX_VERSION_HISTORY.md` 和 `drafts/journal_versions/README.md`。
@@ -47,7 +49,7 @@ Windows PowerShell：
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-lock.txt
 ```
 
 macOS 或 Linux：
@@ -55,7 +57,7 @@ macOS 或 Linux：
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-lock.txt
 ```
 
 ## 运行测试

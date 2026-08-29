@@ -2268,3 +2268,120 @@ scope.
   plain-text `.log` and the compiler's direct unmodified PDF.  Then audit the
   full log and every rendered page.  V5 must not be submitted before that
   gate, and the v4 journal derivatives must not be used as substitutes.
+
+## 2026-08-29: GLM 5.3 adjudication, v6, locked supplement, and native PDF
+
+### Source and adjudication
+
+- Read the complete user-supplied GLM 5.3 adversarial review at
+  `C:\Users\yyt\.codex\attachments\1fad3539-a77c-405f-9b63-30ebc68d86bf\pasted-text.txt`:
+  14,927 bytes, SHA-256
+  `148C257B0F1F73E9D7FD6C942AA76B146F2570CD8499C8913918194FEDA8B284`.
+- The report did not exhibit a counterexample, a failed proof step, or a wrong
+  theorem value.  Its `Major revision` recommendation was driven primarily by
+  reproducibility, source-access uncertainty, and editorial depth rather than
+  a mathematical contradiction.
+- Rechecked Jiang v1.0.1 directly.  Theorem 3.2 is stated for every nonempty
+  finite simple graph, so the second factor need not be connected.  Theorem
+  5.1 treats joins whose factors are all nonempty and noncomplete and expressly
+  excludes the mixed complete/noncomplete case.  Thus the GLM concern about
+  this citation was a source-access limitation, not an error in the manuscript.
+- Rechecked the cited fan preprint v2: the closed formula is stated for
+  `F_n=K_1+P_n` with `n >= 4`.  Added an explicit explanation of why `F_3`
+  is outside that statement.
+- Accepted the report's valid requests for a locked supplement, sharper
+  explanation of the two computational routes, more self-contained boundary
+  language, and an example separating `beta(T)` from the weaker
+  induced-maximum-degree-one optimization.  The detailed ruling is preserved
+  in `notes/glm_5_3_review_adjudication.md`.
+
+### V6 content revision
+
+- Verified the immutable v5 before copying: 47,256 bytes, SHA-256
+  `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`.
+  Created `drafts/mixed_join_research_note_v6.tex`; v3, v4, and v5 were not
+  overwritten.
+- Kept the main theorem, every stated value, and every proof dependency
+  unchanged.  V6 instead clarifies the abstract's DP description, Jiang's
+  scope, the role of `|V(T)| >= 3`, the `F_3` exception, the shared
+  formalization boundary between the two verification routes, and the
+  reproducibility/data-availability statements.  Internal research-stage
+  wording was removed from publication prose.
+- Added the depth-two complete binary tree as a strict separation example.
+  Exhaustive subsets, the linear DP, and the definition-first checker agree
+  that `beta(T)=4` and hence `gp_d(K_1+T)=4`, while the weaker condition
+  `Delta(T[X]) <= 1` admits the root together with all four leaves, of size 5.
+- Final v6 source: 49,825 bytes, 1,203 lines, SHA-256
+  `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`.
+
+### Reproducibility changes and independent checks
+
+- Extended `experiments/audit_mixed_join_dp.py` with 184 definition-first
+  checks of the actual tree-side sets reconstructed by the DP.  This checks
+  feasibility under the dual-general-position definition rather than merely
+  comparing objective values.  Added corresponding regression tests in
+  `tests/test_mixed_join_tree.py`.
+- The refreshed `results/mixed_join_dp_audit.json` records 985 DP/subset
+  comparisons, 11,003 reroot comparisons, 985 reconstruction local checks,
+  184 formula/definition checks, and the new 184 reconstructed-set definition
+  checks.  Every failure count is zero.  The implementation was also tested on
+  the explicit binary-tree separation example.
+- Added `requirements-lock.txt` and `REPRODUCIBILITY.md`.  Created the fixed
+  supplement `artifacts/mixed_join_v6_reproducibility.zip`, 21,868 bytes,
+  SHA-256
+  `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`.
+- Extracted the ZIP into a clean ignored directory, installed nothing from the
+  working tree, ran its packaged test suite, and obtained `30 passed in
+  0.32s`.  Rerunning the packaged mixed-join audit produced a JSON file
+  byte-identical to the repository result.  The working-tree suite separately
+  produced `30 passed in 0.33s`.
+- Current key hashes: audit driver
+  `AE55D305A2893B987E348F64273A7F3CD49738E202BBCD5ACCE48F7161366DCA`,
+  tests
+  `20B6EA2F1F2B2493C606F638775EE4498F975020915E35D04E4021703D2B70BA`,
+  result JSON
+  `1FBCD77D2457F5EED9CC1ED518E47D097145EF0DF36648A3F21BA36D9AC1B7F9`,
+  lock file
+  `4811AEA9E5C13E192FB5865D7095ECBA19A33887ACC1D567AB5368E1D31DDE5E`,
+  and reproducibility guide
+  `C287D53518F003976243CEFB00B29E4E41881F32D4FFA6AD1F51F8937DFF0E36`.
+
+### Static and native LaTeX validation
+
+- Pandoc 2.12 parsed v6 with exit code 0.  Static checks found 35 unique
+  labels, 50 resolved `ref`/`eqref` commands, 13 resolved cite keys backed by
+  six bibliography entries, 13 theorem-like statements, 13 proofs, a balanced
+  environment stack, and zero submission placeholders or unresolved markers.
+- Located the user's MiKTeX installation at
+  `C:\Users\yyt\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe`.
+  Ran MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 three times with
+  `--enable-installer --interaction=nonstopmode --halt-on-error
+  --file-line-error`.
+- Preserved the compiler's native PDF and plain-text log in
+  `artifacts/v6_build/`.  The log is 27,395 bytes, SHA-256
+  `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`;
+  exact scans found no error, warning, overfull/underfull box, undefined
+  reference/citation, missing character, or rerun request.
+- The native PDF is 14 A4 pages, unencrypted, 470,046 bytes, SHA-256
+  `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`.
+  All fonts are embedded and subsetted, external email/DOI/arXiv annotations
+  are present, extracted text has no unresolved marker, and all 14 rendered
+  pages were visually inspected with no clipping, overlap, broken table,
+  missing glyph, black block, or abnormal pagination.  An identical delivery
+  copy is in `output/pdf/mixed_join_research_note_v6.pdf`.
+
+### Evidence boundary and unique next step
+
+- This stage closes the local reproducibility and typesetting gates.  It does
+  not constitute human peer review and does not prove global novelty,
+  priority, journal fit, or acceptance.  Subscription-index coverage, the fan
+  version of record, and the general-second-factor follow-up remain `UNKNOWN`
+  or outside this submission's scope.
+- Preserved the GLM adjudication, v6 source, locked supplement, native PDF/log,
+  refreshed audit, tests, and synchronized handoff records in the local commit
+  titled `Prepare submission-ready v6 package`.  No push or external upload
+  was attempted.
+- Unique next step: the author must read and approve the complete v6 source or
+  PDF, especially the theorem, name/affiliation/email, AI-use disclosure,
+  declarations, and supplement statement.  If approved, submit only v6 TeX,
+  v6 PDF, and the fixed ZIP to one journal; do not submit a v4 derivative.

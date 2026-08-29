@@ -9,11 +9,11 @@ to the frozen v4 body. Only the preamble, front matter, declarations placement,
 and (where required) bibliography presentation differ. No Google Drive file was
 created or changed.
 
-**Supersession notice:** `drafts/mixed_join_research_note_v5.tex` now contains
-the adjudicated minor corrections from the external AI review attempts. These
-five v4-derived files are retained for provenance and format comparison only;
-none is a current submission candidate. Regenerate only the one finally chosen
-journal format from the approved v5-or-later content.
+**Supersession notice:** `drafts/mixed_join_research_note_v6.tex` is now the
+compiled and page-reviewed content candidate after the adjudicated external AI
+review rounds. These five v4-derived files are retained for provenance and
+format comparison only; none is a current submission candidate. Regenerate
+only the one finally chosen journal format from v6 or later content.
 
 | Target journal | TeX file | Submission route | SHA-256 |
 |---|---|---|---|
@@ -57,9 +57,9 @@ statements, 13 proofs, zero submission placeholders, and the confirmed author
 name and email. The DMGT alias has the same SHA-256 as v4, and v3/v4 remain
 unchanged.
 
-No TeX engine is installed in this workspace, so none of these five derivative
-files has yet received a real compile, complete log review, or page-by-page PDF
-inspection. Four external web-AI review attempts have now been adjudicated,
-but this is not human peer review. Submit only one regenerated version to one
-journal at a time, and recheck the selected journal's live instructions
-immediately before submission.
+A local MiKTeX engine is now installed, but none of these obsolete five
+v4-derived files has received a real compile, complete log review, or
+page-by-page PDF inspection. The current v6 source has received those checks.
+The external AI review rounds are not human peer review. Submit only one
+regenerated version to one journal at a time, and recheck the selected
+journal's live instructions immediately before submission.

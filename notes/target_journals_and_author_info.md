@@ -15,7 +15,7 @@ Only one journal may consider the manuscript at a time.
 ### Primary target: Discussiones Mathematicae Graph Theory (DMGT)
 
 **Recommendation:** best topical fit for the present manuscript and the target
-used for the frozen v4 and current v5 first-submission candidates.
+used for the frozen v4/v5 and current v6 first-submission candidates.
 
 Why it fits:
 
@@ -26,7 +26,7 @@ Why it fits:
   operations, so the intended readership already knows the surrounding topic.
 - The paper is well below DMGT's requested maximum of 30 journal-style pages.
 
-Current official first-submission requirements relevant to v5:
+Current official first-submission requirements relevant to v6:
 
 - no submission fee or APC;
 - English used consistently;
@@ -203,7 +203,7 @@ For every author:
 ## Author response recorded on 29 August 2026
 
 The following information and working decisions have now been applied to the
-frozen v4, current v5, and all five v4-derived journal-name files:
+frozen v4/v5, current v6, and all five v4-derived journal-name files:
 
 - Sole author and corresponding author: **Yi Yuteng**. The Chinese name
   `易宇腾` is retained in this internal note but is not added to the English
@@ -215,19 +215,16 @@ frozen v4, current v5, and all five v4-derived journal-name files:
 - No human acknowledgement was requested. Acknowledgements are not arbitrary:
   they must describe genuine assistance, and a named person should normally
   consent to being identified.
-- Because the project remains local-only, the working availability statement
-  is that the code and machine-readable audit outputs are available from the
-  corresponding author on reasonable request. No public repository is claimed.
+- V6 provides the fixed archive `mixed_join_v6_reproducibility.zip` as
+  submission supplementary material. The availability statement names this
+  archive and its SHA-256; no public repository is claimed.
 - **Deferred GitHub release item:** the linked GitHub identity was verified as
-  `Star5Dust`, but the current GitHub App installation exposes no installed
-  account or accessible repository, and the local computer has no `gh` CLI.
-  No repository was created and no file was uploaded. When the author is back
-  at the computer, create an empty private repository under `Star5Dust`, grant
-  the Codex GitHub integration access to that repository, and then decide the
-  curated file set, public/private visibility, license, and whether to archive
-  a release on Zenodo for a DOI. The manuscript must retain the
-  availability-on-request statement until a public URL has actually been
-  created and verified.
+  `Star5Dust`; a private repository named
+  `dual-general-position-mixed-joins` exists and the local `origin` is
+  configured, but authentication/network failure left the remote empty. The
+  author still needs to decide the curated public file set, license, release
+  date, and whether to archive a release on Zenodo. No repository URL belongs
+  in the manuscript until public access has actually been created and checked.
 - OpenAI Codex is acknowledged as an AI-assisted tool, not as an author. The
   disclosure lists its actual roles in literature organization, proof drafting,
   code development, computational checking, manuscript drafting, and editorial
@@ -245,11 +242,12 @@ author has graduated and reported no current institutional position. It may be
 added later only if the author confirms that the work was carried out there and
 that listing the institution is accurate and appropriate.
 
-This metadata completion does not certify the mathematics. Four web-AI review
-attempts have been adjudicated in
-`notes/external_ai_review_adjudication.md`, but they do not constitute human
-peer review. Before submission, the author must personally review and approve
-the manuscript.
+This metadata completion does not certify the mathematics. The four initial
+web-AI attempts and the later GLM 5.3 adversarial report have been adjudicated
+in `notes/external_ai_review_adjudication.md` and
+`notes/glm_5_3_review_adjudication.md`, but they do not constitute human peer
+review. Before submission, the author must personally review and approve the
+manuscript.
 
 ## Metadata already selected in v4 and its journal derivatives
 
@@ -267,20 +265,22 @@ https://msc2020.org/MSC_2020.pdf
 
 ## Submission gates still open
 
-The five v4-derived journal-specific files are superseded format references,
-not ready-to-upload final manuscripts. Before any submission:
+The five v4-derived journal-specific files are superseded format references
+and must not be submitted. The compiled v6 ordinary-`article` route is the
+current DMGT initial-submission package. Before any submission:
 
-1. use the adjudicated v5 as the content source; if a qualified human review
-   later becomes available, preserve and adjudicate it rather than treating
-   the multi-model AI screen as equivalent;
+1. personally read and approve v6; if a qualified human review later becomes
+   available, preserve and adjudicate it rather than treating the multi-model
+   AI screen as equivalent;
 2. check on the submission date whether Jiang's v1.0.1 preprint has changed or
    acquired a journal version;
 3. reconfirm the filled author metadata, declarations, and AI-use disclosure;
-4. reconfirm the availability-on-request policy or deliberately replace it
-   with a public repository or journal-supplement statement;
+4. upload `mixed_join_v6_reproducibility.zip` with the TeX and PDF, or revise
+   the availability statement if the selected submission system cannot accept
+   it;
 5. retain DMGT as the working first target unless the author deliberately
-   changes it, regenerate only that one target from v5, obtain its current
-   official class package if needed, then run a real LaTeX compilation,
-   complete log review, and page-by-page PDF inspection;
+   changes it; v6 has already completed real MiKTeX compilation, native-log
+   review, and 14-page inspection, but the live journal instructions should
+   still be rechecked on the submission date;
 6. confirm that the manuscript is not simultaneously under consideration by
    another journal.

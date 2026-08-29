@@ -4,7 +4,9 @@ Two comparisons are kept separate:
 
 * the linear-time DP is compared with exhaustive subset search for ``beta``;
 * the resulting mixed-join formula is compared with the definition-first
-  shortest-path checker.
+  shortest-path checker;
+* each reconstructed tree-side set in the same mixed-join matrix is checked
+  directly from the shortest-path definition of dual general position.
 
 The output is computational evidence and is not used as the proof.
 """
@@ -28,7 +30,11 @@ from experiments.audit_extension_candidates import (  # noqa: E402
     beta_tree,
     mixed_join_complete_tree,
 )
-from src.dual_gp_independent import direct_dual_gp_number  # noqa: E402
+from src.dual_gp_independent import (  # noqa: E402
+    all_pairs_distances,
+    direct_dual_gp_number,
+    is_dual_general_position,
+)
 from src.mixed_join_tree import (  # noqa: E402
     is_beta_feasible,
     maximum_beta_set,
@@ -122,6 +128,8 @@ def _beta_matrix(max_order: int = 12) -> dict[str, object]:
 def _mixed_join_matrix(max_tree_order: int = 8) -> dict[str, object]:
     comparisons = 0
     mismatches: list[dict[str, object]] = []
+    reconstruction_checks = 0
+    reconstruction_failures: list[dict[str, object]] = []
     summaries: list[dict[str, int]] = []
     for order in range(3, max_tree_order + 1):
         trees = [
@@ -130,7 +138,8 @@ def _mixed_join_matrix(max_tree_order: int = 8) -> dict[str, object]:
         ]
         for r in range(1, 5):
             for tree_index, tree in enumerate(trees):
-                direct = direct_dual_gp_number(mixed_join_complete_tree(r, tree))
+                mixed_join = mixed_join_complete_tree(r, tree)
+                direct = direct_dual_gp_number(mixed_join)
                 formula = mixed_join_dual_gp_number(r, tree)
                 comparisons += 1
                 if direct != formula:
@@ -142,6 +151,28 @@ def _mixed_join_matrix(max_tree_order: int = 8) -> dict[str, object]:
                             "r": r,
                             "shortest_path_direct": direct,
                             "dp_formula": formula,
+                        }
+                    )
+
+                reconstructed = maximum_beta_set(tree)
+                selected = frozenset(
+                    ("T", vertex) for vertex in reconstructed.selected
+                )
+                distances = all_pairs_distances(mixed_join)
+                reconstruction_checks += 1
+                if not is_dual_general_position(
+                    selected, mixed_join, distances
+                ):
+                    reconstruction_failures.append(
+                        {
+                            "tree_order": order,
+                            "tree_index": tree_index,
+                            "edges": _edges(tree),
+                            "r": r,
+                            "beta": reconstructed.value,
+                            "selected_tree_vertices": sorted(
+                                reconstructed.selected
+                            ),
                         }
                     )
         summaries.append(
@@ -158,6 +189,11 @@ def _mixed_join_matrix(max_tree_order: int = 8) -> dict[str, object]:
         "comparisons": comparisons,
         "mismatch_count": len(mismatches),
         "mismatches": mismatches,
+        "reconstructed_tree_side_set_checks": reconstruction_checks,
+        "reconstructed_tree_side_set_failure_count": len(
+            reconstruction_failures
+        ),
+        "reconstructed_tree_side_set_failures": reconstruction_failures,
         "summaries": summaries,
     }
 
@@ -165,8 +201,8 @@ def _mixed_join_matrix(max_tree_order: int = 8) -> dict[str, object]:
 def build_report() -> dict[str, object]:
     """Run both bounded verification matrices."""
     return {
-        "schema_version": 1,
-        "audit_date": "2026-08-28",
+        "schema_version": 2,
+        "audit_date": "2026-08-29",
         "status": "computational verification evidence, not proof",
         "environment": {
             "python": platform.python_version(),

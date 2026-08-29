@@ -10,108 +10,83 @@ digests are SHA-256, computed on the files as stored in this workspace.
 
 ## Current verification status
 
-- The Markdown manuscript and latest v3 LaTeX manuscript preserve 13 numbered
-  statements, 13 proofs, 40 display formulas, all computational totals, five
-  artifact hashes, and five `UNKNOWN` statements. Pandoc 2.12 parsed v3
-  successfully. Static checks found 35 unique labels, 46 resolved
-  `ref`/`eqref` uses, 11 resolved citation uses, four bibliography entries, and
-  a correctly nested environment stack.
-- The most recent test run returned `29 passed in 0.44s`; pytest also reported
-  one non-mathematical cache-write warning because `.pytest_cache` was not
-  writable in this session.
+- V6 is the current DMGT-style initial-submission candidate. Pandoc parsed it
+  successfully. Static checks found 35 unique labels, 50 resolved
+  `ref`/`eqref` uses, 13 resolved citation keys, six bibliography entries, 13
+  theorem-like statements, 13 proofs, a correctly nested environment stack,
+  and zero submission placeholders.
+- The most recent test run returned `30 passed in 0.33s` with no warning.
 - The archived mixed-join audit contains 985 DP/subset comparisons, 11,003
-  root-invariance comparisons, 985 reconstruction checks, and 184
-  formula/definition comparisons, with zero failures in every category.
-- The frozen v2 baseline compiled to 13 pages. Its displayed log had no error,
-  undefined reference/citation, underfull box, missing character, or rerun
-  request, but reported one 2.68097-point longtable-width overfull for each of
-  the two alignment chunks. Visual review also found two low-severity lead-in
-  breaks. Those three items are the complete target list for v3.
-- V3 compiled externally with pdfTeX 1.40.27 / TeX Live 2025 to 13 A4 pages.
-  The complete displayed log contains no TeX/LaTeX error, warning,
+  root-invariance comparisons, 985 local reconstruction checks, 184
+  formula/definition comparisons, and 184 definition-first checks of the
+  reconstructed tree-side sets, with zero failures in every category.
+- MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 compiled v6 through three passes to 14
+  A4 pages. The retained native log contains no error, warning,
   overfull/underfull box, undefined reference/citation, missing character, or
-  rerun request. All 13 pages were rendered and inspected; the two lead-ins
-  now remain with their formula/table, the first reproducibility table is
-  inside the text area, and no clipping, overlap, black box, missing glyph,
-  unresolved `??`, orphan heading, or new layout regression was found.
-- The v3 PDF has 22 font resources, all embedded, subsetted, and
-  Unicode-mapped. All 57 internal links resolve, six URI links are
-  structurally valid, all 58 named destinations resolve, and all 16 bookmarks
-  point to valid pages. Text-coordinate checks found no character outside the
-  page boxes.
-- The v3 attachment is 347,402 bytes with SHA-256
-  `566A99646FFEA83983445A1F2BEBEE44B122911061304AC4DBCC839A948D2712`
-  and declares `/Linearized 1 /L 347402`; the displayed log records the
-  pre-delivery `output.pdf` as 343,570 bytes. The content, metadata, and
-  v3-specific pagination are consistent, but byte-for-byte attachment/log
-  identity is not established. The complete displayed log arrived as a
-  10-page Safari/iOS PDF printout, 45,700 bytes with SHA-256
-  `9E1A279A710538140F70403CD50EC921A9A17B91A0B27E26BC8F54589C60CC5D`,
-  rather than as the native plain-text `.log`; exact raw-log and source-hash
-  provenance therefore remain unavailable.
+  rerun request.
+- All PDF fonts are embedded. The email and external URI annotations were
+  enumerated, text extraction contains no unresolved marker, and all 14 pages
+  were rendered and inspected without finding clipping, overlap, broken
+  tables, black boxes, missing glyphs, orphan headings, or abnormal pagination.
+- The v6 compiler PDF is copied byte-for-byte into `output/pdf/`; the native
+  log and unmodified compiler PDF remain in `artifacts/v6_build/`.
 
 ## Core review files
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
-| `README.md` | 2,979 | `D3EDB568B7E0443BE00B4F8B7B1D5DF308FFC3CCA966FBDE8B894EDC4DBC446C` |
-| `notes/collaborator_reading_guide.md` | 10,414 | `E47F0B6DEE0256E0741491E8070BF2B8F8F5D9183ED2D03A63F8F249BCA23F7A` |
-| `drafts/mixed_join_research_note_v3.tex` | 44,087 | `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6` |
-| `drafts/mixed_join_research_note_v2.tex` | 43,773 | `D648DD44CA321475BCA94CBB29C86F22A218738FAE1546C372AAD774F6FAFF1F` |
-| `drafts/TEX_VERSION_HISTORY.md` | 7,571 | `804B06E73CA6F13AC65FB1DB7FD90B71C472FA2693B719904F8C2F4F86AF93C0` |
-| `drafts/mixed_join_research_note.md` | 36,960 | `9A76A7E8E6AE9BD0505224234C5BEF6379F713B4753D11FB11F5AEEA03E531A7` |
+| `README.md` | 3,105 | `EB4314D3061F13FED0A6DE8910D00D167393F04A1EFBD1C901FC7B7403D4F950` |
+| `notes/collaborator_reading_guide.md` | 9,217 | `B8E89FF894E9607C6E16B09C3C98EA8FAFB75ED11F466477799511FC91C74F8A` |
+| `drafts/mixed_join_research_note_v6.tex` | 49,825 | `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE` |
+| `output/pdf/mixed_join_research_note_v6.pdf` | 470,046 | `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44` |
+| `artifacts/v6_build/mixed_join_research_note_v6.log` | 27,395 | `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1` |
+| `artifacts/mixed_join_v6_reproducibility.zip` | 21,868 | `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33` |
+| `notes/glm_5_3_review_adjudication.md` | 7,209 | `B812A198C15E0760E160D66686C632FBE8EA0C4BC5C2A5DEE15833D24F095D45` |
+| `drafts/TEX_VERSION_HISTORY.md` | 8,928 | `BF2CA512F5175C2BB1FE634870D578CDD53787DE986B35172D5CE03EF4B1DA14` |
 | `proofs/mixed_join_tree.md` | 10,400 | `65D23FAD3BA238FC068AD97963C1E136C8E5DD5C9DAEC29B76F84FC9A3D06409` |
 | `notes/mixed_join_literature_positioning.md` | 19,931 | `0C1224F133C40ED22FC7BE828575D683384602233DEB8183CD9000D558A53D97` |
 
-Recommended reading order is the collaborator guide, dynamic v5 candidate and
-AI-review adjudication, v3 LaTeX manuscript and its reviewed compiled
-artifacts, v2 warning-bearing baseline, Markdown manuscript, version history,
-proof-development note, and literature-positioning note. V3 is the latest
-compiled submission-style draft; v2 is retained unchanged for provenance, and
-the Markdown file is an earlier readable source with the same main theorem.
-
-The frozen AI-reviewed source `drafts/mixed_join_research_note_v4.tex`, the
-adjudicated candidate `drafts/mixed_join_research_note_v5.tex`, its review
-adjudication note, the five
-journal-name derivatives under `drafts/journal_versions/`, and
-`notes/target_journals_and_author_info.md` are submission-preparation files,
-not replacements for this compiled v3 review baseline. V4 and the derivatives
-contain the verified sole-author metadata and declarations and zero submission
-placeholders. V5 contains only adjudicated minor precision changes and has
-passed static checks, but it has not been compiled or visually reviewed. These
-files are therefore listed with the mutable handoff files below rather than
-added to the stable review-package digest table.
+Recommended reading order is the collaborator guide, v6 TeX/PDF, GLM 5.3 and
+earlier AI adjudication notes, reproducibility archive, version history,
+proof-development note, and literature-positioning note. V2--v5 remain frozen
+historical versions. The five v4-derived journal-name files remain format
+references only and must not be submitted.
 
 ## Reproducibility dependency closure
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
 | `requirements.txt` | 54 | `74BBC0D1430A450DF9DAB292A76970B01A9CDB84922E419BA24FF26704F12E9B` |
+| `requirements-lock.txt` | 340 | `4811AEA9E5C13E192FB5865D7095ECBA19A33887ACC1D567AB5368E1D31DDE5E` |
+| `REPRODUCIBILITY.md` | 1,442 | `C287D53518F003976243CEFB00B29E4E41881F32D4FFA6AD1F51F8937DFF0E36` |
 | `src/__init__.py` | 75 | `ED1639318E17C6FF6C2B89761E68E2304314B2081B7A4F674C85D46BF40F19F0` |
 | `src/mixed_join_tree.py` | 8,514 | `D3DDAB46510B217BF9C442CC57302953C4D0C29F208DD7ADE06381F2D90A8B9D` |
 | `src/dual_gp_independent.py` | 9,021 | `D7BA1C520DC6991E78CB8BAE609A598E6BBF950DA03C1EAC9BA4D30D1EFFF231` |
-| `experiments/audit_mixed_join_dp.py` | 6,465 | `93BA42DB963CAB3F2EE34DAC9CF36511FF6332A84543F44A22ACD48BBB974D44` |
+| `experiments/audit_mixed_join_dp.py` | 7,978 | `AE55D305A2893B987E348F64273A7F3CD49738E202BBCD5ACCE48F7161366DCA` |
 | `experiments/audit_extension_candidates.py` | 9,291 | `A463CE202995000F324BDB7F90D2821B1B97AB38911E3E8941DFFC381F8393F6` |
-| `results/mixed_join_dp_audit.json` | 2,881 | `C4489D2A7202AD1413EED2FBC551E6CBDFEB6FC5BB10FF32F4899B747C3F4E90` |
+| `results/mixed_join_dp_audit.json` | 3,031 | `1FBCD77D2457F5EED9CC1ED518E47D097145EF0DF36648A3F21BA36D9AC1B7F9` |
 | `tests/test_dual_gp_independent.py` | 3,306 | `DC838B029F97760FD67006CF582ECB205AE22AEE7F492CE1A5065680A6BA1674` |
 | `tests/test_extension_feasibility.py` | 1,705 | `58EFBF1D99269B8081CA1F3A41FF212254AB46FE8132781299BEA82DEF5D9D80` |
-| `tests/test_mixed_join_tree.py` | 2,984 | `D48F5F0972A3B28D8D9FA58C095E5707D5A5CB5F5C3A8D1E8B51ED61AB3CC447` |
+| `tests/test_mixed_join_tree.py` | 4,103 | `20B6EA2F1F2B2493C606F638775EE4498F975020915E35D04E4021703D2B70BA` |
 
 The main audit directly imports `src/mixed_join_tree.py`,
 `src/dual_gp_independent.py`, and three graph/search helpers from
 `experiments/audit_extension_candidates.py`. The test suite imports the same
 modules. NetworkX is required for tree enumeration and pytest is required for
-the tests. `requirements.txt` records the broader project environment; the
-freshly checked versions were CPython 3.13.5, NetworkX 3.6.1, and pytest 9.1.1.
-The requirements file does not pin versions. A run under different Python or
-NetworkX versions can reproduce the logical counts while producing a
-byte-different JSON file because the report embeds environment versions; a
-JSON hash difference alone is therefore not a mathematical failure.
+the tests. `requirements.txt` records the broader direct dependencies, while
+`requirements-lock.txt` pins the complete installed environment. The freshly
+checked versions were CPython 3.13.5, NetworkX 3.6.1, and pytest 9.1.1. A run
+under a different Python or NetworkX version can reproduce the logical counts
+while producing a byte-different JSON file because the report embeds
+environment versions; a JSON hash difference alone is therefore not a
+mathematical failure.
 
 The two verification routes use different checking logic, but they share the
-audit driver and NetworkX-generated tree samples. They are not two completely
-disjoint software stacks. The JSON report is generated output, not an input to
-the theorem or DP.
+audit driver and NetworkX-generated tree samples. The DP/subset comparison also
+shares the two local constraints defining `beta(T)` and therefore tests the
+implementation rather than that structural reduction. The shortest-path route
+tests the theorem and the reconstructed tree-side set from the definition. The
+JSON report is generated output, not an input to the theorem or DP.
 
 ## Optional historical provenance
 
@@ -153,12 +128,11 @@ artifact without a separate rights and provenance check.
 - `notes/review_package_manifest.md` (this file).
 
 These files remain part of a complete internal handoff, but status and log are
-updated when each stage closes, v5 may be superseded after later review and
-typesetting validation, and hashing the
-manifest inside itself would be self-referential. The target-journal note and
-journal-version index are paired with that mutable submission workflow rather
-than the compiled v3 package. Their omission from the digest tables is
-intentional, not a missing dependency.
+updated when each stage closes, and hashing the manifest inside itself would be
+self-referential. The v4/v5 sources and journal derivatives are frozen
+historical references. The target-journal note and journal-version index are
+paired with the mutable submission workflow. Their omission from the digest
+tables is intentional, not a missing dependency.
 
 ## Verified commands
 
@@ -167,30 +141,24 @@ From the repository root in PowerShell:
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q .\tests
 .\.venv\Scripts\python.exe .\experiments\audit_mixed_join_dp.py --output .\results\mixed_join_dp_audit.json
-& 'E:\Anaconda\Scripts\pandoc.exe' .\drafts\mixed_join_research_note_v3.tex --from=latex --to=native | Out-Null
+& pandoc .\drafts\mixed_join_research_note_v6.tex --from=latex --to=native | Out-Null
 Get-ChildItem .\drafts\journal_versions\*.tex | ForEach-Object { & 'E:\Anaconda\Scripts\pandoc.exe' $_.FullName --from=latex --to=native | Out-Null; if ($LASTEXITCODE -ne 0) { throw "Pandoc failed: $($_.Name)" } }
+& 'C:\Users\yyt\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe' --enable-installer --interaction=nonstopmode --halt-on-error --file-line-error --output-directory=.\artifacts\v6_build .\drafts\mixed_join_research_note_v6.tex
 ```
 
-The first command most recently returned 29 passing tests and the cache-write
-warning recorded above. The second command
-most recently reproduced all four zero-failure audit categories; it overwrites
+The first command most recently returned 30 passing tests. The second command
+most recently reproduced all five zero-failure audit categories; it overwrites
 the canonical JSON path, so a reviewer who wants to preserve the archived file
 should provide a different `--output` path and compare the two JSON objects.
 The third command returned exit code zero and is only a Pandoc reader/static
-syntax check.
+syntax check. The final command was run three times; its last native log and
+compiler PDF are preserved under `artifacts/v6_build/`.
 
-The v3 PDF, complete displayed log, and all 13 rendered pages have now been
-checked. The typesetting stage is complete with no remaining warning or visual
-defect. The native plain-text `.log` was not supplied, so the printable log
-content is verified but its original bytes are not archived here. No TeX
-engine was installed in this workspace. Four independent web-AI review
-attempts of frozen v4 have been adjudicated: one was a detailed proof audit,
-one contained a rejected false critical objection, one was editorial only,
-and one did not receive the manuscript. V5 incorporates the supported minor
-corrections. This is not human peer review. V5 still needs a real
-compile/log/page audit; after content approval, only the selected journal
-derivative should be regenerated. Any later content revision must start v6
-rather than overwrite the preserved v3, v4, or v5 files.
+V6 has completed the source, computation, compile, native-log, font/link, and
+14-page visual checks recorded above. The initial four web-AI attempts and the
+later GLM 5.3 adversarial report have been adjudicated. This is not human peer
+review. Any later content revision must start v7 rather than overwrite the
+preserved v3, v4, v5, or v6 files.
 
 ## Claim boundary
 

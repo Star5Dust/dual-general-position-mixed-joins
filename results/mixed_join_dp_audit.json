@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-08-28",
+  "audit_date": "2026-08-29",
   "beta_dp_vs_exhaustive_subset_search": {
     "comparisons": 985,
     "mismatch_count": 0,
@@ -88,6 +88,9 @@
       3,
       4
     ],
+    "reconstructed_tree_side_set_checks": 184,
+    "reconstructed_tree_side_set_failure_count": 0,
+    "reconstructed_tree_side_set_failures": [],
     "summaries": [
       {
         "nonisomorphic_tree_count": 1,
@@ -131,6 +134,6 @@
       8
     ]
   },
-  "schema_version": 1,
+  "schema_version": 2,
   "status": "computational verification evidence, not proof"
 }

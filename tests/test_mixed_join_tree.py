@@ -7,7 +7,12 @@ from experiments.audit_extension_candidates import (
     mixed_join_complete_tree,
     path_graph,
 )
-from src.dual_gp_independent import direct_dual_gp_number, graph_from_edges
+from src.dual_gp_independent import (
+    all_pairs_distances,
+    direct_dual_gp_number,
+    graph_from_edges,
+    is_dual_general_position,
+)
 from src.mixed_join_tree import (
     beta_tree_dp,
     is_beta_feasible,
@@ -60,6 +65,33 @@ def test_mixed_join_formula_matches_shortest_path_checker_on_small_matrix():
                 assert mixed_join_dual_gp_number(r, tree) == (
                     direct_dual_gp_number(mixed_join_complete_tree(r, tree))
                 )
+
+
+def test_reconstructed_tree_side_set_is_dual_gp_and_separates_weaker_problem():
+    # Root 0, internal vertices 1 and 2, and two leaves below each internal
+    # vertex form the depth-two complete binary tree used in the manuscript.
+    tree = graph_from_edges(
+        7,
+        ((0, 1), (0, 2), (1, 3), (1, 4), (2, 5), (2, 6)),
+    )
+    solution = maximum_beta_set(tree)
+    assert solution.value == 4
+    assert solution.selected == frozenset({3, 4, 5, 6})
+
+    # The weaker induced-maximum-degree-one condition admits five vertices.
+    weaker_witness = frozenset({0, 3, 4, 5, 6})
+    assert all(
+        sum(neighbor in weaker_witness for neighbor in tree[vertex]) <= 1
+        for vertex in weaker_witness
+    )
+    assert not is_beta_feasible(tree, weaker_witness)
+
+    for r in range(1, 5):
+        mixed_join = mixed_join_complete_tree(r, tree)
+        selected = frozenset(("T", vertex) for vertex in solution.selected)
+        assert is_dual_general_position(
+            selected, mixed_join, all_pairs_distances(mixed_join)
+        )
 
 
 def test_long_path_reconstruction_does_not_use_python_recursion():
