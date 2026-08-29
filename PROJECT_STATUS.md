@@ -44,7 +44,7 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3、v4、v5 均已冻结且哈希保持不变；最新不可覆盖稿为 `drafts/mixed_join_research_note_v6.tex`，49,825 bytes，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`。GLM 5.3 新对抗性报告已按定义、canonical proof、源码、独立 checker 和原文引用逐项裁决：它没有发现数学错误；C2 主要是审稿人未取得来源导致的 `UNKNOWN`，而非稿件引文错误；C1 的公开/随稿复现弱点、D1--D7 中成立的自含性和表述意见已进入 v6。主定理、所有定理值和证明依赖均未改变。新增 `requirements-lock.txt`、复现说明和 21,868-byte 固定补充包 `artifacts/mixed_join_v6_reproducibility.zip`（SHA-256 `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`）；补充包在干净目录解压后得到 `30 passed`，并逐字节复现主 JSON。主审计原有 985 次 DP/子集、11,003 次换根、985 次回溯和 184 次公式/定义比较继续零失败，另新增 184 次 DP 重构树侧集合的 definition-first dual-GP 检查，也为零失败。Pandoc 返回 0；35 个 labels 唯一、50 个 `ref/eqref`、13 个 cite keys 和 6 个 bibliography entries 全解析，13 条定理类陈述、13 个证明、环境栈与 0 投稿占位通过。用户安装的 MiKTeX 已找到；MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 对 v6 连续三遍编译成功。原生 `.log` 为 27,395 bytes、SHA-256 `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`，无 error、warning、overfull/underfull、未定义引用/引文、missing character 或 rerun request。编译器原始 PDF 为 14 页 A4、470,046 bytes、SHA-256 `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`；字体全部嵌入，外部链接已枚举，14 页全部渲染目视通过，并已原字节复制到 `output/pdf/mixed_join_research_note_v6.pdf`。五份期刊名稿仍是 v4 衍生格式参考，不能投稿；当前 DMGT 普通 `article` 首投稿包应使用 v6 TeX、v6 PDF 和补充 ZIP。多模型 AI 审查仍不等于人类同行评审，全领域 novelty/priority/publishability 仍为 `UNKNOWN`。唯一直接下一步是作者本人完整通读并批准 v6 的主定理、署名/affiliation、AI 披露、声明和补充材料表述；批准后只向一个期刊提交 v6 TeX、PDF 与 ZIP。**
+当前处于：**mixed join $K_r+T$ 的 v3、v4、v5 均已冻结且哈希保持不变；最新不可覆盖稿为 `drafts/mixed_join_research_note_v6.tex`，49,825 bytes，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`。GLM 5.3 新对抗性报告已按定义、canonical proof、源码、独立 checker 和原文引用逐项裁决：它没有发现数学错误；C2 主要是审稿人未取得来源导致的 `UNKNOWN`，而非稿件引文错误；C1 的公开/随稿复现弱点、D1--D7 中成立的自含性和表述意见已进入 v6。主定理、所有定理值和证明依赖均未改变。新增 `requirements-lock.txt`、复现说明和 21,868-byte 固定补充包 `artifacts/mixed_join_v6_reproducibility.zip`（SHA-256 `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`）；补充包在干净目录解压后得到 `30 passed`，并逐字节复现主 JSON。主审计原有 985 次 DP/子集、11,003 次换根、985 次回溯和 184 次公式/定义比较继续零失败，另新增 184 次 DP 重构树侧集合的 definition-first dual-GP 检查，也为零失败。Pandoc 返回 0；35 个 labels 唯一、50 个 `ref/eqref`、13 个 cite keys 和 6 个 bibliography entries 全解析，13 条定理类陈述、13 个证明、环境栈与 0 投稿占位通过。用户安装的 MiKTeX 已找到；MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 对 v6 连续三遍编译成功。原生 `.log` 为 27,395 bytes、SHA-256 `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`，无 error、warning、overfull/underfull、未定义引用/引文、missing character 或 rerun request。编译器原始 PDF 为 14 页 A4、470,046 bytes、SHA-256 `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`；字体全部嵌入，外部链接已枚举，14 页全部渲染目视通过，并已原字节复制到 `output/pdf/mixed_join_research_note_v6.pdf`。五份期刊名稿仍是 v4 衍生格式参考，不能投稿。DMGT 2026 公开指南确认首投稿只明确要求不超过 10 MB 的单栏逐行编号 PDF，当前 v6 PDF 符合；TeX source 在录用后提交。补充 ZIP 若登录表单有相应字段则同时上传，否则应先邮件询问编辑部附加方式。多模型 AI 审查仍不等于人类同行评审，全领域 novelty/priority/publishability 仍为 `UNKNOWN`。唯一直接下一步是作者本人完整通读并批准 v6，然后注册/登录 DMGT、只向该期刊提交 v6 PDF，并保证补充材料表述与实际附件一致。**
 
 已经完成：
 
@@ -124,6 +124,7 @@ $$
 - 从冻结 v5 新建 `drafts/mixed_join_research_note_v6.tex`，不改主定理值或证明依赖；删除内部阶段行话，修改摘要术语，显式说明 Jiang 无需第二因子连通、$|V(T)|\ge3$ 的作用和 $F_3$ 例外，并用深度 2 完全二叉树证明较弱的 induced-maximum-degree-one 优化可有不同最优值。该例由子集穷举、DP 和 definition-first checker 独立核对为 $\beta=4$，较弱问题有大小 5 的可行集，且 $gp_d(K_1+T)=4$。
 - 扩展 `experiments/audit_mixed_join_dp.py`：在 46 棵 3--8 阶非同构树与 $r=1,2,3,4$ 的 184 个 mixed joins 上，将 DP 重构出的树侧集合直接交给 shortest-path dual-GP checker，184/184 可行；原四类比较仍全为零失败。新增回归测试后得到 `30 passed in 0.33s`。新增锁定环境、`REPRODUCIBILITY.md` 和可随稿上传的固定 ZIP；ZIP 在干净目录解压后测试通过并逐字节复现 `results/mixed_join_dp_audit.json`。
 - 使用用户安装的 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 对 v6 三遍真实编译。最终原生日志无 warning/error/overfull/underfull/未定义引用/引文/缺字/rerun，输出 14 页 A4 PDF。全部字体嵌入，邮件/DOI/arXiv 链接可枚举，14 页渲染逐页核验无裁切、重叠、断表、黑块、缺字或异常分页。当前 TeX/PDF/log 的大小和 SHA-256 已记录在当前阶段、版本历史和 GLM 裁决笔记中。
+- 在用户准备实际投稿时重新读取 DMGT 2026 官网、作者指南、注册、登录与编辑部联系页。确认 DMGT 仍是当前稿的首选：scope 包含 structural graph results、无 APC，首投稿只公开要求通讯作者信息、摘要、关键词、2020 MSC 和不超过 10 MB 的单栏逐行编号 PDF；`dmgt` class、TeX source 和附加文件在录用后要求。当前 470,046-byte v6 PDF 完全符合公开首投文件要求。登录后的 supplement 字段不可公开查看，若不存在则应联系 `dmgt@wmie.uz.zgora.pl` 询问 ZIP 附件方式，不能假称已经随稿提供或因此强制先公开 GitHub。
 
 尚未开始：
 
@@ -353,7 +354,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 ### Next — 只做这一项
 
-作者本人完整通读并批准 `drafts/mixed_join_research_note_v6.tex` 或其 14 页 PDF，重点确认主定理、姓名/affiliation/email、Codex 使用披露、funding 与 competing-interests 声明，以及补充材料/数据可得性表述。若全部认可，投稿前再现场核对唯一目标期刊的当前 author instructions 和 Jiang 最新版本，然后只向一个期刊提交 v6 TeX、v6 PDF 与 `artifacts/mixed_join_v6_reproducibility.zip`。五份 v4 期刊衍生稿不得提交。
+作者本人完整通读并批准 `drafts/mixed_join_research_note_v6.tex` 或其 14 页 PDF，重点确认主定理、姓名/affiliation/email、Codex 使用披露、funding 与 competing-interests 声明，以及补充材料/数据可得性表述。若全部认可，注册并登录 DMGT，只向该期刊提交 v6 PDF；公开指南没有要求首投 TeX。若登录后的表单提供 supplement 字段则上传固定 ZIP，否则先邮件询问编辑部如何附加，再确保 availability statement 与实际交付一致。五份 v4 期刊衍生稿不得提交。
 
 ### After that — 暂不执行
 
@@ -385,7 +386,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - `drafts/journal_versions/*.tex`：DMGT、Graphs and Combinatorics、Discrete Mathematics、Discrete Applied Mathematics、Computational and Applied Mathematics 五份 v4 本地格式参考；只分流 preamble/front matter/declarations/reference presentation，Introduction--Conclusion 与 v4 逐字节一致，但均已被 v6 内容 supersede，不得直接投稿。精确逐文件哈希见该目录 README 和版本历史。
 - `drafts/mixed_join_research_note.tex`：遗留的无版本号文件，当前与 v2 字节相同；不再作为编辑目标。
 - `notes/collaborator_reading_guide.md`：当前 v6 人工审阅入口，列出证明依赖、复现路线、30 项测试、编译证据和必须保留的限制；9,217 bytes，SHA-256 `B8E89FF894E9607C6E16B09C3C98EA8FAFB75ED11F466477799511FC91C74F8A`。
-- `notes/target_journals_and_author_info.md`：目标期刊分层、作者信息/声明清单、独立研究者 affiliation、Codex 披露、补充包、MSC 和提交 gate；已更新为 v6 当前候选；14,519 bytes，SHA-256 `86C3A07FDA8BC77317D88D218D9561FA95ABCE249F2FB7AD9F40E9C95E4025A0`。
+- `notes/target_journals_and_author_info.md`：目标期刊分层、作者信息/声明清单、独立研究者 affiliation、Codex 披露、补充包、MSC 和提交 gate；已按 DMGT 2026 公开首投流程复核；15,109 bytes，SHA-256 `CFC621B3370D14614C07CFEE917903FCEA4AC47112F18509529B899DE60A5393`。
 - `notes/review_package_manifest.md`：v6 内部审阅/投稿包的非自引用制品、大小、哈希、依赖和编译状态清单；manifest 自身及持续变化的状态/日志故意不自哈希。
 - `REPRODUCIBILITY.md`：从全新环境复现实验、测试和主 JSON 的命令；1,442 bytes，SHA-256 `C287D53518F003976243CEFB00B29E4E41881F32D4FFA6AD1F51F8937DFF0E36`。
 - `requirements-lock.txt`：v6 补充包的锁定 Python 环境；340 bytes，SHA-256 `4811AEA9E5C13E192FB5865D7095ECBA19A33887ACC1D567AB5368E1D31DDE5E`。

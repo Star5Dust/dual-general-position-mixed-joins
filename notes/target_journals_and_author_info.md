@@ -42,6 +42,9 @@ Official pages:
 
 - Scope: https://www.dmgt.uz.zgora.pl/
 - Guide for authors: https://www.dmgt.uz.zgora.pl/system_pages/guide.php
+- Author registration: https://www.dmgt.uz.zgora.pl/secure/user/register.php
+- Author login: https://www.dmgt.uz.zgora.pl/secure/login.php
+- Editorial-office contact: https://www.dmgt.uz.zgora.pl/system_pages/display_page.php?E48D6848C298E50780C6
 - Closely related standard-general-position paper:
   https://www.dmgt.uz.zgora.pl/publish/article.php?doi=2269
 
@@ -275,9 +278,13 @@ current DMGT initial-submission package. Before any submission:
 2. check on the submission date whether Jiang's v1.0.1 preprint has changed or
    acquired a journal version;
 3. reconfirm the filled author metadata, declarations, and AI-use disclosure;
-4. upload `mixed_join_v6_reproducibility.zip` with the TeX and PDF, or revise
-   the availability statement if the selected submission system cannot accept
-   it;
+4. DMGT's public guide currently asks for only the line-numbered PDF at first
+   submission and requests TeX source after acceptance. If the authenticated
+   submission form offers a supplementary-file field, also upload
+   `mixed_join_v6_reproducibility.zip`; otherwise ask the editorial office how
+   to attach it before leaving the manuscript's “provided with this manuscript”
+   statement unchanged. Do not upload v6 TeX at first submission unless the
+   authenticated form explicitly asks for it;
 5. retain DMGT as the working first target unless the author deliberately
    changes it; v6 has already completed real MiKTeX compilation, native-log
    review, and 14-page inspection, but the live journal instructions should

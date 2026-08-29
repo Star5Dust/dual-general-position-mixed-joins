@@ -2381,7 +2381,35 @@ scope.
   refreshed audit, tests, and synchronized handoff records in the local commit
   titled `Prepare submission-ready v6 package`.  No push or external upload
   was attempted.
-- Unique next step: the author must read and approve the complete v6 source or
-  PDF, especially the theorem, name/affiliation/email, AI-use disclosure,
-  declarations, and supplement statement.  If approved, submit only v6 TeX,
-  v6 PDF, and the fixed ZIP to one journal; do not submit a v4 derivative.
+- Unique next step at stage close: the author must read and approve the
+  complete v6 source or PDF, especially the theorem,
+  name/affiliation/email, AI-use disclosure, declarations, and supplement
+  statement, and then follow the live instructions of one journal only.  The
+  subsequent DMGT recheck below clarifies that its public first-submission
+  guide asks for the PDF, not the TeX source.
+
+## 2026-08-29: live DMGT submission-route recheck
+
+- Reopened the official DMGT homepage, 2026 guide for authors, registration,
+  login, and editorial-office contact pages immediately before giving the
+  author submission instructions.  The site identifies structural graph
+  results as in scope and states that authors pay no APC.
+- The public first-submission instructions ask for the corresponding author's
+  name, affiliation and email, abstract, keywords, 2020 MSC, and a manuscript
+  PDF no larger than 10 MB.  The PDF may come from any LaTeX class but must be
+  one-column and line-numbered.  The `dmgt` class, TeX source, and additional
+  source files are requested after acceptance.
+- The final v6 PDF is one-column, line-numbered, 14 A4 pages, and 470,046 bytes,
+  so it meets every publicly visible file condition.  The public pages do not
+  expose the authenticated submission form and therefore do not establish
+  whether an initial-submission supplementary-file field exists.
+- Correct operational boundary: upload the v6 PDF at first submission.  Upload
+  `mixed_join_v6_reproducibility.zip` too if the authenticated form offers an
+  appropriate field; otherwise contact `dmgt@wmie.uz.zgora.pl` and ask how to
+  attach it before relying on the manuscript's “provided with this manuscript”
+  statement.  A public GitHub release is not a prerequisite and must not be
+  claimed before it exists.
+- Recommendation remains DMGT as the first and only simultaneous target.
+  Graphs and Combinatorics remains a stretch alternative, and Discrete
+  Mathematics remains the broader fallback after a final decision at a later
+  stage.  No paper, email, account, or submission was created in this check.
