@@ -54,36 +54,39 @@ digests are SHA-256, computed on the files as stored in this workspace.
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
-| `README.md` | 2,851 | `C026F8C4BB97CC9447B8213E7B1E8BEFB92F87ED671DBCF5878AC7351E7FC272` |
-| `notes/collaborator_reading_guide.md` | 9,977 | `D22DE369783119B7D59CBD7ED71C0F2F6A3FE1A35208876ED747B0FD06A60169` |
+| `README.md` | 2,979 | `D3EDB568B7E0443BE00B4F8B7B1D5DF308FFC3CCA966FBDE8B894EDC4DBC446C` |
+| `notes/collaborator_reading_guide.md` | 10,414 | `E47F0B6DEE0256E0741491E8070BF2B8F8F5D9183ED2D03A63F8F249BCA23F7A` |
 | `drafts/mixed_join_research_note_v3.tex` | 44,087 | `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6` |
 | `drafts/mixed_join_research_note_v2.tex` | 43,773 | `D648DD44CA321475BCA94CBB29C86F22A218738FAE1546C372AAD774F6FAFF1F` |
-| `drafts/TEX_VERSION_HISTORY.md` | 6,750 | `4F3C6F3D7FBA3CE369EF75042C7B112CB676D8788555935EDDA62CFB151ED364` |
+| `drafts/TEX_VERSION_HISTORY.md` | 7,571 | `804B06E73CA6F13AC65FB1DB7FD90B71C472FA2693B719904F8C2F4F86AF93C0` |
 | `drafts/mixed_join_research_note.md` | 36,960 | `9A76A7E8E6AE9BD0505224234C5BEF6379F713B4753D11FB11F5AEEA03E531A7` |
 | `proofs/mixed_join_tree.md` | 10,400 | `65D23FAD3BA238FC068AD97963C1E136C8E5DD5C9DAEC29B76F84FC9A3D06409` |
 | `notes/mixed_join_literature_positioning.md` | 19,931 | `0C1224F133C40ED22FC7BE828575D683384602233DEB8183CD9000D558A53D97` |
 
-Recommended reading order is the collaborator guide, v3 LaTeX manuscript and
-its reviewed compiled artifacts, v2 warning-bearing baseline, Markdown
-manuscript, version history, proof-development note, and literature-positioning
-note. V3 is the latest compiled submission-style draft; v2 is retained
-unchanged for provenance, and the Markdown file is the content-equivalent
-readable source.
+Recommended reading order is the collaborator guide, dynamic v5 candidate and
+AI-review adjudication, v3 LaTeX manuscript and its reviewed compiled
+artifacts, v2 warning-bearing baseline, Markdown manuscript, version history,
+proof-development note, and literature-positioning note. V3 is the latest
+compiled submission-style draft; v2 is retained unchanged for provenance, and
+the Markdown file is an earlier readable source with the same main theorem.
 
-The local DMGT candidate `drafts/mixed_join_research_note_v4.tex`, its five
+The frozen AI-reviewed source `drafts/mixed_join_research_note_v4.tex`, the
+adjudicated candidate `drafts/mixed_join_research_note_v5.tex`, its review
+adjudication note, the five
 journal-name derivatives under `drafts/journal_versions/`, and
 `notes/target_journals_and_author_info.md` are submission-preparation files,
 not replacements for this compiled v3 review baseline. V4 and the derivatives
 contain the verified sole-author metadata and declarations and zero submission
-placeholders, but they have not been compiled or externally reviewed; they are
-therefore listed with the mutable handoff files below rather than added to the
-stable review-package digest table.
+placeholders. V5 contains only adjudicated minor precision changes and has
+passed static checks, but it has not been compiled or visually reviewed. These
+files are therefore listed with the mutable handoff files below rather than
+added to the stable review-package digest table.
 
 ## Reproducibility dependency closure
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
-| `requirements.txt` | 47 | `CBD4373D07A99252A00580AAEE497F385535E3E3A2CB80AC6CE40A8E5A943B35` |
+| `requirements.txt` | 54 | `74BBC0D1430A450DF9DAB292A76970B01A9CDB84922E419BA24FF26704F12E9B` |
 | `src/__init__.py` | 75 | `ED1639318E17C6FF6C2B89761E68E2304314B2081B7A4F674C85D46BF40F19F0` |
 | `src/mixed_join_tree.py` | 8,514 | `D3DDAB46510B217BF9C442CC57302953C4D0C29F208DD7ADE06381F2D90A8B9D` |
 | `src/dual_gp_independent.py` | 9,021 | `D7BA1C520DC6991E78CB8BAE609A598E6BBF950DA03C1EAC9BA4D30D1EFFF231` |
@@ -138,6 +141,8 @@ artifact without a separate rights and provenance check.
 - `PROJECT_STATUS.md`;
 - `notes/research_log.md`;
 - `drafts/mixed_join_research_note_v4.tex`;
+- `drafts/mixed_join_research_note_v5.tex`;
+- `notes/external_ai_review_adjudication.md`;
 - `drafts/journal_versions/README.md`;
 - `drafts/journal_versions/Discussiones_Mathematicae_Graph_Theory.tex`;
 - `drafts/journal_versions/Graphs_and_Combinatorics.tex`;
@@ -148,8 +153,8 @@ artifact without a separate rights and provenance check.
 - `notes/review_package_manifest.md` (this file).
 
 These files remain part of a complete internal handoff, but status and log are
-updated when each stage closes, v4 and its journal-format derivatives may be
-superseded after external review and typesetting validation, and hashing the
+updated when each stage closes, v5 may be superseded after later review and
+typesetting validation, and hashing the
 manifest inside itself would be self-referential. The target-journal note and
 journal-version index are paired with that mutable submission workflow rather
 than the compiled v3 package. Their omission from the digest tables is
@@ -178,13 +183,14 @@ The v3 PDF, complete displayed log, and all 13 rendered pages have now been
 checked. The typesetting stage is complete with no remaining warning or visual
 defect. The native plain-text `.log` was not supplied, so the printable log
 content is verified but its original bytes are not archived here. No TeX
-engine was installed in this workspace. The next review stage is external
-human mathematical and submission review using the collaborator guide. The
-local v4 candidate and all five journal-format derivatives now have verified
-author metadata and pass static parsing/content-identity checks, but still need
-that human review and a real compile/log/page audit for the one selected target;
-any later review-driven revision must start v5 rather than overwrite the
-preserved v3 baseline or the current v4 candidate.
+engine was installed in this workspace. Four independent web-AI review
+attempts of frozen v4 have been adjudicated: one was a detailed proof audit,
+one contained a rejected false critical objection, one was editorial only,
+and one did not receive the manuscript. V5 incorporates the supported minor
+corrections. This is not human peer review. V5 still needs a real
+compile/log/page audit; after content approval, only the selected journal
+derivative should be regenerated. Any later content revision must start v6
+rather than overwrite the preserved v3, v4, or v5 files.
 
 ## Claim boundary
 

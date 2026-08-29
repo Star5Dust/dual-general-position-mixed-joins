@@ -28,11 +28,12 @@
 - `results/`：实验输出与整理后的结果。
 - `proofs/`：证明草稿与证明检查记录。
 - `drafts/`：research note 工作稿；最新已编译并逐页审阅的基线是
-  `drafts/mixed_join_research_note_v3.tex`。当前本地投稿候选是面向 DMGT
-  首次投稿要求的 `drafts/mixed_join_research_note_v4.tex`；单作者信息与声明
-  已填充。五个计划投稿期刊的本地格式版本位于
-  `drafts/journal_versions/`，文件名即期刊名；它们共享同一份 v4 数学正文，
-  但尚未完成人类审阅或真实编译，不能直接投稿。`v2` 和 `v3` 均冻结保留，
+  `drafts/mixed_join_research_note_v3.tex`。冻结的 v4 已分别交给四个网页 AI
+  审查，逐条裁决见 `notes/external_ai_review_adjudication.md`；吸收有效小修订
+  后的当前内容候选为 `drafts/mixed_join_research_note_v5.tex`。五个计划投稿
+  期刊的本地格式版本位于 `drafts/journal_versions/`，文件名即期刊名；它们
+  仍基于 v4，现只作格式参考，不能直接投稿。v5 尚未真实编译或逐页审阅，
+  多模型 AI 审查也不等于人类同行评审。`v2`、`v3` 和 `v4` 均冻结保留，
   内容同步的 Markdown 版本为 `drafts/mixed_join_research_note.md`。编号 TeX
   一经后续版本取代即不得覆盖；详细映射与格式依赖见
   `drafts/TEX_VERSION_HISTORY.md` 和 `drafts/journal_versions/README.md`。

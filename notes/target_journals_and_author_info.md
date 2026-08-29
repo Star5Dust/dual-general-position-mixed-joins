@@ -15,7 +15,7 @@ Only one journal may consider the manuscript at a time.
 ### Primary target: Discussiones Mathematicae Graph Theory (DMGT)
 
 **Recommendation:** best topical fit for the present manuscript and the target
-used for the local v4 first-submission candidate.
+used for the frozen v4 and current v5 first-submission candidates.
 
 Why it fits:
 
@@ -26,7 +26,7 @@ Why it fits:
   operations, so the intended readership already knows the surrounding topic.
 - The paper is well below DMGT's requested maximum of 30 journal-style pages.
 
-Current official first-submission requirements relevant to v4:
+Current official first-submission requirements relevant to v5:
 
 - no submission fee or APC;
 - English used consistently;
@@ -203,7 +203,7 @@ For every author:
 ## Author response recorded on 29 August 2026
 
 The following information and working decisions have now been applied to the
-local v4 candidate and all five journal-name derivatives:
+frozen v4, current v5, and all five v4-derived journal-name files:
 
 - Sole author and corresponding author: **Yi Yuteng**. The Chinese name
   `易宇腾` is retained in this internal note but is not added to the English
@@ -245,9 +245,11 @@ author has graduated and reported no current institutional position. It may be
 added later only if the author confirms that the work was carried out there and
 that listing the institution is accurate and appropriate.
 
-This metadata completion does not certify the mathematics. Before submission,
-the author must personally review and approve the manuscript, and the external
-human mathematical and literature review remains an open gate.
+This metadata completion does not certify the mathematics. Four web-AI review
+attempts have been adjudicated in
+`notes/external_ai_review_adjudication.md`, but they do not constitute human
+peer review. Before submission, the author must personally review and approve
+the manuscript.
 
 ## Metadata already selected in v4 and its journal derivatives
 
@@ -265,18 +267,20 @@ https://msc2020.org/MSC_2020.pdf
 
 ## Submission gates still open
 
-The five journal-specific files are candidates, not ready-to-upload final
-manuscripts. Before any submission:
+The five v4-derived journal-specific files are superseded format references,
+not ready-to-upload final manuscripts. Before any submission:
 
-1. obtain the external human mathematical and literature review already listed
-   as the next scientific gate in `PROJECT_STATUS.md`;
+1. use the adjudicated v5 as the content source; if a qualified human review
+   later becomes available, preserve and adjudicate it rather than treating
+   the multi-model AI screen as equivalent;
 2. check on the submission date whether Jiang's v1.0.1 preprint has changed or
    acquired a journal version;
 3. reconfirm the filled author metadata, declarations, and AI-use disclosure;
 4. reconfirm the availability-on-request policy or deliberately replace it
    with a public repository or journal-supplement statement;
-5. select exactly one target, obtain its current official class package, then
-   run a real LaTeX compilation, complete log review, and page-by-page PDF
-   inspection on that journal-specific file;
+5. retain DMGT as the working first target unless the author deliberately
+   changes it, regenerate only that one target from v5, obtain its current
+   official class package if needed, then run a real LaTeX compilation,
+   complete log review, and page-by-page PDF inspection;
 6. confirm that the manuscript is not simultaneously under consideration by
    another journal.

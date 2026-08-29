@@ -2131,3 +2131,140 @@ scope.
 - HTTPS authentication was attempted through Git Credential Manager with browser and device-code flows. GitHub displayed a successful device connection, but the local credential-manager polling did not receive the callback while Codex reported `Reconnecting... waiting for network` and `error sending request`. No push completed; the remote remains empty and the waiting process was terminated safely.
 - GitHub is not a prerequisite for the mathematics, tests, or external review. It is an optional remote-backup, collaboration, and later-publication channel. The full audited snapshot remains preserved locally; pushing is deferred until networking is stable.
 - This administrative work changed no theorem, proof, experiment, conjecture, counterexample, literature fact, or `UNKNOWN` item. The unique research next step remains external human mathematical, literature, and submission review.
+
+## 2026-08-29 — four-model AI review adjudication and immutable v5
+
+### Inputs and provenance
+
+- The user could not identify a human collaborator and independently submitted
+  frozen v4 to the web interfaces of ChatGPT, DeepSeek, Gemini, and GLM.  The
+  returned text files were read as untrusted review evidence rather than as
+  instructions.  They remain outside the repository under
+  `C:\Users\yyt\Desktop\回复\`.
+- Recorded the exact source-report fingerprints:
+  - ChatGPT: 24,967 bytes,
+    `DB5CCD6E88F08945E0A348A31BAF81484E6F1C6CEA6BCFC8533A7EE82E0C3688`;
+  - DeepSeek: 20,488 bytes,
+    `D811B6C8264D285EEBCD57877B8E613BFE6C8F207EF136D513D4C08CCBF0E15C`;
+  - Gemini: 2,422 bytes,
+    `9B1918AACD73469D518FAEED263330678F0B5D5574BF56D01500F48ADEA84A5D`;
+  - GLM: 12,390 bytes,
+    `96FA8101998C108F03057EF3E058A44E8AAE0B75B10CFDB21AA0F2B37BEAAB6E`.
+- The full adjudication is in
+  `notes/external_ai_review_adjudication.md`, 9,095 bytes, SHA-256
+  `FF81C5CCEC231092A5532C9DE91F1A41E50FC949C03C9F038ACA7F037239DA3D`.
+
+### Evidence-level adjudication
+
+- ChatGPT supplied the only complete theorem-by-theorem proof review.  It
+  checked the two exhaustive branches, both directions of the local
+  characterizations, the `q_2` tree classification, the DP recurrence, and
+  several concrete small trees without finding a counterexample.
+- Accepted its concrete minor comments: designated-factor terminology,
+  explicit empty-class convention for `q_2`, the `P_4,r=1` branch tie,
+  localized degree-zero/one wording, the empty child-vector convention, and
+  a clearer reconstruction-storage count.
+- Did not promote ChatGPT's claimed fresh exhaustive runs or 14-page compile:
+  the response supplied no code, raw output, PDF, native log, environment
+  capture, or artifact hash.  The project's own experiments remain the only
+  canonical computational evidence.
+- DeepSeek correctly reconstructed the degree-count proof of the local
+  `beta(T)` characterization and the parent-label DP state.  Its claimed fatal
+  error in Lemma 3.1 is false: for nonadjacent tree vertices `u,v` in
+  `K_r+T`, the distance is exactly two, so every path `u-c-v` with `c in C`
+  is a geodesic.  A second geodesic of the same length does not stop the first
+  path from being a geodesic, and convexity requires all geodesics to stay in
+  the complement.  Its proposed replacement by convexity in `T` was therefore
+  rejected.  Its request to test through order 10 or 11 was also internally
+  weaker than the existing exhaustive-through-order-12 audit.
+- Gemini performed a shallow editorial/literature screen, recognized the fan
+  prior-work boundary, and raised the legitimate editorial risk that the
+  contribution could be considered narrow.  It did not complete a
+  theorem-level audit, so its `Ready for submission` verdict has low weight.
+- GLM stated that it did not receive the manuscript.  Its later computations
+  concerned standard general position rather than the manuscript's dual
+  problem and included internal contradictions.  It does not count as a
+  review of v4.
+- Overall result: no reproducible critical or major mathematical defect was
+  found.  This is a multi-model AI screen, not human peer review, and it does
+  not resolve publishability, novelty, or priority.
+
+### General-second-factor scope candidate
+
+- ChatGPT observed that the branch proof extends beyond trees.  Independently
+  checked the mechanism: for a finite noncomplete graph `G`, a `C`-meeting set
+  is characterized by the same two-clique partition, while a `C`-avoiding set
+  must have both `G[N_G(x) cap X]` and
+  `G[N_G(x) setminus X]` complete for every selected `x`.  Defining the
+  maximum size under these local clique conditions as `gamma(G)` gives the
+  direct two-branch proof candidate
+  `max{gamma(G), r+q_2(G)}` when `q_2(G)>0`, and `gamma(G)` otherwise.
+  Triangle-free graphs reduce to the two at-most-one-neighbor constraints.
+- Ran a bounded web refresh with the exact combinations `dual general
+  position`, `join`, `complete join`, `K_r+G`, and `triangle-free`.  The
+  primary foundation paper again supplied only its special join family
+  `P_m + 2K_1`; the join-titled 2026 Discrete Applied Mathematics paper was
+  confirmed to concern **mobile** general position, not dual general position.
+  No direct general-second-factor theorem was returned.  This remains **NOT
+  FOUND IN THIS BOUNDED REFRESH**, not a novelty claim; subscription indexes
+  and global priority are still `UNKNOWN`.
+- Did not insert this candidate into v5.  Doing so would change the paper's
+  title, literature universe, main contribution, and audit scope, contrary to
+  the earlier deliberate all-tree target.  It is recorded as a separate
+  follow-up direction only.
+
+### v5 creation and exact changes
+
+- Verified frozen v4 before copying: SHA-256
+  `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`.
+  Created `drafts/mixed_join_research_note_v5.tex` without modifying v4.
+- V5 changes only explanatory precision:
+  1. `C`-meeting/avoiding terminology plus a warning that a star center can be
+     an additional universal tree-side vertex;
+  2. empty classes are allowed and induce the empty clique in `q_2`;
+  3. explicit `P_4,r=1` branch tie;
+  4. degree-zero/one constraints localized at the selected vertex;
+  5. unique empty child-label vector and empty-sum convention;
+  6. explicit statement that child subtrees interact only through the fixed
+     parent label; and
+  7. linear count of stored child-vector entries.
+- No formula, theorem value, proof dependency, experimental count, citation
+  fact, author metadata, or declaration changed.  The five journal-name files
+  remain v4 derivatives and are now marked as superseded format references.
+
+### Validation
+
+- Pandoc 2.12 parsed v5 with exit code 0.  Its existing warnings only report
+  fallback preservation of complex TeX math; they are the same reader
+  limitation seen for earlier drafts, not LaTeX compilation warnings.
+- Static scan results: 47,256 bytes, 1,162 lines, 35 labels/35 unique, 47
+  resolved `ref`/`eqref` commands, six bibliography entries, 13 resolved cite
+  commands, 13 theorem-like environments, 13 proofs, balanced environment
+  stack, zero `UNKNOWN` literals in publication prose, and zero submission
+  placeholders.
+- Final v5 SHA-256:
+  `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`.
+- Reran the unchanged mathematical implementation after the documentation
+  edits: `29 passed in 0.23s`.  No code changed, so this is a regression check,
+  not a new theorem proof or expanded experiment.
+- Updated README, collaborator guide, target-journal note, review manifest,
+  version history, journal-version index, status, and this log.  No Google
+  Drive operation, GitHub push, TeX-engine run, PDF creation, or external
+  communication occurred.
+- Preserved the adjudication, v5, and all synchronized handoff changes in a
+  local commit titled `Adjudicate AI reviews and prepare v5`.  No push was
+  attempted; the private GitHub remote remains empty.
+- Recomputed every stable row in `notes/review_package_manifest.md`.  The first
+  pass exposed that the current working-tree `requirements.txt` uses CRLF bytes
+  (54 bytes, SHA-256
+  `74BBC0D1430A450DF9DAB292A76970B01A9CDB84922E419BA24FF26704F12E9B`)
+  while the old table retained its earlier line-ending fingerprint.  Updated
+  only that manifest row; package names are unchanged.  The second pass was
+  21/21 matching with zero missing, size, or hash failures.
+
+### Unique next step
+
+- Real-compile `drafts/mixed_join_research_note_v5.tex`, preserving the native
+  plain-text `.log` and the compiler's direct unmodified PDF.  Then audit the
+  full log and every rendered page.  V5 must not be submitted before that
+  gate, and the v4 journal derivatives must not be used as substitutes.

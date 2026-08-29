@@ -4,13 +4,16 @@ Date: 29 August 2026
 
 ## Purpose and claim status
 
-The manuscript `drafts/mixed_join_research_note_v3.tex` gives a self-contained
+The manuscript `drafts/mixed_join_research_note_v5.tex` gives a self-contained
 classification and algorithm for the mixed join `K_r+T`, where `r>=1` and `T`
 is a tree of order at least three. The result is internally proved and its
 implementation has passed two bounded checks with different verification
 logic. It
 has **not** been peer reviewed, and this project makes **no novelty or priority
-claim**. The externally compiled v2 PDF and its complete supplied log were
+claim**. V5 incorporates adjudicated minor corrections from four external web
+AI review attempts; `notes/external_ai_review_adjudication.md` records which
+comments were accepted, rejected, or left `UNKNOWN`. This does not substitute
+for human peer review. The externally compiled v2 PDF and its complete supplied log were
 reviewed on 29 August 2026. That review found no compilation error, unresolved
 reference, missing font, clipping, or mathematical regression. It did expose
 one repeated longtable-width warning and two low-severity lead-in/page breaks.
@@ -150,15 +153,18 @@ Primary reproducibility files are:
 
 Read in this order:
 
-1. `drafts/mixed_join_research_note_v3.tex` (latest compiled and reviewed
-   submission-style draft), together with the v3 PDF and displayed-log
-   printout identified by hash in `drafts/TEX_VERSION_HISTORY.md`;
-2. `drafts/mixed_join_research_note_v2.tex` (frozen compiled baseline);
-3. `drafts/mixed_join_research_note.md` (content-equivalent readable source);
-4. `drafts/TEX_VERSION_HISTORY.md` (immutable-version and Drive mapping);
-5. `proofs/mixed_join_tree.md` (earlier proof-development note);
-6. `notes/mixed_join_literature_positioning.md` (query matrix and limits);
-7. the reproducibility files listed above.
+1. `drafts/mixed_join_research_note_v5.tex` (latest content candidate) and
+   `notes/external_ai_review_adjudication.md`;
+2. `drafts/mixed_join_research_note_v3.tex` (latest compiled and visually
+   reviewed baseline), together with the v3 PDF and displayed-log printout
+   identified by hash in `drafts/TEX_VERSION_HISTORY.md`;
+3. `drafts/mixed_join_research_note_v2.tex` (frozen compiled baseline);
+4. `drafts/mixed_join_research_note.md` (earlier readable source with the same
+   mathematical theorem, but without v5's submission and review edits);
+5. `drafts/TEX_VERSION_HISTORY.md` (immutable-version and Drive mapping);
+6. `proofs/mixed_join_tree.md` (earlier proof-development note);
+7. `notes/mixed_join_literature_positioning.md` (query matrix and limits);
+8. the reproducibility files listed above.
 
 For a complete internal handoff, also include `PROJECT_STATUS.md` and
 `notes/research_log.md`. The historical 92-case screen is in

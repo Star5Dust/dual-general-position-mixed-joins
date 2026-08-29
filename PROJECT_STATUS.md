@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-08-29 (local initial commit preserved; private GitHub push deferred after network/authentication failure; external human review remains next)
+Last updated: 2026-08-29 (four external web-AI review attempts adjudicated; immutable v5 prepared and statically verified; real v5 compilation is next)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -44,7 +44,7 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3 仍是冻结的、已完成真实编译和 13 页逐页核验的数学/排版基线，SHA-256 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`，不得覆盖；本地 v4 仍是含已确认单作者元数据和声明的内容基线，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，也未被覆盖。现已在 `drafts/journal_versions/` 建立五份以期刊名命名的本地 TeX 候选：DMGT（v4 精确副本）、Graphs and Combinatorics（`svjour3/smallextended`）、Discrete Mathematics 与 Discrete Applied Mathematics（`elsarticle/preprint`）、Computational and Applied Mathematics（`sn-jnl/sn-mathphys-ay`）。五份均通过 Pandoc 和结构检查，各有 35 个唯一 label、47 个已解析交叉引用、6 个 bibliography entries、13 个已解析 cite commands、13 条定理类陈述、13 个证明、0 个投稿占位；从 Introduction 到 Conclusion 的正文均与 v4 逐字节一致。格式转换没有改变定理、证明、实验、引用事实或限制。作者均为 Yi Yuteng，`Independent Researcher, Shanghai, China`，邮箱 `yiyuteng29@163.com`，代码声明仍为 reasonable request。本机无 TeX engine，因此五份均未真实编译、未审日志或逐页 PDF，不得直接投稿。GitHub private repository `Star5Dust/dual-general-position-mixed-joins` 已由用户创建；审计后的 43 文件上传集已保存为本地首次提交 `e274fd3`，但 HTTPS 认证回传因 VPN/网络故障未完成，远端仍为空，推送已安全延后。仓库尚非公开，也未选定 license 或 Zenodo DOI。唯一直接下一步仍是外部人类数学、文献和投稿审阅；之后只选择一个目标做最终编译与投稿，禁止同时投稿**。
+当前处于：**mixed join $K_r+T$ 的 v3 仍是冻结的、已完成真实编译和 13 页逐页核验的排版基线，SHA-256 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`，不得覆盖；本地 v4 仍是送交四个网页 AI 独立审查的冻结内容基线，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，也未被覆盖。ChatGPT、DeepSeek、Gemini、GLM 四份原始回复已完整读取并按证据逐条裁决：ChatGPT 给出最完整的逐证明审计且未发现反例；DeepSeek 对 $\beta(T)$ 与 DP 的重建有效，但其所谓 Lemma 3.1 致命错误是把“存在另一条同长测地线”误当成原长度 2 路径不再是测地线，已判为错误；Gemini 只是浅层编辑审查；GLM 明确没有收到稿件且审查了不同的 standard general-position 问题，不能计为有效审稿。没有得到可复现的 critical/major 数学缺陷。现已从 v4 新建不可覆盖的 `drafts/mixed_join_research_note_v5.tex`，SHA-256 `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`；v5 只吸收经核实的小修订：用 designated-factor $C$ meeting/avoiding 术语避免 apex 歧义，声明 $q_2$ 的空类约定，记录 $P_4,r=1$ 两分支并列，澄清度 0/1 顶点约束和 DP 空子向量、子树独立性及存储计数。定理值、证明依赖、实验数字、引用事实和声明均未改变。Pandoc 解析成功；35 个 label 唯一、47 个 `ref/eqref`、6 个 bibliography entries、13 个 cite commands 全部解析，13 条定理类陈述、13 个证明、环境栈和 0 个投稿占位均通过；测试重跑为 `29 passed in 0.23s`。GPT 提出的 $K_r+G$ 一般非完全第二因子推广在数学机制上成立为有依据的 proof candidate，但会改变标题、文献范围和贡献定位，且全领域 novelty/priority 未核验，因此没有塞入 v5。五份期刊格式稿仍是 v4 衍生物，现只保留作格式参考，不得投稿。多模型 AI 审查不是人类同行评审，v5 也尚未真实编译、审日志或逐页核验。GitHub private repository 仍为空；本地首次提交 `e274fd3` 与本轮题为 `Adjudicate AI reviews and prepare v5` 的本地提交均已保留，远端推送继续因网络/认证故障延后。唯一直接下一步是对 v5 进行真实 LaTeX 编译，取得原生 `.log` 和未改写的 PDF，再做完整日志与逐页验收；在此之前不得投稿**。
 
 已经完成：
 
@@ -118,14 +118,17 @@ $$
 - 核对上海交通大学浦江国际学院官网当前英文名为 `SJTU Global College`；由于用户已经毕业且没有当前机构职位，该教育经历没有写成现 affiliation。作者信息填充后，v4 的 Pandoc 解析、标签/引用/引文/环境检查再次通过，0 个投稿占位；35 个 labels、47 个 `ref/eqref`、6 个 bibliography keys、13 个 cite commands、13 条定理类陈述、13 个证明和 40 个显示公式保持。v3 哈希仍为 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`。本阶段没有修改数学实现、没有重跑旧测试、没有触碰 Google Drive。
 - 完成 GitHub 连接的只读核验：认证身份为 `Star5Dust`，但 installed accounts 与 accessible repositories 均为空，本机没有 `gh` CLI，且现有连接没有新建仓库接口；没有创建仓库、上传文件或改动远端状态。用户要求把代码公开列为待定事项，待其回家使用电脑后再创建私有仓库并授权 Codex；在实际公共 URL 经核验前，v4 的 availability-on-request 声明保持不变。
 - 完成五个目标期刊的官方格式复核并建立本地期刊名版本：DMGT 保留普通单栏逐行编号的首次投稿路线；Graphs and Combinatorics 使用官方 `svjour3` 的 `smallextended` 路线；Discrete Mathematics 与 Discrete Applied Mathematics 使用 Elsevier `elsarticle` 的 preprint 路线；Computational and Applied Mathematics 使用 Springer Nature `sn-jnl` 的 line-numbered `sn-mathphys-ay` 路线并按作者年制重排 bibliography。五份的 author/front matter、keywords/MSC、declarations 和引用样式按各路线分流，但 Introduction--Conclusion 与 v4 精确一致。Pandoc 五份均返回 0；标签、交叉引用、引文、环境、定理/证明和占位扫描全部通过。DMGT 文件与 v4 同哈希，v3/v4 均未覆盖。新增 `drafts/journal_versions/README.md`，并同步更新版本历史、目标期刊说明、README、review manifest、status 和 research log；没有调用 Google Drive，也没有修改数学代码或伪称重跑测试。
+- 收到用户分别从 ChatGPT、DeepSeek、Gemini 和 GLM 网页版取得的四份原始 AI 审稿回复，记录字节数与 SHA-256 后完整裁决。没有按多数投票：逐项对照 v4、canonical proof 和定义。判定 ChatGPT 的证明核验与五项小修订有效；DeepSeek 的 Lemma 3.1 致命 objection 为明确误报，因为非相邻端点在 join 中距离为 2，`u-c-v` 仍是测地线，另一条同长测地线不改变这一事实；Gemini 只提供低权重编辑意见；GLM 未收到稿件且混淆 standard 与 dual general position，不能作为有效审稿。没有发现可复现的 critical/major 数学错误。完整证据与逐项理由写入 `notes/external_ai_review_adjudication.md`。
+- 按不可覆盖规则从冻结 v4 新建 `drafts/mixed_join_research_note_v5.tex`，只实施术语、空类约定、$P_4,r=1$ tie 和 DP 边界/存储澄清，没有改变主公式、任何定理值、证明依赖、实验数字、引用事实或作者声明。v5 为 47,256 bytes、1,162 行，SHA-256 `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`；Pandoc 返回 0，35 个 labels 唯一，47 个 `ref/eqref`、13 个 cite commands 和 6 个 bibliography keys 全部解析，13 条定理类陈述、13 个证明、环境栈与 0 投稿占位均通过。重跑测试得到 `29 passed in 0.23s`。五份 v4 期刊衍生稿已明确标为 superseded format references；本轮没有真实 TeX 编译、Drive 操作或 GitHub push。
 
 尚未开始：
 
-- 外部人类合作者按 `notes/collaborator_reading_guide.md` 进行的数学/投稿审阅；尚需权限的订阅数据库与 fan VOR 正文核验；
-- 五份期刊候选（或最终选中的唯一一份）的真实 LaTeX 编译、完整日志审阅和逐页 PDF 验收；当前只有静态检查，不能称为已编译；
+- v5 的真实 LaTeX 编译、原生完整日志审阅和逐页 PDF 验收；当前只有 Pandoc/结构检查，不能称为已编译。五份 v4 期刊候选已经被 v5 内容取代，只能作格式参考；
+- 外部合格人类数学审阅仍未取得；用户目前不认识合适审阅者，已选择用多模型 AI 筛查作为现实替代，但该流程不等于人类同行评审。尚需权限的订阅数据库与 fan VOR 正文核验也未完成；
 - 原生纯文本 v3 `.log` 的归档尚未取得；现有 PDF 打印件已完整保留可见日志内容，但不能证明原始日志字节或外部编译输入源码哈希；
 - version-of-record fan 公式的正文比对，以及只有在获得权限时才能做的 MathSciNet/Scopus/Web of Science 最终查重；
 - private GitHub repository 已创建，审计后的初次提交已在本地保留，但远端推送因 VPN/认证回传故障延后；尚待决定 license、公开时点与可选 Zenodo DOI。在公共 URL 实际可用并读回核验前，不得把 private URL 提前写入论文；
+- GPT 审稿提出的任意非完全第二因子 $K_r+G$ 局部团邻域推广已经有直接证明机制，但尚未完成专门的系统文献、命名参数和计算审计；它不属于 v5，不能作为本文已确立 novelty；
 - 任意 first factor $F$ 的一般理论；$P_n\circ T$ 候选保持 dormant，不并行启动。
 
 ## 5. 本地论文与可靠读取状态
@@ -306,6 +309,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - $\beta(T)$ 已有精确局部结构刻画、线性 DP 和最大集合回溯；是否已有完全等价的命名参数/递推，以及是否存在明显更简洁的无递推闭式，仍为 `UNKNOWN`。
 - 当前证据已经解决“是否值得开始内部稿”的阶段判断（conditional go），并形成以 DMGT 为 fit-first 主目标的初步投稿定位；但该推荐不等于 scope 预审、接收保证或同行评审，最终可发表性和 novelty 仍为 `UNKNOWN`。
 - arbitrary first factor $F$ 和一般 mixed complete joins 的完整分类仍为 `UNKNOWN`；$P_n\circ T$ 方向保持 dormant。
+- 对任意非完全第二因子 $G$，以每个入选点的入选邻域和未入选邻域分别诱导团为条件的 $K_r+G$ 两分支公式已有直接 proof candidate；但其既有文献覆盖、参数命名、全领域 novelty/priority、最合适表述和是否值得并入本文均为 `UNKNOWN`。v5 没有声称或使用该推广。
 - 旧状态所列但当前缺失的四份本地论文快照和 `notes/literature_search_log.md` 是否能从原来源或备份完整恢复。
 
 `FORMULA INTERNALLY PROOF-VERIFIED` 仍然不等于 `PEER REVIEWED`，也不产生本项目的 novelty 或 priority claim。
@@ -338,15 +342,17 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 2026-08-29 的五份期刊格式转换只改变 LaTeX class、front matter、声明位置和所需引用呈现；Introduction--Conclusion 已验证与 v4 逐字节相同。官方格式核对不等于期刊预审、接收保证或 novelty 审计，静态解析也不等于真实编译。Jiang 后续状态、订阅数据库覆盖、fan VOR 精确显示、命名参数、publishability、novelty/priority 和超出范围的图类等全部 `UNKNOWN` 仍保持不变。
 
+2026-08-29 的四模型网页 AI 审稿裁决没有发现有效的 critical/major 数学缺陷，但这不是人类同行评审，也不能把 publishability 或 novelty 从 `UNKNOWN` 改为已知。DeepSeek 的核心 objection 已由距离定义直接否定；GLM 没有收到稿件；Gemini 没有完成逐定理审计；ChatGPT 的无反例结论及其未附原始制品的自称新计算都不能单独构成证明。v5 只吸收经独立核对的小修订，未改变任何定理值。GPT 提出的 $K_r+G$ 推广只记录为有证明依据的后续候选，其文献/priority 状态保持 `UNKNOWN`。v5 尚未真实编译，因此不能继承 v3 的 13 页 warning-free 排版结论。
+
 ## 9. 当前任务队列
 
 ### Next — 只做这一项
 
-把已填作者信息但尚未编译的 v4、五份期刊格式候选与冻结且已编译的 v3 基线交给外部人类合作者，按 `notes/collaborator_reading_guide.md` 的六个优先点完成数学、文献和投稿审阅。数学正文可集中审 v4/v3 差异，期刊文件另审 front matter、声明和引用样式。审阅者必须特别检查主定理的两分支完备性、$\beta(T)$ 局部刻画与 DP、fan prior-work 边界、AI-assisted disclosure 和单作者责任是否准确；不得因五份格式文件已生成而把任何一份视为可直接投稿。
+对 `drafts/mixed_join_research_note_v5.tex` 进行真实 LaTeX 编译。优先使用与 v3 相同或可明确记录的 TeX 环境，至少保留原生纯文本 `.log` 和编译器直接生成、尚未线性化或重新保存的 PDF。然后检查 error、warning、overfull/underfull box、undefined reference/citation、missing character、rerun request、页数、字体、链接以及逐页版面。v5 当前只是 DMGT 普通 `article` 首投稿路线的内容候选；五份 v4 期刊衍生稿不得用于本次编译或投稿。
 
 ### After that — 暂不执行
 
-收到外部审阅意见后，如需改稿先从 v4 创建 v5，v3/v4 和现有五份格式候选均不得用来掩盖内容版本变化；批准 v5 后只重新生成实际选择的期刊版本。独立待定事项是确定已创建 private GitHub repository 的 license、公开时点和可选 Zenodo DOI；只有公共链接实际存在并读回核验后，才把 availability statement 从 reasonable request 改为 repository URL/DOI。投稿日前还要刷新 Jiang 版本状态，并在有合法权限时补 MathSciNet/Scopus/Web of Science 与 fan VOR；最后只对唯一选定目标重走静态检查、真实编译、完整日志和逐页核验，并再次确认作者本人已经审阅、批准且愿意承担责任以及稿件没有同时投往其他期刊。
+若 v5 编译暴露内容或排版修改，必须从 v5 新建 v6，v3/v4/v5 均不得覆盖；若只需期刊 front matter 分流，也只能在 v5 内容批准后重新生成唯一选定的 DMGT 版本。随后刷新 Jiang 版本状态，并在有合法权限时补 MathSciNet/Scopus/Web of Science 与 fan VOR；决定 private GitHub repository 的 license、公开时点和可选 Zenodo DOI，且只有公共链接实际存在并读回核验后，才把 availability statement 从 reasonable request 改为 repository URL/DOI。投稿前作者本人必须通读并批准主定理、署名、AI 披露和全部声明，确认愿意承担责任，并确认稿件只投一个期刊。$K_r+G$ 一般推广另立研究阶段，不与本次 v5 编译并行。
 
 ## 10. Canonical notes
 
@@ -364,14 +370,16 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - `drafts/mixed_join_research_note.md`：自包含英文 research-note 工作稿；已同步本轮形式边界与证据措辞修订，当前 SHA-256 为 `9A76A7E8E6AE9BD0505224234C5BEF6379F713B4753D11FB11F5AEEA03E531A7`。
 - `drafts/mixed_join_research_note_v2.tex`：冻结的外部编译基线，与旧的无版本号 43,773-byte 源稿字节相同；完整日志和 13 页 PDF 已审，SHA-256 为 `D648DD44CA321475BCA94CBB29C86F22A218738FAE1546C372AAD774F6FAFF1F`，不得再覆盖。
 - `drafts/mixed_join_research_note_v3.tex`：当前最新的已编译/逐页审阅 submission-style 基线；只修两处分页和首张复现表总宽度，Pandoc/结构/引用检查及真实 pdfTeX/显示日志/13 页验收全部通过，SHA-256 为 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`；不得覆盖。
-- `drafts/mixed_join_research_note_v4.tex`：从冻结 v3 建立的当前本地 DMGT 首次投稿候选；含逐行编号、已确认的单作者/通讯作者元数据、无 funding/competing-interests 声明、code/audit availability-on-request、透明 Codex 使用披露、关键词、2020 MSC 和两条新增已核验引文。静态检查通过且投稿占位为 0，但尚未真实编译、视觉审阅或外部人类数学审阅；46,222 bytes、1,147 行，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`。
-- `drafts/TEX_VERSION_HISTORY.md`：TeX 不可覆盖版本规则、本地/Drive 映射、v2/v3/v4 与五份期刊格式衍生稿的哈希、编译状态和制品溯源边界；全部投稿候选明确为 local-only，当前 SHA-256 为 `4F3C6F3D7FBA3CE369EF75042C7B112CB676D8788555935EDDA62CFB151ED364`。
-- `drafts/journal_versions/README.md`：五份期刊名 TeX 候选的路径、class/引用路线、官方说明链接、SHA-256、共同正文一致性和未编译边界；3,779 bytes，SHA-256 `AA23EDFE93661CE8EB1FA983F5002FFEA22B762842903702CAE653DF207B3B61`。
-- `drafts/journal_versions/*.tex`：DMGT、Graphs and Combinatorics、Discrete Mathematics、Discrete Applied Mathematics、Computational and Applied Mathematics 五份本地格式候选；只分流 preamble/front matter/declarations/reference presentation，Introduction--Conclusion 与 v4 逐字节一致。精确逐文件哈希见该目录 README 和版本历史。
+- `drafts/mixed_join_research_note_v4.tex`：从冻结 v3 建立、现已冻结的四模型 AI 审稿输入基线；含逐行编号、已确认的单作者/通讯作者元数据、无 funding/competing-interests 声明、code/audit availability-on-request、透明 Codex 使用披露、关键词、2020 MSC 和两条新增已核验引文。静态检查通过且投稿占位为 0，但未真实编译；46,222 bytes、1,147 行，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，不得覆盖。
+- `drafts/mixed_join_research_note_v5.tex`：从冻结 v4 建立的当前 AI-review-adjudicated DMGT 内容候选；只含术语、空类、分支 tie 与 DP 说明小修，未改变数学值或证据。Pandoc/结构检查通过、0 投稿占位、测试仍 29 passed，但尚未真实编译、逐页审阅或人类同行评审；47,256 bytes、1,162 行，SHA-256 `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`。
+- `notes/external_ai_review_adjudication.md`：四份网页 AI 原始报告的字节数/哈希、有效意见、误报、无效审稿、v5 变更与 $K_r+G$ scope candidate 的证据级裁决；9,095 bytes，SHA-256 `FF81C5CCEC231092A5532C9DE91F1A41E50FC949C03C9F038ACA7F037239DA3D`。
+- `drafts/TEX_VERSION_HISTORY.md`：TeX 不可覆盖版本规则、本地/Drive 映射、v2/v3/v4/v5 与五份 v4 期刊格式衍生稿的哈希、编译状态和制品溯源边界；当前 SHA-256 为 `804B06E73CA6F13AC65FB1DB7FD90B71C472FA2693B719904F8C2F4F86AF93C0`。
+- `drafts/journal_versions/README.md`：五份 v4 期刊名 TeX 的路径、class/引用路线、官方说明链接、SHA-256、共同正文一致性和未编译边界；已明确全部被 v5 内容 supersede，只作格式参考；4,135 bytes，SHA-256 `12B3DA4B431B0D54A382ACE6E1EB1336056F8D78F2F8DB0B8AC54479FBCE56D7`。
+- `drafts/journal_versions/*.tex`：DMGT、Graphs and Combinatorics、Discrete Mathematics、Discrete Applied Mathematics、Computational and Applied Mathematics 五份 v4 本地格式参考；只分流 preamble/front matter/declarations/reference presentation，Introduction--Conclusion 与 v4 逐字节一致，但均已被 v5 内容 supersede，不得直接投稿。精确逐文件哈希见该目录 README 和版本历史。
 - `drafts/mixed_join_research_note.tex`：遗留的无版本号文件，当前与 v2 字节相同；不再作为编辑目标。
-- `notes/collaborator_reading_guide.md`：外部合作者审阅入口，包含证明依赖、六个审阅热点、prior-work/`UNKNOWN` 边界、计算证据和依赖闭包；已更新为 v3 typesetting audit 完成并保留原生 `.log` 缺失限制，当前 SHA-256 为 `D22DE369783119B7D59CBD7ED71C0F2F6A3FE1A35208876ED747B0FD06A60169`。
-- `notes/target_journals_and_author_info.md`：2026-08-29 官网核对后的目标期刊分层、五份本地格式路线、作者信息/声明清单、独立研究者 affiliation 决策、Codex 披露、GitHub 公开待定项、MSC 选择和投稿前 gate；14,311 bytes，SHA-256 `26C3D1F6226C17411BE6256A29B616232187705FF688CB8F7B34B844DD24DBD4`。
-- `notes/review_package_manifest.md`：内部审阅包的非自引用制品/依赖清单；现记录 v2 历史基线、v3 PDF/完整显示日志、字体/链接/逐页结论、线性化与非原生 `.log` 限制、版本映射，以及五份未编译期刊稿作为动态 handoff files；21 个稳定文件指纹已在本阶段末现场复算为 21/21 一致，动态 status/log 与 manifest 自身故意不哈希。
+- `notes/collaborator_reading_guide.md`：审阅入口，现以 v5 与 AI 裁决为首读材料，同时保留 v3 已编译基线和原生 `.log` 缺失限制；10,414 bytes，SHA-256 `E47F0B6DEE0256E0741491E8070BF2B8F8F5D9183ED2D03A63F8F249BCA23F7A`。
+- `notes/target_journals_and_author_info.md`：2026-08-29 官网核对后的目标期刊分层、五份本地格式路线、作者信息/声明清单、独立研究者 affiliation 决策、Codex 披露、GitHub 公开待定项、MSC 选择和投稿前 gate；已更新为 v5 当前候选与 AI 非人类同行评审边界；14,572 bytes，SHA-256 `7B1259D3E08E82F1011A299B19ECCEF08F7E4F44D6932B5E52CEACBB584F4F8E`。
+- `notes/review_package_manifest.md`：内部审阅包的非自引用制品/依赖清单；现记录 v2 历史基线、v3 PDF/完整显示日志、字体/链接/逐页结论、线性化与非原生 `.log` 限制、版本映射，并把 v4/v5、AI 裁决和五份未编译期刊稿列作动态 handoff files；稳定表 21/21 现场复算一致，动态 status/log 与 manifest 自身故意不哈希。
 - `results/jiang_v1_0_1_supplement_report.json`：supplement 实际运行报告。
 - `results/jiang_v1_0_1_independent_report.json`：项目第二套实现的实际运行报告。
 - `experiments/audit_extension_candidates.py`：只用于目标选择的最小可复现筛选脚本。
@@ -385,15 +393,15 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 ## 11. Repository and environment status
 
 - Git repository：已初始化，当前分支为 `main`，本地 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
-- 当前 Git 状态：43 个审计后文件已纳入首次提交；本轮的 status/log 收尾将作为后续本地提交保留。
+- 当前 Git 状态：43 个审计后文件已纳入首次提交 `e274fd3`；四模型审稿裁决、v5 及配套交接文件已纳入题为 `Adjudicate AI reviews and prepare v5` 的本地提交。尚未推送远端。
 - GitHub repository：已在 `Star5Dust` 下创建 private repository `dual-general-position-mixed-joins`，`origin` 已配置为 `https://github.com/Star5Dust/dual-general-position-mixed-joins.git`。上传前审计确认 `.venv/`、缓存、`tmp/`、`papers_local/`、`paper_local/` 和本地 scratch export `v4.txt` 均不会上传，且未发现密钥或令牌。GitHub 设备页曾显示授权成功，但凭据管理器因 VPN/网络错误未收到回传，故 `git push` 未完成，远端仍为空。仓库仍为 private，未添加 license，也未建立 DOI。
 - `papers_local/`：已加入 `.gitignore`；不要提交其中 PDF。
 - Python virtual environment：`.venv` 已创建，Python 3.13.5。
-- 文档工具：Pandoc 2.12 可用；本机仍未找到 `pdflatex`、`xelatex`、`lualatex`、`latexmk`、`tectonic`、`latex` 或 `texify`。用户提供的 v2 和 v3 日志内容均证明外部 pdfTeX 1.40.27 / TeX Live 2025 成功输出 13 页；v3 显示日志为 PDF 打印件而非原生 `.log`，但其可见内容完整且 typesetting audit 已通过。v4 与五份期刊候选只完成 Pandoc、结构和正文一致性静态检查，不能套用 v3 的真实编译结论。
-- 外部制品交付：Google Drive `ai4math/v2/`（文件夹 ID `1QjW44nhUeXm45qBMRMCBVkJllfNebPjO`）保留 43,773-byte 编译基线，文件 ID `1SVkC2udd2568CXOuzXFYp-23tUrR_M81`；没有覆盖。44,087-byte v3 保存在 `ai4math/v3/`（文件夹 ID `1JKUCmJoC7E18skB_FmfbwxtTqG_GvXx_`），文件 ID `1A2MepYtCLU80SR9pb011T-lM7iyU2X8M`，MIME type `application/x-tex`；元数据和文件夹列表双重读回一致。本地 v3 SHA-256 为 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`。本轮外部 PDF 为 347,402 bytes、SHA-256 `566A99646FFEA83983445A1F2BEBEE44B122911061304AC4DBCC839A948D2712`；日志打印件为 45,700 bytes、SHA-256 `9E1A279A710538140F70403CD50EC921A9A17B91A0B27E26BC8F54589C60CC5D`，未复制进 workspace stable-file 表。v4 与五份期刊衍生稿按用户要求仅保存在本地，本轮没有创建、读取或更新任何 Drive 文件。
+- 文档工具：Pandoc 2.12 可用；本机仍未找到 `pdflatex`、`xelatex`、`lualatex`、`latexmk`、`tectonic`、`latex` 或 `texify`。用户提供的 v2 和 v3 日志内容均证明外部 pdfTeX 1.40.27 / TeX Live 2025 成功输出 13 页；v3 显示日志为 PDF 打印件而非原生 `.log`，但其可见内容完整且 typesetting audit 已通过。v5、v4 与五份 v4 期刊衍生稿只完成 Pandoc/结构检查；不能套用 v3 的真实编译、13 页或 warning-free 结论。
+- 外部制品交付：Google Drive `ai4math/v2/`（文件夹 ID `1QjW44nhUeXm45qBMRMCBVkJllfNebPjO`）保留 43,773-byte 编译基线，文件 ID `1SVkC2udd2568CXOuzXFYp-23tUrR_M81`；没有覆盖。44,087-byte v3 保存在 `ai4math/v3/`（文件夹 ID `1JKUCmJoC7E18skB_FmfbwxtTqG_GvXx_`），文件 ID `1A2MepYtCLU80SR9pb011T-lM7iyU2X8M`，MIME type `application/x-tex`；元数据和文件夹列表双重读回一致。本地 v3 SHA-256 为 `35C9D1D4816D3C7B39381FF42F5CCAB7064131870AB2458D256B09DA22FF53A6`。本轮外部 PDF 为 347,402 bytes、SHA-256 `566A99646FFEA83983445A1F2BEBEE44B122911061304AC4DBCC839A948D2712`；日志打印件为 45,700 bytes、SHA-256 `9E1A279A710538140F70403CD50EC921A9A17B91A0B27E26BC8F54589C60CC5D`，未复制进 workspace stable-file 表。v4、v5 与五份 v4 期刊衍生稿仅保存在本地；本轮没有创建、读取或更新任何 Drive 文件。
 - `requirements.txt` 已列出 `networkx`、`numpy`、`pandas`、`sympy`、`pytest`、`matplotlib`。
 - 上述 packages 已安装并核对：NetworkX 3.6.1、NumPy 2.5.2、pandas 3.0.5、SymPy 1.14.0、pytest 9.1.1、Matplotlib 3.11.1。
-- 项目独立实现、extension audit 与 mixed-join DP 测试：上传前于 2026-08-29 重跑为 `29 passed in 0.28s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。本轮未修改任何数学实现，测试只验证初次提交前的既有实现状态，不构成新证明或扩大实验范围。
+- 项目独立实现、extension audit 与 mixed-join DP 测试：v5 静态验收后于 2026-08-29 重跑为 `29 passed in 0.23s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。本轮未修改任何数学实现，测试只确认既有实现未受文稿/交接改动影响，不构成新证明或扩大实验范围。
 
 ## 12. 每轮结束时的更新规则
 

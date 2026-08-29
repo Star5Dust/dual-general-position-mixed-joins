@@ -9,6 +9,12 @@ to the frozen v4 body. Only the preamble, front matter, declarations placement,
 and (where required) bibliography presentation differ. No Google Drive file was
 created or changed.
 
+**Supersession notice:** `drafts/mixed_join_research_note_v5.tex` now contains
+the adjudicated minor corrections from the external AI review attempts. These
+five v4-derived files are retained for provenance and format comparison only;
+none is a current submission candidate. Regenerate only the one finally chosen
+journal format from the approved v5-or-later content.
+
 | Target journal | TeX file | Submission route | SHA-256 |
 |---|---|---|---|
 | Discussiones Mathematicae Graph Theory | `Discussiones_Mathematicae_Graph_Theory.tex` | Ordinary one-column, line-numbered `article` file for first submission; exact byte copy of v4 | `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF` |
@@ -53,7 +59,7 @@ unchanged.
 
 No TeX engine is installed in this workspace, so none of these five derivative
 files has yet received a real compile, complete log review, or page-by-page PDF
-inspection. They also still require the external human mathematical,
-literature, and submission review recorded in `PROJECT_STATUS.md`. Submit only
-one version to one journal at a time, and recheck the selected journal's live
-instructions immediately before submission.
+inspection. Four external web-AI review attempts have now been adjudicated,
+but this is not human peer review. Submit only one regenerated version to one
+journal at a time, and recheck the selected journal's live instructions
+immediately before submission.
