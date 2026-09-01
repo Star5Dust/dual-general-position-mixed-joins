@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-08-29 (v7 compiled and verified with public GitHub availability)
+Last updated: 2026-09-02 (DMGT rejection recorded; DAM fast-transfer route conditionally selected)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -44,7 +44,7 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3--v6 均已冻结；最新不可覆盖稿为 `drafts/mixed_join_research_note_v7.tex`，50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`。v7 只把经匿名访问核验的公开仓库 `https://github.com/Star5Dust/dual-general-position-mixed-joins` 及其中固定 archive 路径写入复现和 data/code availability 段落，没有改变定理、证明、数值、引文或计算主张。公开仓库的 v6 PDF、固定 ZIP 与主 JSON 已分别与本地 canonical 文件逐字节匹配；TeX 在忽略行尾差异后内容相同。Pandoc 返回 0，测试重跑为 `30 passed in 0.36s`。MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 三遍编译得到 14 页 A4、470,873-byte PDF，SHA-256 `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`；27,395-byte 原生日志 SHA-256 为 `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`，扫描为零 error/warning/box warning/未定义引用引文/缺字/rerun。字体全部嵌入，PDF 中仓库 URI 可枚举，文本抽取无未解决投稿标记，14 页已渲染目检通过。DMGT 首投只需当前 v7 PDF；公开仓库已经提供代码与固定 ZIP，所以不再需要另附 ZIP 或发邮件。多模型 AI 审查仍不等于人类同行评审，全领域 novelty/priority/publishability 仍为 `UNKNOWN`。唯一直接下一步是作者删除投稿草稿中的 v6 PDF，上传并预览 v7 PDF，然后完成最终提交。**
+当前处于：**mixed join $K_r+T$ 的 v3--v7 均已冻结。v7（50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`）已作为 14 页 PDF 投稿 DMGT，并于 2026-09-02 在 “initial evaluation” 后收到仅含容量说明的编辑初筛拒稿；没有审稿报告或稿件特定理由。2026-09-02 重新核对 Elsevier 当前公开的 Discrete Applied Mathematics 页面：其范围明确包括 algorithmic and applicable discrete mathematics，并接受 research papers 与 short notes；本文的线性时间 DP 和最大集合重构形成真实匹配，但正文主体仍偏结构图论，必须诚实定位而不能夸大应用性。ScienceDirect 的详细 Guide for Authors 页面本次返回 403，因此完整格式、AI 披露和上传字段仍须在建立 v8/实际投稿前从可访问的官方入口复核。条件性决定为先走一次 DAM 快速转投路线，而不是因无理由初筛拒稿立即扩展数学范围。v7 不得覆盖。唯一直接下一步是从冻结 v7 新建 DAM 定位的 v8，先完成 front matter、摘要/引言/结论的算法贡献重心与投稿声明适配；任何数学内容变更必须有独立理由并重新验证。**
 
 已经完成：
 
@@ -128,6 +128,8 @@ $$
 - 按用户要求建立 `github_upload/` 手动上传包：根目录含中文 `README.md`、复现说明和依赖文件；`paper/` 保存冻结 v6 TeX/PDF；`docs/` 保存合作者导读、证明说明和文献定位；`src/`、`experiments/`、`tests/`、`results/` 保留可运行的原相对结构；`release/` 保存固定补充 ZIP。没有纳入 v2--v5、期刊格式旧稿、第三方论文、本地环境、缓存或 AI 原始回复。TeX、PDF、ZIP 与 canonical v6 的 SHA-256 全部一致，从该文件夹直接运行测试得到 `30 passed in 0.30s`。README 已说明 GitHub 网页端逐步上传、目录关联、上传后核验、private/public 与 license 边界；本轮没有改动或上传远端仓库。
 - 用户已通过 GitHub Desktop 将 `main` 推送，并把 `Star5Dust/dual-general-position-mixed-joins` 改为 public；GitHub REST API 于 2026-08-29 读回 `visibility=public`、`default_branch=main`、无 license。公开审计未发现常见 token/private-key 模式。根 README 已改为面向公开读者的英文首页，直接给出主结果、论文/PDF/证明/复现包链接、运行命令、证据边界和无 license 的真实状态。误提交的 `回复/` 已在后续提交从当前树移除并加入 `.gitignore`；其历史副本仍存在于早期 commit。重复的 `github_upload/` 现准备从 Git 跟踪中移除但保留本地，并加入 `.gitignore`。冻结 v6 未覆盖；若论文要加入公开 URL，必须新建 v7。
 - 对 public repository 做匿名只读审计：`main`/`HEAD` 为 `6f60b4d006943b9fdab83f364b37139a5891213d`，v6 PDF、固定复现 ZIP 和主 JSON 与本地 canonical 文件 SHA-256 完全相同，TeX 仅有 Git 行尾归一化造成的字节差异且规范化文本相同。按不可覆盖规则建立 v7，只加入 repository URL/固定 archive 路径，三遍编译、日志、字体、URI、文本、14 页视觉和 30 项测试全部通过。该公开 URL 取代单独 ZIP 上传或邮件询问。
+- v7 已投稿 DMGT，并于 2026-09-02 收到编辑初筛拒稿。决定信只给出投稿量大、可发表数量有限的通用说明，没有论文特定理由或审稿报告。该事件不改变任何数学定理、证明、计算结果或文献事实；也没有证据把拒稿归因于 Jiang、AI 披露、作者身份、格式或数学错误。
+- 2026-09-02 重新核对 Discrete Applied Mathematics 当前公开范围：官方 Elsevier Shop 页面将其定位为算法型与可应用离散数学期刊，并列明 research papers、short notes、surveys 等稿型。本文的线性时间算法与最大集合重构提供范围匹配；但 ScienceDirect 详细作者指南返回 403，所以尚未完成格式与 AI 政策的全部投稿级核验。
 
 尚未开始：
 
@@ -315,6 +317,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - removal paper 的 arXiv v2 中 fan 公式已经核对，但 version-of-record 正文的精确显示仍为 `UNKNOWN`。
 - $\beta(T)$ 已有精确局部结构刻画、线性 DP 和最大集合回溯；是否已有完全等价的命名参数/递推，以及是否存在明显更简洁的无递推闭式，仍为 `UNKNOWN`。
 - 当前证据已经解决“是否值得开始内部稿”的阶段判断（conditional go），并形成以 DMGT 为 fit-first 主目标的初步投稿定位；但该推荐不等于 scope 预审、接收保证或同行评审，最终可发表性和 novelty 仍为 `UNKNOWN`。
+- DMGT 的 2026-09-02 初筛拒稿没有给出稿件特定原因；编辑实际基于何种组合判断（优先级、贡献广度、新颖性、容量或其他因素）为 `UNKNOWN`，不得自行归因于 AI、Jiang 或数学错误。
 - arbitrary first factor $F$ 和一般 mixed complete joins 的完整分类仍为 `UNKNOWN`；$P_n\circ T$ 方向保持 dormant。
 - 对任意非完全第二因子 $G$，以每个入选点的入选邻域和未入选邻域分别诱导团为条件的 $K_r+G$ 两分支公式已有直接 proof candidate；但其既有文献覆盖、参数命名、全领域 novelty/priority、最合适表述和是否值得并入本文均为 `UNKNOWN`。v5 没有声称或使用该推广。
 - 旧状态所列但当前缺失的四份本地论文快照和 `notes/literature_search_log.md` 是否能从原来源或备份完整恢复。
@@ -359,11 +362,11 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 ### Next — 只做这一项
 
-在 DMGT 投稿草稿中删除当前 v6 PDF，上传 `output/pdf/mixed_join_research_note_v7.pdf` 并打开预览，确认文件名、14 页正文和 GitHub availability statement 正确，然后完成最终提交。首投不另附 ZIP、不发邮件、不上传 TeX；五份 v4 期刊衍生稿不得提交。
+从冻结 v7 新建 `drafts/mixed_join_research_note_v8.tex`，按 Discrete Applied Mathematics 的算法型范围重新定位 front matter、摘要、引言、结论和 cover-letter facts；不得覆盖 v7、不得直接提交旧 v4 衍生稿、不得把结构图论结果夸大为现实应用。建立 v8 时必须同时从可访问的官方入口复核详细 Guide for Authors、生成式 AI 披露要求和上传字段。
 
 ### After that — 暂不执行
 
-提交后只处理编辑或审稿人的实际来信；任何内容改动必须从冻结 v7 新建 v8，不得覆盖 v3--v7。若获得人类数学同行的审阅，单独记录并裁决。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。$K_r+G$ 一般推广另立研究阶段，不与本次投稿并行。
+完成 v8 的文献刷新、Pandoc/标签/引用/声明检查、测试重跑、真实 LaTeX 编译、原生日志扫描和逐页 PDF 验收，再单独提交 DAM。若 DAM 也以初筛方式拒绝，则暂停原样连续转投，单独启动 $K_r+G$ 一般推广的文献、证明和计算阶段；未经完成的推广不得写入 v8。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。
 
 ## 10. Canonical notes
 

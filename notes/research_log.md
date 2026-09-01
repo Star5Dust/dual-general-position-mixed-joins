@@ -2543,3 +2543,44 @@ scope.
   remain `UNKNOWN`. The unique next step is to replace the v6 PDF in the DMGT
   draft submission with the v7 PDF, preview it, and submit only after the
   author confirms the displayed file.
+
+## 2026-09-02: DMGT initial-evaluation rejection
+
+- The author supplied the full DMGT decision text for the submitted manuscript
+  “Dual General Position in the Join of a Complete Graph and a Tree.” The
+  journal states that, after an “initial evaluation,” it decided to reject the
+  paper because it receives many high-quality submissions and can publish only
+  a limited number; it describes the early notice as facilitating submission
+  elsewhere.
+- Classified the outcome as an editorial initial-evaluation rejection. No
+  referee report or manuscript-specific mathematical, novelty, scope, format,
+  authorship, Jiang-related, or AI-related reason was supplied. Consequently,
+  none of those possible causes may be asserted from this letter.
+- Frozen v7 remains the exact DMGT submission baseline and must not be
+  overwritten. No theorem, proof, citation, computation, code, test, PDF, or
+  repository content was changed in recording the decision.
+- The next stage is a fresh, current check of Discrete Applied Mathematics as
+  the algorithm-oriented follow-on target, followed by an explicit choice
+  between a journal-positioning v8 and a separate contribution-strengthening
+  stage. The obsolete v4 journal-specific derivative must not be submitted.
+
+## 2026-09-02: post-rejection target decision
+
+- Rechecked the current official Elsevier Shop description for Discrete
+  Applied Mathematics. It explicitly covers algorithmic and applicable
+  discrete mathematics and lists research papers and short notes among its
+  contribution types. This gives a genuine scope route for the manuscript's
+  linear-time dynamic program and maximum-set reconstruction, although the
+  paper remains primarily structural and must not be presented as having an
+  unproved real-world application.
+- Direct requests to the current ScienceDirect aims/scope and Guide for Authors
+  pages returned HTTP 403 in this environment. Therefore detailed formatting,
+  generative-AI disclosure, and submission-field requirements have not been
+  claimed as fully reverified and remain a mandatory pre-submission gate.
+- Because DMGT supplied no manuscript-specific criticism, selected one
+  controlled fast-transfer attempt before enlarging the mathematical scope:
+  create v8 from frozen v7, adapt the journal positioning and front matter,
+  rerun all document and computational checks, and submit only after the
+  detailed official guide is accessible and checked. A second rapid editorial
+  rejection would trigger a pause and a separate audit of the broader
+  `K_r+G` direction rather than repeated unchanged transfers.
