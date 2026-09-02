@@ -1,6 +1,21 @@
 # Target journals and author-information checklist
 
-Date checked: 29 August 2026
+Date checked: 2 September 2026
+
+> **Current route update (2 September 2026).** DMGT rejected v7 at initial
+> evaluation without a manuscript-specific reason. The active target is now
+> Discrete Applied Mathematics using the new v8 `Contribution` candidate
+> derived from frozen v7. The detailed current Guide and upload requirements
+> are recorded in `notes/dam_v8_submission_requirements.md`. The older DMGT
+> recommendation below is retained as decision history, not as the active
+> submission instruction; the obsolete v4 DAM derivative must not be used.
+
+V8 local validation is now complete: bounded literature refresh, static checks,
+30 passing tests (one nonfunctional pytest-cache permission warning), three
+MiKTeX passes, a clean final native log, and all 22 PDF pages visually checked.
+The current validated source/PDF hashes are maintained in
+`drafts/TEX_VERSION_HISTORY.md`. This does not replace author approval or the
+live submission-system build review, and no DAM submission has been made.
 
 This note records a submission-positioning decision, not an acceptance
 prediction. Journal fit is an informed recommendation; scopes and submission
@@ -12,7 +27,7 @@ recorded in `PROJECT_STATUS.md`.
 
 Only one journal may consider the manuscript at a time.
 
-### Primary target: Discussiones Mathematicae Graph Theory (DMGT)
+### Former primary target: Discussiones Mathematicae Graph Theory (DMGT)
 
 **Recommendation:** best topical fit for the present manuscript and the target
 used for the frozen v4--v6 and current v7 first-submission candidates.
@@ -77,10 +92,11 @@ again significance and breadth, not subject mismatch.
 Official journal description:
 https://shop.elsevier.com/journals/discrete-mathematics/0012-365X
 
-### Algorithm-oriented alternative: Discrete Applied Mathematics
+### Current target: Discrete Applied Mathematics
 
-**Recommendation:** use if the linear-time computation and reconstruction of
-the maximum set are foregrounded together with the structural theorem.
+**Recommendation:** current controlled follow-on target. V8 foregrounds the
+linear-time computation and reconstruction of a maximum set together with the
+structural theorem.
 
 The journal's stated remit is algorithmic and applicable discrete mathematics.
 It published the directly related 2026 paper on dual general position under
@@ -100,8 +116,8 @@ Official pages:
 The journal explicitly includes discrete mathematics and asks for mathematical
 depth, methodological rigor, and computational relevance. It published the
 2026 product paper that posed the surrounding complete-first-factor problem.
-This is a defensible fallback, but DMGT has the cleaner audience match for the
-present all-tree structural classification.
+This remains a defensible fallback if the controlled DAM attempt is not
+successful, but it is not the active target.
 
 Official pages:
 
@@ -109,19 +125,21 @@ Official pages:
 - Directly related product paper:
   https://doi.org/10.1007/s40314-025-03547-7
 
-## Recommended order
+## Current order
 
-Two reasonable, mutually exclusive strategies are:
+DMGT has completed its initial evaluation and rejected v7 without a
+manuscript-specific reason. The active sequence is therefore:
 
-1. **Fit-first:** DMGT, then Discrete Applied Mathematics, then Computational
-   and Applied Mathematics.
-2. **Stretch-first:** Graphs and Combinatorics or Discrete Mathematics, then
-   DMGT.
+1. obtain author approval of validated v8, then prepare one controlled
+   `Contribution` submission to Discrete Applied Mathematics; verify the live
+   fields and generated submission PDF before any final submission;
+2. if DAM also rejects at initial evaluation, pause direct transfers and audit
+   the broader `K_r+G` direction before choosing another journal.
 
 The fit-first sequence is the current recommendation because the manuscript is
-a specialized 14-page graph-theory paper and global novelty is still
-`UNKNOWN`. This is a risk assessment, not a statement that DMGT will accept the
-paper.
+a specialized graph-theory paper (22 pages in the current Elsevier preprint
+layout), with a proved linear-time algorithm, and global novelty is still
+`UNKNOWN`. This is a risk assessment, not a prediction of DAM acceptance.
 
 ## Local journal-specific TeX candidates
 

@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-09-02 (DMGT rejection recorded; DAM fast-transfer route conditionally selected)
+Last updated: 2026-09-02 (DAM data/code availability field checked; Other plus verified public-repository statement recommended; submission not confirmed)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -44,7 +44,7 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3--v7 均已冻结。v7（50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`）已作为 14 页 PDF 投稿 DMGT，并于 2026-09-02 在 “initial evaluation” 后收到仅含容量说明的编辑初筛拒稿；没有审稿报告或稿件特定理由。2026-09-02 重新核对 Elsevier 当前公开的 Discrete Applied Mathematics 页面：其范围明确包括 algorithmic and applicable discrete mathematics，并接受 research papers 与 short notes；本文的线性时间 DP 和最大集合重构形成真实匹配，但正文主体仍偏结构图论，必须诚实定位而不能夸大应用性。ScienceDirect 的详细 Guide for Authors 页面本次返回 403，因此完整格式、AI 披露和上传字段仍须在建立 v8/实际投稿前从可访问的官方入口复核。条件性决定为先走一次 DAM 快速转投路线，而不是因无理由初筛拒稿立即扩展数学范围。v7 不得覆盖。唯一直接下一步是从冻结 v7 新建 DAM 定位的 v8，先完成 front matter、摘要/引言/结论的算法贡献重心与投稿声明适配；任何数学内容变更必须有独立理由并重新验证。**
+当前处于：**mixed join $K_r+T$ 的 v3--v7 均已冻结；v7（50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`）仍是 DMGT 初筛拒稿后不可覆盖的内容基线。严格从 v7 而非旧 v4 期刊衍生稿建立的 DAM `Contribution` 候选 `drafts/mixed_join_research_note_v8.tex` 已完成本地提交前验证（52,422 bytes，1,249 行，SHA-256 `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`）。v8 使用 `elsarticle`，突出已证明的线性时间 DP 和最大集合构造；没有改变主公式、证明核心或计算结果，也没有声称现实应用。2026-09-02 的有边界文献刷新、Pandoc/结构/声明检查、30 项测试、三遍 MiKTeX 编译及最终 22 页 PDF 视觉验收均已完成；最终原生日志无 error/warning/overfull/underfull/未定义引用/缺字/rerun。测试另有一条非数学性的 pytest 缓存写入权限警告，已保留。最终 PDF 为 438,048 bytes，位于 `output/pdf/mixed_join_research_note_v8.pdf`；其与 build 副本字节一致。只在 v8 修复了字体与长公式/表格/命令排版，并更新文献截止日。作者现已表示“我看过了，可以”，认可当前 v8，并询问投稿流程。作者已登录 DAM 并提供 `Attach Files` 第一文件上传页截图。该页明确要求 LaTeX 作者先上传编译 PDF、类型为 `Manuscript`，源码在 revision 时提供；此前“先传 TeX”的流程说明已纠正。作者现又提供必填数据/代码可获得性下拉框；因代码、测试与计算结果已有公开 GitHub 仓库，已建议选择 `Other` 并填写可公开发表的仓库声明。唯一下一步是完成该声明，再逐屏核对剩余必填项和附件；截图片段不证明文件列表正确或投稿完成，助手未代为操作。**
 
 已经完成：
 
@@ -130,9 +130,25 @@ $$
 - 对 public repository 做匿名只读审计：`main`/`HEAD` 为 `6f60b4d006943b9fdab83f364b37139a5891213d`，v6 PDF、固定复现 ZIP 和主 JSON 与本地 canonical 文件 SHA-256 完全相同，TeX 仅有 Git 行尾归一化造成的字节差异且规范化文本相同。按不可覆盖规则建立 v7，只加入 repository URL/固定 archive 路径，三遍编译、日志、字体、URI、文本、14 页视觉和 30 项测试全部通过。该公开 URL 取代单独 ZIP 上传或邮件询问。
 - v7 已投稿 DMGT，并于 2026-09-02 收到编辑初筛拒稿。决定信只给出投稿量大、可发表数量有限的通用说明，没有论文特定理由或审稿报告。该事件不改变任何数学定理、证明、计算结果或文献事实；也没有证据把拒稿归因于 Jiang、AI 披露、作者身份、格式或数学错误。
 - 2026-09-02 重新核对 Discrete Applied Mathematics 当前公开范围：官方 Elsevier Shop 页面将其定位为算法型与可应用离散数学期刊，并列明 research papers、short notes、surveys 等稿型。本文的线性时间算法与最大集合重构提供范围匹配；但 ScienceDirect 详细作者指南返回 403，所以尚未完成格式与 AI 政策的全部投稿级核验。
+- 用户随后提供 2026-09-02 打印的 17 页 DAM Guide（539,209 bytes，SHA-256 `FD626863EFD3F53EED8850395555A2307E00E88F183ED6673B2F226499AC9E64`）。完成 PDF 元数据/文本提取和第 2、5、8、15 页重点目检；确认 `Contribution` 为超过 10 页的 full-length original article，审稿为 single anonymized，摘要上限 250 词，关键词 1--7 个，Highlights 为鼓励而非强制项，且投稿必须保留可编辑源文件。还确认生成式 AI 声明、声明工具、无资助推荐句和 Option C 数据政策；Guide 未把 cover letter 或 graphical abstract 列为强制材料。
+- 严格从冻结 v7 建立 `drafts/mixed_join_research_note_v8.tex`，没有覆盖任何旧版本，也没有使用或提交旧 `drafts/journal_versions/Discrete_Applied_Mathematics.tex`。v8 采用 DAM/Elsevier front matter，算法型标题和定位段落，补入由现有定理直接推出的 $O(r+|V(T)|)$ 最大集合构造说明，并加入当前要求的 AI-assisted code-development 方法说明和文末披露；主公式、Preliminaries--DP complexity proof、worked examples 与 bibliography 的对应核心片段经字节比较保持不变。
+- 建立候选 `drafts/mixed_join_research_note_v8_highlights.txt`、可选的一页内 `drafts/mixed_join_research_note_v8_cover_letter.md` 和逐项官方要求记录 `notes/dam_v8_submission_requirements.md`。摘要约 202 词；四条 Highlights 分别为 71、58、64、63 个字符。只完成阶段限定的 diff、词数、字符数、哈希和冻结文件核对；未提前执行下一阶段的全文静态检查、测试或编译。
+
+- 完成 v8 有边界文献刷新：Zenodo 仍只有 Jiang v1.0.0/v1.0.1，DataCite 只有 concept `IsVersionOf` 关联，精确题名相关查询未识别新期刊版本；removal paper 的 arXiv 仍为 v2，Crossref 与作者列表确认 DAM 388 (2026), 56--64。作者 PDF 第 9 页再次核对 fan 的 $n\ge4$ 与 floor 公式，但仍非 VOR；全领域 novelty 与 VOR 正文状态未改变。
+- 完成 v8 全套静态验收：Pandoc 返回 0，35 个 labels 唯一，52 个交叉引用和 13 处引文全部解析，6 条 bibliography、53 对环境、13 条定理类陈述、13 个证明和 40 个显示公式均通过；摘要约 200 词、6 个关键词、4 条合规长度 Highlights，声明齐全，占位 0。初始核心片段在行尾归一化后与 v7 相同；先前“逐字节”表述须按此限定，最终只有两处公式排版与命令/表宽进一步改变，未改数学含义。
+- 完成 v8 测试与真实编译：Python 3.13.5/NetworkX 3.6.1/pytest 9.1.1 下最新为 `30 passed, 1 warning in 0.51s`；警告仅为 `.pytest_cache` 不可写。MiKTeX 26.5/pdfTeX 1.40.29 初次暴露不可缩放字体与六条 overfull 报告；只在 v8 添加 `lmodern`、拆分两处长公式和两条命令、缩窄审计表，最终三遍编译成功且原生日志扫描为 0 问题。最后日期更新后的中断编译已重新完成，未把半成品交付。
+- 完成最终 22 页 PDF 的字体、链接、文本和视觉验收：24 个 Type 1 字体资源全部嵌入/子集化/带 Unicode 映射，80 个链接注释含 65 个内部链接及 15 个 URI 注释（8 个不同 URI），无占位、空白内容页或表单。全部页面以 120 dpi 渲染并检查；相对先前验收版只有第 21 页截止日期像素改变。v7 与旧 v4 DAM 衍生稿哈希未变；数学源码、tests 和结果 JSON 未改，未扩大计算审计范围，未做任何外部提交或 push。
+
+- 作者已明确表示看过当前 v8 且认可，随后询问 DAM 投稿步骤；已核对 Elsevier 官方 Editorial Manager 新投稿与 LaTeX 指南，说明作者注册/登录、`Contribution`、源文件/声明与可选材料、元数据核对，以及 build/view/approve 的区别。未把本地稿件认可误记为系统 PDF 已审或投稿已完成。
+
+- 已读取作者提供的 DAM `Attach Files` 第一文件上传页截图：稿型选择步骤已完成，但该图未显示具体稿型；LaTeX 说明明确要求先上传编译 PDF 并设为 `Manuscript`，源码到 revision 时提供。已据此纠正“先传 TeX”的早期推断，并指向 438,048-byte 的已验收 v8 PDF；截图尚未显示上传成功。
+
+- 已核对作者提供的数据/代码可获得性必填下拉框及“Other 文本将原样发表”提示，并复查 GitHub 仓库为 Public、列有 src/tests/experiments/results。建议 `Other` 加准确的公开仓库英文声明；未建议“未使用数据”或“合理索取”，也未虚称已在 Attach Files 添加外部链接。该核验不替代逐文件远端哈希审计。
 
 尚未开始：
 
+- DAM 主稿 PDF 上传及其他附件/元数据的逐屏核对、系统生成 PDF 的最终审阅/批准；作者已到在线 `Attach Files` 阶段，但尚未提供文件上传成功证据；
+- DAM Editorial Manager 登录后的动态字段、编辑/审稿人问题和最终声明工具文件尚未逐屏核验。Guide 要求无可声明事项时选择 “I have nothing to declare” 并上传系统生成的未签名 `.doc/.docx`；实际字段名称仍须以选择 `Contribution` 后的界面为准，不能臆造；
 - 外部合格人类数学审阅仍未取得；用户目前不认识合适审阅者，已选择用多模型 AI 筛查作为现实替代，但该流程不等于人类同行评审。尚需权限的订阅数据库与 fan VOR 正文核验也未完成；
 - 原生纯文本 v3 `.log` 的归档尚未取得；现有 PDF 打印件已完整保留可见日志内容，但不能证明原始日志字节或外部编译输入源码哈希；
 - version-of-record fan 公式的正文比对，以及只有在获得权限时才能做的 MathSciNet/Scopus/Web of Science 最终查重；
@@ -316,7 +332,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - 系统定位没有找到覆盖 all trees、任意 $r$ 的 $gp_d(K_r+T)$ 既有结果，但 MathSciNet、Scopus、Web of Science 尚未人工核验，部分开放索引又出现限流；因此该完整结果在全领域是否开放、是否具有 novelty，以及本项目的 priority 均为 `UNKNOWN`。
 - removal paper 的 arXiv v2 中 fan 公式已经核对，但 version-of-record 正文的精确显示仍为 `UNKNOWN`。
 - $\beta(T)$ 已有精确局部结构刻画、线性 DP 和最大集合回溯；是否已有完全等价的命名参数/递推，以及是否存在明显更简洁的无递推闭式，仍为 `UNKNOWN`。
-- 当前证据已经解决“是否值得开始内部稿”的阶段判断（conditional go），并形成以 DMGT 为 fit-first 主目标的初步投稿定位；但该推荐不等于 scope 预审、接收保证或同行评审，最终可发表性和 novelty 仍为 `UNKNOWN`。
+- 当前证据已经解决“是否值得开始内部稿”的阶段判断（conditional go）。DMGT 已在无稿件特定理由的初筛后拒稿；当前 DAM 路线具有可核验的算法范围匹配，但不等于 scope 预审、接收保证或同行评审，最终可发表性和 novelty 仍为 `UNKNOWN`。
 - DMGT 的 2026-09-02 初筛拒稿没有给出稿件特定原因；编辑实际基于何种组合判断（优先级、贡献广度、新颖性、容量或其他因素）为 `UNKNOWN`，不得自行归因于 AI、Jiang 或数学错误。
 - arbitrary first factor $F$ 和一般 mixed complete joins 的完整分类仍为 `UNKNOWN`；$P_n\circ T$ 方向保持 dormant。
 - 对任意非完全第二因子 $G$，以每个入选点的入选邻域和未入选邻域分别诱导团为条件的 $K_r+G$ 两分支公式已有直接 proof candidate；但其既有文献覆盖、参数命名、全领域 novelty/priority、最合适表述和是否值得并入本文均为 `UNKNOWN`。v5 没有声称或使用该推广。
@@ -358,15 +374,21 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 2026-08-29 的 public repository 匿名审计与 v7 只关闭交付一致性问题：仓库及固定 archive 已可公开访问，稿件不再需要声称 ZIP 随稿附加。此改动没有新增数学、实验或文献事实，也不构成人类同行评审；publishability、acceptance、全领域 novelty/priority、订阅数据库覆盖和 fan version of record 等 `UNKNOWN` 全部保持不变。
 
+2026-09-02 的 DAM Guide 审计解决了当前稿型、审稿模式、摘要/关键词、Highlights、editable-source、声明、AI 披露和 Option C 数据政策等投稿要求；但登录后随稿型动态生成的全部字段、可能要求的编辑/审稿人信息和系统声明文件的最终呈现仍须在 Editorial Manager 中核验。v8 的算法定位和直接构造段落没有生成新的文献事实或改变定理值；有限静态比较也不是证明或同行评审。全领域 novelty/priority、可发表性、接收结果、订阅数据库覆盖、fan version of record 和超出范围推广仍为 `UNKNOWN`。
+
+2026-09-02 的 v8 提交前验证关闭了本地编译、排版和测试 gate，并将 Jiang 元数据和 fan arXiv v2 核验刷新到该日；没有新增数学结论或扩大有限计算范围。新查询未识别 Jiang 的新版本/期刊关联不等于不存在相关出版物；全领域 novelty/priority、订阅数据库覆盖、fan VOR 精确显示、人类同行评审、可发表性和接收结果仍为 `UNKNOWN`。DAM 登录后的动态字段、声明工具文件及系统生成 PDF 仍须实际核验。
+
+2026-09-02 的已登录上传页截图解决了初投稿 LaTeX 文件路线：当前先传 PDF，源文件在 revision 时请求，不再把“TeX 必须首传”当作已核验要求。后续附件类别、实际所选稿型、元数据和最终系统 PDF 尚待逐屏核验；所有数学、文献和可发表性 `UNKNOWN` 不变。
+
 ## 9. 当前任务队列
 
 ### Next — 只做这一项
 
-从冻结 v7 新建 `drafts/mixed_join_research_note_v8.tex`，按 Discrete Applied Mathematics 的算法型范围重新定位 front matter、摘要、引言、结论和 cover-letter facts；不得覆盖 v7、不得直接提交旧 v4 衍生稿、不得把结构图论结果夸大为现实应用。建立 v8 时必须同时从可访问的官方入口复核详细 Guide for Authors、生成式 AI 披露要求和上传字段。
+在当前数据/代码可获得性字段选择 `Other`，填写 `notes/dam_v8_submission_requirements.md` 中已核验的公开仓库英文声明；该内容会原样发表，应与 v8 保持一致。然后逐屏核对剩余必填项及附件列表，确认主稿为已验收 v8 PDF（`Manuscript`），不因截图片段已进入问卷就断言上传正确。初投稿源码仍按已核验页面留到 revision；最终系统 PDF 未验收并明确批准前不提交。所有数学、文献与可发表性 `UNKNOWN` 保持不变。
 
 ### After that — 暂不执行
 
-完成 v8 的文献刷新、Pandoc/标签/引用/声明检查、测试重跑、真实 LaTeX 编译、原生日志扫描和逐页 PDF 验收，再单独提交 DAM。若 DAM 也以初筛方式拒绝，则暂停原样连续转投，单独启动 $K_r+G$ 一般推广的文献、证明和计算阶段；未经完成的推广不得写入 v8。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。
+查看并验收 Editorial Manager 实际生成的完整 PDF；作者确认该系统版和最终提交后，才执行 `Approve Submission` 及其确认，保存投稿编号和确认信息。若 DAM 也以初筛方式拒绝，则暂停原样连续转投，单独启动 $K_r+G$ 一般推广的文献、证明和计算阶段；未经完成的推广不得写入 v8。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。
 
 ## 10. Canonical notes
 
@@ -387,21 +409,26 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - `drafts/mixed_join_research_note_v4.tex`：从冻结 v3 建立、现已冻结的四模型 AI 审稿输入基线；含逐行编号、已确认的单作者/通讯作者元数据、无 funding/competing-interests 声明、code/audit availability-on-request、透明 Codex 使用披露、关键词、2020 MSC 和两条新增已核验引文。静态检查通过且投稿占位为 0，但未真实编译；46,222 bytes、1,147 行，SHA-256 `8E0BBFD7C2436AF9D0396CBA7C1954A47F75A1AEE2861CA933594320716578DF`，不得覆盖。
 - `drafts/mixed_join_research_note_v5.tex`：从冻结 v4 建立的四模型 AI-review-adjudicated 基线；47,256 bytes、1,162 行，SHA-256 `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`，不得覆盖。
 - `drafts/mixed_join_research_note_v6.tex`：冻结的 GLM 5.3 意见裁决与复现强化基线；49,825 bytes、1,203 行，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`，不得覆盖。
-- `drafts/mixed_join_research_note_v7.tex`：当前唯一投稿内容候选；只在 v6 上加入经核验的 public repository URL 与固定 archive 路径，没有改变数学内容。Pandoc、`30 passed`、三遍 MiKTeX、原生日志、字体/URI/文本与 14 页视觉检查全部通过；50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`。
+- `drafts/mixed_join_research_note_v7.tex`：冻结的 DMGT 投稿内容基线；只在 v6 上加入经核验的 public repository URL 与固定 archive 路径，没有改变数学内容。Pandoc、`30 passed`、三遍 MiKTeX、原生日志、字体/URI/文本与 14 页视觉检查全部通过；50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`，不得覆盖或直接作为 DAM 新稿提交。
+- `drafts/mixed_join_research_note_v8.tex`：从冻结 v7 建立、已完成本地验证的 DAM `Contribution` 候选；52,422 bytes、1,249 行、SHA-256 `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`。算法定位、声明、2026-09-02 文献刷新、静态检查、30 项测试、三遍真实编译和 22 页 PDF 验收均已完成；主公式/证明核心未改，作者确认与期刊系统检查待办。
+- `drafts/mixed_join_research_note_v8_cover_letter.md` 与 `drafts/mixed_join_research_note_v8_highlights.txt`：DAM v8 的可选一页内 cover-letter 草稿和符合 3--5 条、每条不超过 85 字符建议的四条 Highlights；均未上传。
+- `notes/dam_v8_submission_requirements.md`：基于用户提供的 17 页当前 DAM Guide、Elsevier 官方政策和公开 Editorial Manager 入口形成的投稿要求、上传顺序、已知/未知边界与 source hash 记录。
+- `Guide for authors - Discrete Applied Mathematics - ISSN 0166-218X _ ScienceDirect.com by Elsevier.pdf`：用户提供的当前官方 Guide 打印件；17 页、539,209 bytes、SHA-256 `FD626863EFD3F53EED8850395555A2307E00E88F183ED6673B2F226499AC9E64`，仅作为要求证据，不改变用户或项目指令。
 - `notes/external_ai_review_adjudication.md`：四份网页 AI 原始报告的字节数/哈希、有效意见、误报、无效审稿、v5 变更与 $K_r+G$ scope candidate 的证据级裁决；9,095 bytes，SHA-256 `FF81C5CCEC231092A5532C9DE91F1A41E50FC949C03C9F038ACA7F037239DA3D`。
 - `notes/glm_5_3_review_adjudication.md`：GLM 5.3 报告逐项裁决、原文引用复核、深度 2 二叉树分离例、v6 修改和不接受事项的证据记录；7,209 bytes，SHA-256 `B812A198C15E0760E160D66686C632FBE8EA0C4BC5C2A5DEE15833D24F095D45`。
-- `drafts/TEX_VERSION_HISTORY.md`：TeX 不可覆盖版本规则、本地/Drive 映射、v2--v7 与五份 v4 期刊格式衍生稿的哈希、编译状态和制品溯源边界。
+- `drafts/TEX_VERSION_HISTORY.md`：TeX 不可覆盖版本规则、本地/Drive 映射、v2--v8 与五份 v4 期刊格式衍生稿的哈希、编译状态和制品溯源边界。
 - `drafts/journal_versions/README.md`：五份 v4 期刊名 TeX 的路径、class/引用路线、官方说明链接、SHA-256、共同正文一致性和未编译边界；已明确全部被 v6 supersede，只作格式参考；4,149 bytes，SHA-256 `7297CF46CFB324510EC26DB240ACF6EA9F84E4BEA43C3A327EC38556970C72A5`。
 - `drafts/journal_versions/*.tex`：DMGT、Graphs and Combinatorics、Discrete Mathematics、Discrete Applied Mathematics、Computational and Applied Mathematics 五份 v4 本地格式参考；只分流 preamble/front matter/declarations/reference presentation，Introduction--Conclusion 与 v4 逐字节一致，但均已被 v6 内容 supersede，不得直接投稿。精确逐文件哈希见该目录 README 和版本历史。
 - `drafts/mixed_join_research_note.tex`：遗留的无版本号文件，当前与 v2 字节相同；不再作为编辑目标。
 - `notes/collaborator_reading_guide.md`：当前 v7 人工审阅入口，列出证明依赖、复现路线、30 项测试、编译证据和必须保留的限制。
-- `notes/target_journals_and_author_info.md`：目标期刊分层、作者信息/声明清单、独立研究者 affiliation、Codex 披露、public repository、MSC 和提交 gate；已按 DMGT 2026 公开首投流程复核；14,924 bytes，SHA-256 `4F44652DA2F728D8FDCEB62B5BED55F2682C64233D45918D0351021B6526F01D`。
+- `notes/target_journals_and_author_info.md`：目标期刊历史、当前 DAM 路线、作者信息/声明清单、独立研究者 affiliation、Codex 披露、public repository、MSC 和提交 gate；16,224 bytes，SHA-256 `06F02407DDEC9D19778566ABDD64B2EBDAF71F9E31C6EC746A253157E8275661`。
 - `notes/review_package_manifest.md`：v7 内部审阅/投稿包的非自引用制品、大小、哈希、依赖和编译状态清单；manifest 自身及持续变化的状态/日志故意不自哈希。
 - `REPRODUCIBILITY.md`：从全新环境复现实验、测试和主 JSON 的命令；1,442 bytes，SHA-256 `C287D53518F003976243CEFB00B29E4E41881F32D4FFA6AD1F51F8937DFF0E36`。
 - `requirements-lock.txt`：v6 补充包的锁定 Python 环境；340 bytes，SHA-256 `4811AEA9E5C13E192FB5865D7095ECBA19A33887ACC1D567AB5368E1D31DDE5E`。
 - `artifacts/mixed_join_v6_reproducibility.zip`：固定随稿复现包；干净目录得到 `30 passed` 且主 JSON 字节一致；21,868 bytes，SHA-256 `0E91BAAC07EFA121784CA94355C93F304A7AF8FF89AB480E952E9C62DC316A33`。
 - `artifacts/v6_build/mixed_join_research_note_v6.pdf` 与 `.log`：MiKTeX 三遍编译的原生制品；PDF 470,046 bytes、SHA-256 `C41FDA75669A253273CF05BC90F0B04DE9020884F982B1E6E56784583919DE44`，log 27,395 bytes、SHA-256 `7696F4DCF9A5AF6B1F2EC40E0F899CFDA4DEF4ED883A8973FFC05B2007BC13D1`。相同 PDF 已复制到 `output/pdf/`。
 - `artifacts/v7_build/mixed_join_research_note_v7.pdf` 与 `.log`：MiKTeX 三遍编译的当前制品；PDF 470,873 bytes、SHA-256 `B10D50C0A77F76AD24E87A78DCFC9C9A1D9D7385FD42D38AA311C1989C887500`，log 27,395 bytes、SHA-256 `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`。相同 PDF 已复制到 `output/pdf/`。
+- `artifacts/v8_build/mixed_join_research_note_v8.pdf` 与 `.log`：最终三遍 MiKTeX 编译制品；PDF 22 页、438,048 bytes、SHA-256 `6871515D36D96CFFC9AFC70BC9F02B0C572ABF380E1F05148AF2E01BCEDE91F9`，log 28,906 bytes、SHA-256 `6C6A2E6AF5C4CF54BCB35502EB076A43997F7D9168750256EF1B8C6F99F14A5C`。相同 PDF 已复制到 `output/pdf/mixed_join_research_note_v8.pdf`，最终原生日志与全部页面均已检查。
 - `results/jiang_v1_0_1_supplement_report.json`：supplement 实际运行报告。
 - `results/jiang_v1_0_1_independent_report.json`：项目第二套实现的实际运行报告。
 - `experiments/audit_extension_candidates.py`：只用于目标选择的最小可复现筛选脚本。
@@ -414,16 +441,16 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 ## 11. Repository and environment status
 
-- Git repository：已初始化，当前分支为 `main`，本地 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
-- 当前 Git 状态：`main` 已推送并跟踪 `origin/main`；本轮 v7 工作开始时本地 `HEAD` 与远端均为 `6f60b4d`。v7 和本轮文档更新尚未 push；这不影响 v7 所引用的 public v6 archive 已经可用。
+- Git repository：已初始化，当前分支为 `main`；初始 root commit 为 `e274fd3` (`Initial research code and reproducibility package`)。
+- 当前 Git 状态：`main` 跟踪 `origin/main`；本阶段检查时本地 `HEAD` 为 `1a0a20c` (`Record DMGT rejection and select DAM fast-transfer route`)，远端 `origin/main` 为 `286d71e`。v8 定位稿、support drafts、requirements note 和本轮状态/日志更新均尚未 push；这不影响稿中引用的 public v6 archive 已可用。
 - GitHub repository：`https://github.com/Star5Dust/dual-general-position-mixed-joins` 已由 GitHub REST API 读回为 public，默认分支为 `main`，当前无 license、无 topics、无 Zenodo DOI。`origin` 指向该 URL。常见 token/private-key 模式扫描为零命中；公开树仍包含作者在论文中主动列出的通讯邮箱以及若干内部研究/投稿交接说明，是否进一步精简历史由作者决定。
 - `papers_local/`：已加入 `.gitignore`；不要提交其中 PDF。
 - Python virtual environment：`.venv` 已创建，Python 3.13.5。
-- 文档工具：Pandoc 2.12 可用；本机 MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 已用于 v6 和 v7 三遍编译。v7 原生 `.log`、14 页 PDF、字体/URI/文本和逐页渲染均已验收；v4/v5 与五份 v4 期刊衍生稿仍未真实编译，不能套用 v7 结论。
+- 文档工具：Pandoc 2.12 可用；本轮 v8 使用 MiKTeX 26.5 / pdfTeX 1.40.29、LaTeX2e 2026-06-01、elsarticle 3.5（2026-01-09）三遍编译，原生 `.log`、22 页 PDF、字体/URI/文本和全部页面验收通过。MiKTeX 的 AppData 配置写入需要沙箱外权限，已获准运行；未安装新包。v6/v7 的 14 页历史制品保持不变；v4/v5 和五份 v4 期刊衍生稿仍未真实编译。
 - 外部制品交付：Google Drive 的 v2/v3 历史基线保持不变；本轮没有 Drive 操作。v6 TeX、PDF、固定 ZIP、代码、测试和审计结果已在 public GitHub repository 可读并完成匿名一致性审计。v7 PDF 直接引用该仓库，因此 DMGT 首投不需要另附 ZIP 或发邮件；本地 v7 源/PDF尚未 push 也不影响链接有效性。
 - `requirements.txt` 已列出 `networkx`、`numpy`、`pandas`、`sympy`、`pytest`、`matplotlib`。
 - 上述 packages 已安装并核对：NetworkX 3.6.1、NumPy 2.5.2、pandas 3.0.5、SymPy 1.14.0、pytest 9.1.1、Matplotlib 3.11.1。
-- 项目独立实现、extension audit 与 mixed-join DP 测试：v7 验收时为 `30 passed in 0.36s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。184 次 DP 重构树侧集合的 definition-first dual-GP 可行性检查仍全部零失败；这些有限实验是验证，不构成证明或全范围 exhaustive claim。
+- 项目独立实现、extension audit 与 mixed-join DP 测试：2026-09-02 v8 最终验收时为 `30 passed, 1 warning in 0.51s`；运行命令为 `.\.venv\Scripts\python.exe -m pytest -q tests`。唯一警告是 `.pytest_cache\v\cache\nodeids` 不可写，不是测试失败。本轮未重跑完整 985-tree 主审计或改变结果 JSON；既有 184 次 DP 重构集合 definition-first 检查结果保持不变。有限实验是验证，不构成证明或全范围 exhaustive claim。
 
 ## 12. 每轮结束时的更新规则
 

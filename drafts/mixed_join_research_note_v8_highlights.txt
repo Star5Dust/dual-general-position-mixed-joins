@@ -1,0 +1,6 @@
+Highlights
+
+- Dual general-position sets in K_r+T split into two exhaustive branches.
+- Local tree constraints yield a four-state dynamic program.
+- The optimum value and a maximum set are obtained in linear time.
+- Exhaustive and definition-first checks test the implementation.

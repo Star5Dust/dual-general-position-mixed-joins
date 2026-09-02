@@ -6,6 +6,7 @@
 \documentclass[preprint,12pt]{elsarticle}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[mathlines]{lineno}
 \usepackage{longtable,booktabs,array}
@@ -233,9 +234,12 @@ criterion throughout:
 
 \nopagebreak[4]
 \[
+\begin{aligned}
 X\text{ is dual general position in }G
-\quad\Longleftrightarrow\quad
-X\text{ is general position and }G-X\text{ is convex}.
+\quad\Longleftrightarrow\quad{}
+&X\text{ is general position}\\
+&\text{and }G-X\text{ is convex}.
+\end{aligned}
 \]
 
 \Needspace{6\baselineskip}
@@ -275,8 +279,10 @@ interchanged, so \(q_2(T)\) records the largest possible class in a
 partition of the tree into two induced cliques. Second, define
 
 \[
-\beta(T)=\max\bigl\{|X|:X\subseteq V(T),\ \Delta(T[X])\le 1,
-\ |N_T(x)\setminus X|\le 1\text{ for every }x\in X\bigr\}.
+\begin{aligned}
+\beta(T)=\max\bigl\{|X|:{}&X\subseteq V(T),\ \Delta(T[X])\le 1,\\
+&|N_T(x)\setminus X|\le 1\text{ for every }x\in X\bigr\}.
+\end{aligned}
 \]
 
 The first constraint in the definition of \(\beta(T)\) says that a
@@ -814,7 +820,7 @@ For completeness, the dynamic program also yields a constructive algorithm
 for the original mixed-join problem. If \(T\notin\{P_3,P_4\}\), the
 reconstructed \(\beta\)-feasible set, viewed as a subset of the tree factor,
 is a maximum dual general-position set by
-Corollary~\ref{cor:tree-specialization}. If \(T\) is \(P_3\) or \(P_4\),
+Corollary~\ref{cor:main-formula}. If \(T\) is \(P_3\) or \(P_4\),
 take all vertices of \(K_r\) together with a two-vertex clique class in the
 corresponding two-clique partition of \(T\). Detecting the exceptional paths
 takes linear time in the tree order, and listing the complete-factor vertices
@@ -1015,7 +1021,7 @@ This latter check concerns feasibility; on \(P_3\) and \(P_4\), a
 The archived report \path{results/mixed_join_dp_audit.json}
 records:
 
-\begin{longtable}[]{@{}L{0.25\textwidth}L{0.40\textwidth}rr@{}}
+\begin{longtable}[]{@{}L{0.21\textwidth}L{0.34\textwidth}rr@{}}
 \toprule
 Check & Scope & Number checked & Failures \\
 \midrule
@@ -1056,9 +1062,11 @@ CPython 3.13.5, NetworkX 3.6.1, and pytest 9.1.1. From the repository
 root, the relevant PowerShell commands are
 
 \begin{verbatim}
-.\.venv\Scripts\python.exe -m pip install -r .\requirements-lock.txt
+.\.venv\Scripts\python.exe -m pip install `
+  -r .\requirements-lock.txt
 .\.venv\Scripts\python.exe -m pytest -q .\tests
-.\.venv\Scripts\python.exe .\experiments\audit_mixed_join_dp.py `
+.\.venv\Scripts\python.exe `
+  .\experiments\audit_mixed_join_dp.py `
   --output .\results\mixed_join_dp_audit.json
 \end{verbatim}
 
@@ -1153,7 +1161,7 @@ a new result.
 
 Several limitations are essential. Jiang's closest general result
 \cite{jiang-complete-first-factor} was available as preprint v1.0.1 at the
-literature cutoff of 29 August 2026. The bounded computations in
+literature cutoff of 2 September 2026. The bounded computations in
 Section~\ref{sec:computation} support the implementation but do not prove the
 theorem. The comparison with the known fan formula uses the display in arXiv
 v2 of~\cite{tian-et-al-removal}, which has the rounding convention consistent
@@ -1167,44 +1175,37 @@ present scope, and no claim about their resolution or novelty is made here.
 The contribution is an algorithmic result for this graph-optimization family;
 it is not presented as a real-world application of dual general position.
 
-\enlargethispage{2\baselineskip}
-\section*{Statements and Declarations}
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the
+public, commercial, or not-for-profit sectors.
 
-\noindent\textbf{Funding.}
-The author received no funding for this work.
+\section*{CRediT authorship contribution statement}
+Yi Yuteng: Conceptualization, Methodology, Software, Validation, Formal
+analysis, Investigation, Writing -- original draft, Writing -- review and
+editing.
 
-\medskip
-\noindent\textbf{Competing interests.}
-The author declares no competing interests.
+\section*{Declaration of competing interest}
+The author declares that there are no known competing financial interests or
+personal relationships that could have appeared to influence the work reported
+in this paper.
 
-\medskip
-\noindent\textbf{Author contributions.}
-Yi Yuteng is the sole author and assumes responsibility for the study, the
-reported mathematical arguments and computations, and the final manuscript.
-
-\medskip
-\noindent\textbf{Data and code availability.}
+\section*{Data and code availability}
 The code, tests, locked Python environment, proof note, and machine-readable
-audit outputs supporting the computational checks are publicly available at
+audit outputs supporting the computational checks are deposited in the public
+repository at
 \url{https://github.com/Star5Dust/dual-general-position-mixed-joins}. The fixed
 archive used for the reported checks is
 \path{artifacts/mixed_join_v6_reproducibility.zip}; its SHA-256 checksum is
 recorded in Section~\ref{sec:computation}.
 
-\medskip
-\noindent\textbf{Acknowledgements.}
-The author acknowledges the assistance of OpenAI Codex in the roles described
-below.
+\section*{Declaration of generative AI and AI-assisted technologies in the
+manuscript preparation process}
+During the preparation of this work the author used OpenAI Codex to assist with
+literature organization, proof and manuscript drafting, code development,
+computational checking, and editorial revision. After using this tool, the
+author reviewed and edited the content and source code as needed and takes full
+responsibility for the content of the published article.
 
-\medskip
-\noindent\textbf{Use of AI-assisted tools.}
-OpenAI Codex was used as an AI-assisted tool for literature organization,
-proof drafting, code development, computational checking, manuscript drafting,
-and editorial revision. Codex is not an author. The author assumes full
-responsibility for the final manuscript, including verification of the
-mathematical claims, citations, code, and text.
-
-\clearpage
 \begin{thebibliography}{9}
 
 \bibitem{tian-klavzar-variety}

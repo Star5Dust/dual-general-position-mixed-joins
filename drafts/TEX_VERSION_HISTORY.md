@@ -26,6 +26,7 @@ or inferred.
 | v5 | `drafts/mixed_join_research_note_v5.tex` | `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2` | Frozen first AI-review-adjudicated candidate. It changes no theorem value or experimental claim. It replaces potentially misleading apex terminology by designated-factor `C` terminology, states the empty-class convention for `q_2`, records the `P_4,r=1` branch tie, and clarifies the local and DP boundary/storage wording. Pandoc parsing and structural checks passed; v5 itself was not run through a TeX engine and is not peer reviewed. |
 | v6 | `drafts/mixed_join_research_note_v6.tex` | `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE` | Frozen DMGT-style candidate. It adjudicates the GLM 5.3 report, strengthens the separation from the weaker induced-degree problem, removes internal project language, clarifies the two computational routes and the `F_3`/small-tree boundaries, adds a locked environment and fixed supplementary archive, and records 184 definition-first checks of reconstructed tree-side sets. No theorem value or proof dependency changed. Static checks pass with 35 unique labels, 50 resolved references, six bibliography entries, 13 citation keys, 13 theorem-like statements, 13 proofs, balanced environments, and zero placeholders; tests return 30 passed. MiKTeX-pdfTeX 4.27 / pdfTeX 1.40.29 produced a warning-free 14-page PDF through three passes. The native log, embedded fonts, hyperlinks, and all 14 rendered pages passed review. V6 is not human peer reviewed. |
 | v7 | `drafts/mixed_join_research_note_v7.tex` | `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992` | Current DMGT initial-submission candidate. It changes only the reproducibility-location wording by naming the verified public GitHub repository and its fixed v6 archive; no theorem, proof, numerical result, citation, or computational claim changed. Pandoc returns zero and the unchanged test suite reports 30 passed. Three MiKTeX-pdfTeX passes produced a 14-page A4 PDF whose native log has zero errors, warnings, box warnings, undefined references/citations, missing characters, or rerun requests. All fonts are embedded, the repository URI is present, extracted text has no unresolved submission marker, and all pages passed visual review. V7 is not human peer reviewed. |
+| v8 | `drafts/mixed_join_research_note_v8.tex` | `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB` | Current locally validated Discrete Applied Mathematics `Contribution` candidate, derived from frozen v7, not the obsolete v4 journal file. Elsevier front matter foregrounds the proved linear-time DP and maximum-set reconstruction without claiming an external application. The structural formula and proof core are unchanged; a direct consequence explains maximum-set construction in `O(r+|V(T)|)` time. The current AI disclosure and research-code statement are included. Validation added scalable Latin Modern fonts, broke two long formulas and two commands, narrowed the audit table, and refreshed the literature cutoff to 2 September 2026. Source: 52,422 bytes, 1,249 lines. Pandoc and structural checks pass: 35 unique labels, 52 resolved references, six bibliography entries, 13 citation uses, 53 balanced environment pairs, 13 theorem-like statements, 13 proofs, 40 displayed formulas, zero placeholders. Tests: 30 passed, with one pytest-cache permission warning. Three MiKTeX 26.5/pdfTeX 1.40.29 passes produced 22 pages; final native log, fonts, links, text and all rendered pages passed checks. Author approval and live submission-PDF review remain required; no DAM submission or human peer review is claimed. |
 
 The v6 compiler PDF is retained at
 `artifacts/v6_build/mixed_join_research_note_v6.pdf` and copied without byte
@@ -43,14 +44,38 @@ with SHA-256
 The native v7 log is 27,395 bytes with SHA-256
 `EB46D421FF2D3293C2F177156BF10349D198881E8053C64C810B18D34147C3F2`.
 
+V7 is now the frozen DMGT submission baseline: DMGT rejected it at initial
+evaluation on 2 September 2026 without a manuscript-specific report. The
+historical initial-submission description above is not an active instruction.
+
+The final v8 compiler PDF is retained at
+`artifacts/v8_build/mixed_join_research_note_v8.pdf` and copied without byte
+change to `output/pdf/mixed_join_research_note_v8.pdf`; both are 438,048 bytes,
+22 pages, with SHA-256
+`6871515D36D96CFFC9AFC70BC9F02B0C572ABF380E1F05148AF2E01BCEDE91F9`.
+The native v8 log is 28,906 bytes with SHA-256
+`6C6A2E6AF5C4CF54BCB35502EB076A43997F7D9168750256EF1B8C6F99F14A5C`.
+Its final scan has zero errors, warnings, overfull/underfull boxes, undefined
+references/citations, missing characters or rerun requests. All 24 font
+resources are embedded/subsetted Type 1 fonts with Unicode mappings. The 80
+link annotations comprise 65 internal links and 15 URI annotations (eight
+unique URIs). All 22 pages were rendered at 120 dpi and visually reviewed.
+
+The optional cover-letter draft, candidate highlights, and journal-requirements
+audit are stored respectively at
+`drafts/mixed_join_research_note_v8_cover_letter.md`,
+`drafts/mixed_join_research_note_v8_highlights.txt`, and
+`notes/dam_v8_submission_requirements.md`. None has been uploaded to a journal.
+
 ## Journal-name derivatives of v4
 
 The files below are journal-format derivatives, not new mathematical content
 versions. Their text from `Introduction` through `Conclusion and limitations`
 is byte-for-byte identical to the corresponding v4 span. They are now
 superseded as content candidates by v6 and must not be submitted. If a
-journal-specific class is later required, only the single selected derivative
-may be regenerated from v6 instead of editing divergent mathematical copies.
+journal-specific class is later required, create a new numbered candidate from
+the current frozen content baseline; retain these historical derivatives. DAM
+v8 was created from v7 and does not use the obsolete DAM derivative.
 
 | Target journal | Local source | Bytes | SHA-256 | Format and validation state |
 |---|---|---:|---|---|
@@ -84,6 +109,9 @@ recorded in `drafts/journal_versions/README.md`.
 - v7 is intentionally local-only with respect to Google Drive. It cites the
   already-public GitHub repository; no Drive folder or file was created, read,
   or changed while preparing or compiling v7.
+- v8 is intentionally local-only. No Google Drive or journal-submission file
+  was created or changed while preparing the DAM-positioned source and support
+  drafts.
 - All five journal-name derivatives are also intentionally local-only. No Drive
   folder or file was created, read, or changed while producing them.
 

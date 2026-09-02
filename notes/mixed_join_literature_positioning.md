@@ -302,8 +302,8 @@ without another final metadata/index check.
 - [x] include at least stars and subdivided stars as worked structural examples;
 - [ ] check the version-of-record body of DOI `10.1016/j.dam.2026.02.044` for the
   floor/ceiling display;
-- [ ] rerun the Jiang version/related-identifier and exact-title searches
-  immediately before submission;
+- [x] rerun the Jiang version/related-identifier and exact-title searches
+  at the 2026-09-02 v8 validation cutoff (refresh again if submission is delayed);
 - [ ] if human access becomes available, check MathSciNet, Scopus, and Web of
   Science and record the result; absence there would still be search evidence,
   not a proof of novelty;
@@ -377,3 +377,45 @@ proof.
 Therefore the exact fan formula display in the version-of-record body remains
 `UNKNOWN`. The checked arXiv v2 floor formula remains the manuscript's explicit
 source for that display.
+
+## 13. DAM v8 pre-submission refresh (2026-09-02)
+
+This is a bounded metadata and source refresh, not a new full-database search
+or a proof of novelty. No subscription database was newly accessed.
+
+- The [Zenodo record API](https://zenodo.org/api/records/22116770) still
+  identifies Jiang's latest preprint as v1.0.1, dated 2026-08-27, DOI
+  `10.5281/zenodo.22116770`, updated
+  `2026-08-27T03:02:35.559335+08:00`, with no related journal identifier.
+  Its [versions endpoint](https://zenodo.org/api/records/22116770/versions)
+  returns only v1.0.1 (`22116770`) and v1.0.0 (`22081166`).
+- The [DataCite DOI record](https://api.datacite.org/dois/10.5281/zenodo.22116770)
+  remains findable, version v1.0.1, updated `2026-08-26T19:02:36Z`.
+  Its only related identifier is `IsVersionOf` the concept DOI
+  `10.5281/zenodo.22081165`; it supplies no journal relation.
+- A Crossref title-weighted query for Jiang's exact title, inspecting the top
+  ten returned candidates, did not return an exact title match. Its first
+  result was the known product paper, DOI `10.1007/s40314-025-03547-7`.
+  Crossref's broad `total-results` value is not a count of exact title matches.
+  Web searches for the exact title, version DOI, and author/title with journal
+  terms likewise yielded no new identifiable Jiang publication. This is only
+  a negative result within those queries, not evidence of exhaustive coverage.
+- The [arXiv API](https://export.arxiv.org/api/query?id_list=2510.01294) still
+  gives `2510.01294v2`, updated `2026-02-03T06:35:52Z`, for the removal paper.
+  The [Crossref DOI record](https://api.crossref.org/works/10.1016/j.dam.2026.02.044)
+  identifies its journal publication as *Discrete Applied Mathematics* 388
+  (2026), 56--64, with publication date parts `[2026, 7]`.
+- The [author publication list](https://users.fmf.uni-lj.si/klavzar/papers-all.htm)
+  confirms the same journal citation. Its linked
+  [PDF](https://users.fmf.uni-lj.si/klavzar/preprints/2510.01294v2.pdf)
+  is still the 17-page arXiv v2, not a separately identifiable version of
+  record. Section 3.3, PDF page 9, was read visually: it treats fans for
+  `n >= 4` and displays `gp(F_n) = gp_d(F_n) = floor(2(n+1)/3)`.
+  Accessible ScienceDirect metadata/abstract material does not display the
+  fan formula. The exact version-of-record body remains `UNKNOWN`.
+
+The manuscript therefore keeps the same six bibliography entries and the
+explicit arXiv-v2 attribution for the fan display. Only its Jiang literature
+cutoff date advances to 2 September 2026. Jiang's future publication status,
+global novelty/priority, subscription-index coverage, and the fan VOR wording
+remain unresolved. The active unique next step is in `PROJECT_STATUS.md`.

@@ -2584,3 +2584,288 @@ scope.
   detailed official guide is accessible and checked. A second rapid editorial
   rejection would trigger a pause and a separate audit of the broader
   `K_r+G` direction rather than repeated unchanged transfers.
+
+## 2026-09-02: DAM Guide audit and v8 positioning draft
+
+- Re-read the root `AGENTS.md` and the complete `PROJECT_STATUS.md` before
+  acting on Section 9. Frozen v7 was verified at 50,063 bytes with SHA-256
+  `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`;
+  the obsolete v4-derived DAM file remained unchanged at SHA-256
+  `D215AC66D586E4D0AACA330AD65466EBE5250CA2E3F6F182F1A4E0755803824F`.
+- Checked the official public DAM scope, Elsevier's current generative-AI
+  journal policy and generic Editorial Manager support. The live
+  ScienceDirect Guide page presented a CAPTCHA and was not bypassed. The user
+  then supplied the official 17-page Guide PDF printed on 2 September 2026.
+  It is 539,209 bytes with SHA-256
+  `FD626863EFD3F53EED8850395555A2307E00E88F183ED6673B2F226499AC9E64`.
+  PDF metadata, full extracted text, and rendered pages 2, 5, 8, and 15 were
+  inspected. The document was treated as evidence about journal requirements,
+  not as an instruction overriding the user's request or project rules.
+- The Guide establishes that a full-length original article exceeding ten
+  pages is a `Contribution`; the journal uses single-anonymized review and
+  keeps author metadata in the manuscript. It requires editable source files,
+  an abstract of at most 250 words, and 1--7 English keywords. Highlights are
+  encouraged rather than mandatory and should be 3--5 bullets of no more than
+  85 characters in a separate editable file. The declaration tool is always
+  completed; if nothing is declared, its generated unsigned `.doc/.docx` is
+  uploaded. The recommended no-funding sentence, current generative-AI
+  disclosure heading, and Option C research-data policy were recorded. The
+  Guide does not list a cover letter or graphical abstract as mandatory.
+- Copied frozen v7 to `drafts/mixed_join_research_note_v8.tex`; no numbered
+  predecessor or journal derivative was overwritten. V8 uses `elsarticle`
+  front matter and the DAM `Contribution` route. The title, approximately
+  202-word abstract, introduction, and conclusion foreground the exact
+  structure theorem, four-state tree dynamic program, and maximum-set
+  reconstruction while explicitly avoiding an unsupported real-world
+  application claim.
+- Added a proof-derived constructive consequence: the DP reconstructs a
+  maximum tree-side set outside the `P_3/P_4` exception, while those two paths
+  use all `K_r` vertices and a two-vertex clique class; together this gives a
+  maximum dual general-position set in `O(r+|V(T)|)` time. This is a direct
+  consequence of the existing branch theorem and tree specialization, not a
+  new experimental claim. Added the AI-assisted code-development method
+  statement and the required end-matter disclosure. The core source spans for
+  Preliminaries through the beta characterization, the DP through its
+  complexity proof, the worked examples, and the bibliography compare
+  byte-for-byte with v7.
+- Final v8 source is 52,314 bytes and 1,241 lines with SHA-256
+  `095C0E64DC4D104A9F80045AD0F890E43D49417C7E63895465D81C9BDF616B38`.
+  Created `drafts/mixed_join_research_note_v8_highlights.txt` with four bullets
+  of 71, 58, 64, and 63 characters (SHA-256
+  `F92E3EFD5070E6B3EDC14EA7B3582C875B5D600E0E0E04B6FB23347E02666FCF`),
+  an optional 238-word cover-letter draft (SHA-256
+  `0FC71A53319F3DF7600F0EB486BF164C7D24CDB02B5A1BEBC45EAA868BD027AD`),
+  and `notes/dam_v8_submission_requirements.md` (SHA-256
+  `1AAAE23689D93AE7C81D9B751173E437C7B1B87C12C3BBEBF124A51E98D67CC8`).
+- This phase intentionally stopped at targeted diff, word/character counts,
+  hashes, and frozen-file checks. It did not run the next-stage literature
+  refresh, complete Pandoc/label/reference/declaration scan, Python tests,
+  LaTeX compilation, native-log inspection, or PDF QA. No mathematical code or
+  result JSON changed, so no new implementation test was required in this
+  positioning phase. No journal, Google Drive, GitHub, release, DOI, or other
+  external state was changed.
+- The Guide-specific submission facts are no longer `UNKNOWN`; authenticated
+  dynamic Editorial Manager fields, the journal's eventual editorial outcome,
+  human peer review, full-database novelty/priority, fan version-of-record
+  wording, and out-of-scope generalizations remain `UNKNOWN`. The unique next
+  step is the full v8 pre-submission validation recorded in Section 9.
+
+## 2026-09-02: v8 pre-submission validation and local MiKTeX build
+
+### Scope and literature refresh
+
+- Continued the unique Section 9 validation task after reading root
+  `AGENTS.md` and the complete `PROJECT_STATUS.md`. Used the PDF skill for
+  rendering and visual QA. The author explicitly allowed MiKTeX compilation.
+  No journal submission, upload, Google Drive mutation, Git commit/push,
+  release, or DOI operation was performed.
+- Refreshed the official Zenodo record and versions endpoints, DataCite DOI
+  record, arXiv API, Crossref metadata/title search, author publication list,
+  and relevant public web search results. Initial web-tool API access failed;
+  read-only PowerShell requests also hit sandbox network restrictions, then
+  succeeded with approved network access. These failures were not interpreted
+  as negative search results.
+- Zenodo still lists exactly v1.0.0 and v1.0.1 for Jiang's work; v1.0.1 is
+  dated 2026-08-27 and updated `2026-08-27T03:02:35.559335+08:00`, without a
+  related journal identifier. DataCite reports v1.0.1, findable, updated
+  `2026-08-26T19:02:36Z`, and only `IsVersionOf` the concept DOI. A Crossref
+  title-weighted top-ten query and exact-title/DOI/author web searches did not
+  identify a new Jiang publication. The broad Crossref `total-results`
+  (3,298,055) is not an exact-title count and is not used for any inference.
+- arXiv still returns removal-paper `2510.01294v2`, updated
+  `2026-02-03T06:35:52Z`; Crossref and the author's list give DAM 388 (2026),
+  56--64. The author's linked 17-page PDF is arXiv v2, not the VOR. Section
+  3.3 on PDF page 9 was visually checked and displays the fan result for
+  `n >= 4` with `floor(2(n+1)/3)`. Accessible ScienceDirect metadata/abstract
+  material does not settle the VOR's exact formula display.
+- Exact source URLs and the bounded interpretation are appended to Section 13
+  of `notes/mixed_join_literature_positioning.md`. No subscription database
+  was newly accessed. No reference or mathematical claim needed changing;
+  only the manuscript's Jiang literature cutoff changed from 29 August to
+  2 September 2026. Novelty/priority and fan VOR wording remain `UNKNOWN`.
+
+### Static checks and mathematical-content boundary
+
+- Pandoc 2.12 parsed the final source successfully. A resumed check initially
+  used `--output=NUL`, which Pandoc rejected as an invalid output path; this
+  was a command issue, not a source error. Piping its native output to
+  PowerShell `Out-Null` succeeded with exit code zero.
+- Final structural counts: 35 labels, all unique; 52 resolved `ref/eqref`
+  uses; six bibliography entries; 13 resolved citation uses; 53 properly
+  nested environment pairs; 13 theorem-like statements and 13 proofs;
+  34 display-delimiter pairs plus six equation environments (40 displays).
+  Submission-placeholder scan returned zero. The abstract is approximately
+  200 words (199 under this pass's approximate count), with six keywords.
+  The four unchanged highlights have 71, 58, 64, and 63 characters.
+- Author/journal metadata, funding, CRediT, competing-interest, data/code,
+  and exact AI-declaration heading were present. An initial literal-string
+  check for human responsibility failed because of a source line break;
+  whitespace-aware checking confirmed the sentence, so no content repair
+  was needed.
+- Before the layout fixes, six corresponding core spans of initial v8 and
+  v7 compared equal after CRLF/LF normalization. This qualifies the previous
+  phase's overly strong "byte-for-byte" description: raw line endings differ.
+  Subsequent edits only changed two formula layouts, table widths, command
+  line breaks, fonts, and the literature cutoff; they did not change theorem
+  values, proof dependencies, citations, code, tests, or numerical results.
+
+### Tests, failures, and compilation repairs
+
+- Environment: CPython 3.13.5, NetworkX 3.6.1, pytest 9.1.1,
+  `Windows-11-10.0.26100-SP0`. Command:
+  `.\.venv\Scripts\python.exe -m pytest -q tests`.
+  The initial run gave `30 passed, 1 warning in 0.27s`; the final repeated
+  run gave `30 passed, 1 warning in 0.51s`. The only warning was
+  `PytestCacheWarning`, permission denied writing
+  `.pytest_cache\v\cache\nodeids`. It is retained as an environment warning,
+  not hidden or presented as a failed mathematical test.
+- The complete 985-tree audit driver was not rerun in this task and its JSON
+  was not changed. Section 7's 29 August full-audit rerun remains the accurate
+  provenance of that matrix; today's tests do not enlarge its scope.
+- Engine: `C:\Users\yyt\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe`,
+  pdfTeX 3.141592653-2.6-1.40.29 (MiKTeX 26.5), LaTeX2e 2026-06-01,
+  L3 2026-07-20, `elsarticle` 2026-01-09 v3.5. Initial sandbox execution
+  failed when MiKTeX tried to initialize its AppData configuration directory;
+  approved execution outside that restriction allowed the existing engine
+  and packages to run. No new TeX package was installed.
+- The first real build failed with `auto expansion is only possible with
+  scalable fonts`, alongside font-size substitution warnings. Verified the
+  installed `lmodern.sty` and added `\usepackage{lmodern}` only to v8. Removed
+  only the exact v8 failed-build auxiliary files; no old source was removed.
+- A successful build then exposed six overfull reports: 40.3513 pt for the
+  dual-GP criterion, 14.90675 pt for the beta definition, 24.07355 pt twice for
+  one longtable width, and 29.9002/11.3752 pt for two verbatim commands.
+  Split the two formulas with `aligned`, reduced the audit-table text columns
+  from `0.25/0.40` to `0.21/0.34\textwidth`, and split two PowerShell commands
+  using explicit continuation backticks. No mathematical meaning changed.
+- After the first clean build and visual review, the cutoff-date update
+  triggered a final rebuild that was interrupted. Its partial build PDF/log
+  were not delivered; the previous valid output copy was preserved. On
+  continuation, all three final passes completed successfully, using:
+
+  ```powershell
+  & 'C:\Users\yyt\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe' -interaction=nonstopmode -halt-on-error -file-line-error -output-directory='artifacts\v8_build' 'drafts\mixed_join_research_note_v8.tex'
+  ```
+
+  This command was run three times. The final native log has zero errors,
+  warnings, overfull/underfull boxes, undefined references/citations, missing
+  characters, or rerun requests. Package names such as `rerunfilecheck` were
+  not mistaken for actual warnings.
+
+### Final PDF and handoff
+
+- Final PDF: 22 nonempty US Letter pages (612 x 792 pt, Elsevier preprint
+  default), PDF 1.5, no encryption, JavaScript or AcroForm. Title and author
+  metadata are correct. All 24 font resources are Type 1, embedded, subsetted,
+  and have Unicode mappings. There are 80 link annotations: 65 internal and
+  15 URI annotations representing eight unique URIs (six DOI URLs, the
+  removal-paper arXiv-v2 URL, and the public repository URL). Extracted text
+  has no placeholder/undefined marker and includes the new cutoff date.
+- Rendered every final page at 120 dpi with Poppler and reviewed all eleven
+  two-page contact sheets, with an additional full-size check of page 21.
+  Compared with the earlier fully inspected build, only page 21 changes
+  pixels, exactly at the cutoff date; the other 21 pages are pixel-identical.
+  No clipping, overlap, missing glyph, broken table, or illegible content was
+  found. Longtable continuation headers, wrapped hash strings, and command
+  continuations remain readable. Temporary renders are not submission files.
+
+| Final artifact | Bytes | SHA-256 |
+|---|---:|---|
+| `drafts/mixed_join_research_note_v8.tex` (1,249 lines) | 52,422 | `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB` |
+| `artifacts/v8_build/mixed_join_research_note_v8.pdf` | 438,048 | `6871515D36D96CFFC9AFC70BC9F02B0C572ABF380E1F05148AF2E01BCEDE91F9` |
+| `output/pdf/mixed_join_research_note_v8.pdf` (identical delivery copy) | 438,048 | `6871515D36D96CFFC9AFC70BC9F02B0C572ABF380E1F05148AF2E01BCEDE91F9` |
+| `artifacts/v8_build/mixed_join_research_note_v8.log` | 28,906 | `6C6A2E6AF5C4CF54BCB35502EB076A43997F7D9168750256EF1B8C6F99F14A5C` |
+
+- Frozen v7 remains SHA-256
+  `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`;
+  the obsolete v4 DAM derivative remains
+  `D215AC66D586E4D0AACA330AD65466EBE5250CA2E3F6F182F1A4E0755803824F`.
+  Optional cover letter/highlights and the guide audit were not altered.
+- Updated version history, target-journal note, canonical literature note,
+  project state/completed/UNKNOWN items, and the unique Next. Local validation
+  is complete, but author approval and live Editorial Manager fields,
+  declaration-tool file, generated submission PDF and final submission
+  confirmation remain pending. The technical checks are not human peer
+  review, novelty proof, or an acceptance guarantee.
+- Final internal-link resolution found 76 named destinations and all 65
+  internal links resolved; external URI syntax checks passed. `git diff
+  --check` passed. Git printed its existing LF-to-CRLF normalization notices,
+  so source hashes above identify the checked local bytes, not a promise of
+  byte identity after a future Git normalization. Removed only the task-owned
+  `tmp/pdfs/v8/` render/contact-sheet/text scratch directory after QA; these
+  disposable files can be regenerated from the retained PDF. All final source,
+  PDF/log artifacts and other version directories were retained.
+
+## 2026-09-02: author approval and DAM submission instructions
+
+- The author stated that they had reviewed v8, accepted it, and asked how to
+  submit. Recorded this as approval of the local manuscript, not approval of
+  a still-unbuilt Editorial Manager PDF or an instruction to click final submit.
+- Re-read the root rules and complete status, then the canonical DAM
+  requirements note and support drafts. Rechecked Elsevier's current official
+  [submission guide](https://www.elsevier.support/publishing/answer/how-do-i-submit-a-manuscript-in-editorial-manager)
+  (updated 28 August 2026) and
+  [LaTeX guidance](https://www.elsevier.support/publishing/answer/how-to-submit-a-latex-file-in-editorial-manager).
+  The automated web reader could not open the DAM EM entry and received HTTP
+  403 for the live ScienceDirect Guide; neither failure was treated as evidence
+  of a changed requirement. Journal-specific requirements remain grounded in
+  the previously checked same-day official Guide supplied by the author.
+- Explained Author login/new manuscript, `Contribution`, v8 source and required
+  build dependencies, declarations-tool output, optional highlights/cover
+  letter, author/abstract/keyword/funding data, and build/view/approve stages.
+  Exact attachment categories, reviewer questions, and extension restrictions
+  remain dependent on the authenticated live form and are not claimed verified.
+- Source inspection found no external bibliography or figure files; standard
+  class/package dependencies still need to compile on the journal system.
+  Did not create a source ZIP, declaration file, account, online draft, or
+  submission, and did not edit or rebuild the approved TeX/PDF. No tests were
+  rerun because no mathematical implementation changed. All mathematical and
+  literature `UNKNOWN` items remain unchanged; the Next is live new-submission
+  preparation after the author opens the page or authorizes assistance.
+
+## 2026-09-02: authenticated DAM first-file screen clarification
+
+- The author supplied screenshot `codex-clipboard-60b77db8-c136-487d-818e-d214b75d3081.png`
+  of the authenticated DAM `Attach Files` first-file screen and asked what to
+  upload. The screenshot shows Article Type Selection completed but does not
+  display the selected type or an uploaded file.
+- Read the visible journal-specific LaTeX instructions: compile a manuscript
+  PDF, attach it as `Manuscript`, attach other items not contained in it, and
+  supply source files at revision. This resolves the previously unverified
+  live route and corrects the earlier instruction to upload TeX first. It is
+  consistent with retaining sources for submission or revision, not evidence
+  that editable sources will never be needed.
+- Identified the existing validated initial-upload file as
+  `output/pdf/mixed_join_research_note_v8.pdf`, 438,048 bytes and 22 pages.
+  Advised Browse -> select that PDF -> use `Manuscript` if a type selector
+  appears. Other item categories must be read after this first upload; no
+  declaration/highlights/cover-letter upload is claimed complete.
+- Updated the requirements note and project status/Next. No manuscript or
+  compiled artifact changed, no browser action/upload was performed by the
+  assistant, and no tests were needed. Mathematical/literature `UNKNOWN`
+  items remain unchanged. Final submission still requires review of the
+  system-assembled PDF and explicit approval.
+
+## 2026-09-02: data/code availability dropdown
+
+- Read the author's two screenshots of the required data/code availability
+  question. The displayed options include no-data, confidential, no-permission,
+  on-request, unspecified-data, and `Other`. The question explicitly warns
+  that the chosen statement, and any Other explanation, will be published.
+- Rechecked the public
+  [repository page](https://github.com/Star5Dust/dual-general-position-mixed-joins),
+  which identifies the repository as Public and lists `src`, `tests`,
+  `experiments`, and `results`. This confirms a public-location statement;
+  this was not a new byte-level audit of every remote file.
+- Recommended `Other`, with: "The source code, tests, and machine-readable
+  computational results supporting this study are publicly available at
+  https://github.com/Star5Dust/dual-general-position-mixed-joins."
+  This is consistent with v8's data/code availability section and does not
+  claim external empirical data or proof from finite experiments.
+- Did not recommend the dropdown's no-data or on-request statements, and did
+  not copy its example claim about a link supplied during Attach Files because
+  that UI action has not been verified. The cropped screenshots do not prove
+  the manuscript file list is correct or the submission complete.
+- Updated the requirements note and status/Next. No online form was filled by
+  the assistant, and no source, PDF, code, test or computational result changed.
+  Mathematical/literature `UNKNOWN` items remain unchanged.
