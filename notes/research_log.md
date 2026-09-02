@@ -2869,3 +2869,179 @@ scope.
 - Updated the requirements note and status/Next. No online form was filled by
   the assistant, and no source, PDF, code, test or computational result changed.
   Mathematical/literature `UNKNOWN` items remain unchanged.
+
+## 2026-09-02: manual manuscript metadata
+
+- The author supplied the Manuscript Data screen with Full Title, Abstract,
+  and Keywords and requested the values for manual entry.
+- Read these fields directly from the approved v8 TeX. Its SHA-256 remains
+  `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`.
+  Supplied the exact title and six keyword phrases; converted the abstract's
+  LaTeX math to plain-text notation and its cases display to equivalent
+  if/otherwise wording so it can be pasted into a rich-text field. No new
+  mathematical, experimental, or application claim was introduced.
+- No manuscript/source/PDF was edited or rebuilt, no form was filled by the
+  assistant, and no submission completion is inferred from the screenshot.
+  The next step is author entry and preview of these metadata fields, followed
+  by the remaining author/funding details and final system-PDF review.
+
+## 2026-09-02: affiliation between graduation and future enrolment
+
+- The author supplied the Edit Author Details screenshot with an empty,
+  mandatory Institution field, and stated that they recently graduated from
+  Shanghai Jiao Tong University and will enter TUM in October.
+- Read the complete root instructions/status. Checked approved v8 lines 43--46:
+  the existing affiliation is `Independent Researcher, Shanghai, China`.
+- Checked Elsevier's official guidance on
+  [affiliation choice](https://www.elsevier.support/publishing/answer/what-affiliations-should-i-use)
+  and [EM personal information](https://www.elsevier.support/publishing/answer/how-do-i-change-my-personal-information-in-editorial-manager).
+  The former distinguishes current/recent form affiliations from the affiliation
+  applying mainly during the research/manuscript preparation; the latter says
+  institution text need not be selected from normalization suggestions.
+- Recommended the existing independent-researcher affiliation if the work was
+  independently undertaken after graduation. Did not recommend using a future
+  TUM affiliation simply on the basis of forthcoming enrolment. Graduation does
+  not itself invalidate SJTU as the research affiliation if the work was mainly
+  undertaken while studying there; the author has not clarified that condition
+  in this turn. Actual location, rather than a future address, should be used.
+- No online field/account, manuscript, PDF, code or results were changed; no
+  successful save or submission was inferred. If manual institution entry is
+  blocked, the next diagnostic needs the actual validation message. Updated
+  status/Next; mathematical and literature UNKNOWN items remain unchanged.
+
+## 2026-09-02: no-funding submission field
+
+- The author reports that the author-details save problem is resolved. The
+  newly supplied Funding Information screenshot does not show the final
+  affiliation text, so no exact saved affiliation is inferred.
+- The screenshot shows an empty Current Funding Sources List, the checked
+  `Funding information is not available` box, and a green Required checkmark.
+- Read the complete root instructions/status and checked v8 lines 1178--1180:
+  the manuscript declares no specific grant from public, commercial or
+  not-for-profit funding agencies, consistent with the author's earlier
+  confirmation of no research funding.
+- Checked [EM's official funding-field help](https://emhelp.editorialmanager.com/robohelp/Request_Funding_Information.htm).
+  It documents the generic unavailable checkbox for authors unable to provide
+  funding details at submission; it does not define that wording exclusively
+  as a no-funding declaration. The precise no-specific-grant statement remains
+  in the manuscript. Recommended retaining the empty list/checked box if the
+  earlier no-funding facts remain accurate, and not adding a university simply
+  because the author studied or will study there.
+- No online action, manuscript/PDF edit, computation, commit or push performed.
+  Updated status/Next. All mathematical/literature UNKNOWN items remain intact;
+  complete metadata/attachments and the system-assembled PDF still need review
+  before explicit final submission approval.
+
+## 2026-09-02: open access versus subscription preference
+
+- Read the complete root instructions/status and the author's two Publishing
+  Options screenshots. They identify DAM as a hybrid journal, show OA and
+  Subscription choices, and explicitly state that this is a preference that
+  can be changed after acceptance and is visible to editors/reviewers only
+  after acceptance. Neither a selected option nor an APC quote is shown.
+- Checked Elsevier's official
+  [open-access explanation](https://www.elsevier.support/publishing/answer/which-open-access-options-are-available)
+  and [EM publishing-options help](https://www.elsevier.support/publishing/answer/what-are-the-new-publishing-options-in-editorial-manager).
+  Explained immediate public access with OA/APC versus subscriber-supported
+  access without an OA APC. Subscription does not mean the author must buy a
+  personal subscription. The DAM-specific ScienceDirect pricing page could
+  not be retrieved, so no current list price or personalized charge was given.
+- Recommended Subscription given the author's confirmed absence of research
+  funding and lack of verified OA coverage, while preserving the option to
+  reconsider after acceptance. Did not infer TUM agreement eligibility from
+  future enrolment or suggest a paid choice improves editorial acceptance.
+- Updated status/Next. No online selection/save, payment commitment, manuscript
+  edit, computation, commit or push was performed. Actual selected terms,
+  complete submission metadata and the assembled PDF remain unverified;
+  all mathematical/literature/publishability UNKNOWN items are unchanged.
+
+## 2026-09-02: checked acceptance box rejected at final approval
+
+- Read the complete root instructions/status and the new author screenshot.
+  The manuscript is on Submissions Waiting for Approval by Author, status
+  `Needs Approval`, with View Submission/Approve Submission actions. The
+  rightmost `I accept` checkbox is visibly checked while an error requires
+  that box to be selected before approval. The manuscript number is not shown.
+- This supports a discrepancy between the displayed state and validation,
+  not an established browser, network, timing or server diagnosis. It is not
+  evidence that the author forgot to check the box, nor proof that the PDF
+  was reviewed or the submission completed.
+- Rechecked [Elsevier approval guidance](https://www.elsevier.support/publishing/answer/how-can-i-approve-my-submission)
+  (updated 2026-08-04) and [EM checkbox documentation](https://emhelp.editorialmanager.com/robohelp/Configure_I_Accept_Checkbox.htm).
+  The official workflow requires viewing the assembled PDF, reviewing and
+  accepting the terms, and then approving; completion moves the submission
+  to Submissions Being Processed and may generate an email confirmation.
+- Suggested low-risk manual troubleshooting: dismiss the alert; complete PDF
+  review/terms reading if outstanding; if the author accepts and intends to
+  submit, uncheck/recheck and allow the page to respond before a single retry.
+  If persistent, reopen the same pending manuscript from Main Menu, then try
+  a fresh browser session/support if necessary. These are suggestions, not
+  a demonstrated fix. Do not remove or duplicate the submission or bypass the
+  acceptance gate. No assurance that clicking external links is technically
+  tracked or independently mandatory was made.
+- Updated status/Next to the actual approval stage. No browser action, legal
+  acceptance, final submission, file edit to the manuscript, computation,
+  commit or push was performed by the assistant. Root cause and final state
+  remain unverified; mathematical/literature UNKNOWN items are unchanged.
+
+## 2026-09-02: author reports DAM submission; journal positioning and outlook
+
+- Fully read root AGENTS.md and PROJECT_STATUS.md before this project work.
+  The author reports successful submission after the earlier approval error.
+  Recorded this as author-reported submitted, not independent verification of
+  the online status, manuscript number, final institution, publishing option,
+  attachments or assembled PDF. The earlier acceptance-checkbox problem is
+  historical, not the current blocker; its technical cause remains unknown.
+- Re-read the approved v8 front matter, abstract and contribution statement.
+  The positive case is its classification for all trees of order at least
+  three and arbitrary complete-factor order, local feasible-set structure,
+  linear-time constructive dynamic program, and reproducible checks. The
+  main editorial risks are restricted scope, perceived incremental novelty,
+  routine tree-DP methods after reduction, and contribution density. Known
+  fan results are not claimed as new. This is a qualitative editorial-risk
+  assessment, not an external mathematical review or acceptance prediction.
+- Verified the [CCF theoretical computer science directory](https://www.ccf.org.cn/Academic_Evaluation/TCS/):
+  DAM is C-class, not B-class. The [official ScienceDirect Volume 386 page](https://www.sciencedirect.com/journal/discrete-applied-mathematics/vol/386/suppl/C)
+  returned through search displays CiteScore 2.2 and Impact Factor 1.1.
+  No metric year, current JCR/CAS quartile or institutional recognition policy
+  was inferred. [Elsevier's journal description](https://shop.elsevier.com/journals/discrete-applied-mathematics/0166-218X)
+  places it in algorithmic/applicable discrete mathematics and combinatorial
+  applications; assessing the v8 topic as aligned does not imply acceptance.
+- Direct retrieval of the official journal home/Insights pages failed.
+  Current journal-specific decision-time statistics and acceptance rate
+  therefore remain UNKNOWN. Search exposed the nonofficial look-alike
+  sciencedirectelsevier.com; its figures were excluded, not treated as
+  Elsevier statistics. No particular manuscript probability was fabricated.
+- [Elsevier Journal Finder help](https://www.elsevier.support/publishing/answer/how-can-i-find-the-right-journal-for-my-paper-in-journal-finder)
+  distinguishes time to first editorial decision (which can include desk
+  rejection or inviting reviewers) from time to acceptance among accepted
+  papers. Any weeks/months ranges in the response are broad planning estimates,
+  not verified DAM medians or guarantees; a fast first decision is not a
+  promise of quick acceptance. Prior generic DMGT rejection and internal/AI
+  audits cannot calibrate a numerical DAM acceptance probability.
+- Updated current state, completed work, UNKNOWNs and the sole Next: archive
+  the confirmation/manuscript number and then await the actual decision.
+  Freeze approved v8; do not overwrite earlier versions, resubmit, contact
+  editors, or launch a new research stage. No online action, monitoring
+  automation, manuscript edit, new experiment, commit or push was performed.
+
+## 2026-09-02: clarify the conditional plan after another rejection
+
+- Fully re-read root AGENTS.md and PROJECT_STATUS.md, retrieving portions
+  truncated by output limits, before answering the author's planning question.
+- Clarified that another rejection is not proof that mathematical expansion
+  is mandatory. Preserve the existing fallback after another desk rejection:
+  stop unchanged serial transfers and assess substantive strengthening, with
+  general mixed joins K_r+G as a candidate, not a completed or guaranteed-novel
+  result. Mere extra examples or a formal change of graph-class notation do
+  not establish a meaningful contribution.
+- Distinguish reasons before acting: insufficient contribution favors a
+  stronger result; explicit scope mismatch favors reassessing positioning;
+  concrete proof/exposition issues require targeted repair. A generic desk
+  rejection does not identify any one of these causes. A revision invitation
+  should be answered on its actual requests, not treated as rejection.
+- No new DAM decision was reported and no expansion was authorized or begun.
+  Generalization novelty, algorithmic consequences and publishability remain
+  UNKNOWN. Approved v8 stays frozen; the sole Next remains confirmation
+  archival and awaiting actual editorial correspondence. Only status/log
+  were updated; no manuscript/code edits, experiments or external actions.

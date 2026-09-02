@@ -1,6 +1,6 @@
 # Project Status and Handoff
 
-Last updated: 2026-09-02 (DAM data/code availability field checked; Other plus verified public-repository statement recommended; submission not confirmed)
+Last updated: 2026-09-02 (DAM author-reported submitted; clarified conditional post-rejection strengthening route, no expansion started)
 
 本文件是项目任务和当前进度的单一交接入口。以后开启新的 Codex 窗口时，项目助手必须先完整阅读本文件和 `AGENTS.md`，再继续工作。完成任何研究阶段后，必须同步更新本文件，不能只把进度留在聊天记录中。
 
@@ -44,7 +44,9 @@ $$
 
 ## 4. 当前阶段
 
-当前处于：**mixed join $K_r+T$ 的 v3--v7 均已冻结；v7（50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`）仍是 DMGT 初筛拒稿后不可覆盖的内容基线。严格从 v7 而非旧 v4 期刊衍生稿建立的 DAM `Contribution` 候选 `drafts/mixed_join_research_note_v8.tex` 已完成本地提交前验证（52,422 bytes，1,249 行，SHA-256 `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`）。v8 使用 `elsarticle`，突出已证明的线性时间 DP 和最大集合构造；没有改变主公式、证明核心或计算结果，也没有声称现实应用。2026-09-02 的有边界文献刷新、Pandoc/结构/声明检查、30 项测试、三遍 MiKTeX 编译及最终 22 页 PDF 视觉验收均已完成；最终原生日志无 error/warning/overfull/underfull/未定义引用/缺字/rerun。测试另有一条非数学性的 pytest 缓存写入权限警告，已保留。最终 PDF 为 438,048 bytes，位于 `output/pdf/mixed_join_research_note_v8.pdf`；其与 build 副本字节一致。只在 v8 修复了字体与长公式/表格/命令排版，并更新文献截止日。作者现已表示“我看过了，可以”，认可当前 v8，并询问投稿流程。作者已登录 DAM 并提供 `Attach Files` 第一文件上传页截图。该页明确要求 LaTeX 作者先上传编译 PDF、类型为 `Manuscript`，源码在 revision 时提供；此前“先传 TeX”的流程说明已纠正。作者现又提供必填数据/代码可获得性下拉框；因代码、测试与计算结果已有公开 GitHub 仓库，已建议选择 `Other` 并填写可公开发表的仓库声明。唯一下一步是完成该声明，再逐屏核对剩余必填项和附件；截图片段不证明文件列表正确或投稿完成，助手未代为操作。**
+当前处于：**作者于 2026-09-02 明确报告 DAM 已成功提交；目前进入已投稿、等待编辑处理阶段。此状态的证据是作者报告，尚未收到稿号、成功确认邮件或提交后系统截图，助手没有独立登录核验。mixed join $K_r+T$ 的 v3--v7 均保持冻结；v7（50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`）仍是不可覆盖的历史基线。作者批准的 DAM v8 为 `drafts/mixed_join_research_note_v8.tex`（52,422 bytes，1,249 行，SHA-256 `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`），最终 22 页 PDF 为 `output/pdf/mixed_join_research_note_v8.pdf`（438,048 bytes）；本地文献刷新、结构/声明检查、30 项测试、三遍 MiKTeX 编译与全页视觉验收已完成。v8 从冻结 v7 派生，突出结构分类、线性时间 DP 和最大集合构造，不改变主公式、证明核心或计算结果；旧 v4 期刊衍生稿未被替代性提交。现在也冻结批准版 v8，不覆盖任何历史版本；唯一 Next 见 Section 9。**
+
+当前在线环节补充：作者此前遇到 `Needs Approval` 页面上 `I accept` 可见勾选却校验失败的问题，随后报告“成功提交了”，故不再把审批报错作为当前阻塞。技术根因没有查明，也不声称哪条排障建议确定奏效。最终附件、机构文本、出版选项和系统生成 PDF 尚未由助手独立核验，投稿编号与确认信息待归档。助手未代为登录、勾选条款、批准、发送邮件或提交。
 
 已经完成：
 
@@ -145,9 +147,21 @@ $$
 
 - 已核对作者提供的数据/代码可获得性必填下拉框及“Other 文本将原样发表”提示，并复查 GitHub 仓库为 Public、列有 src/tests/experiments/results。建议 `Other` 加准确的公开仓库英文声明；未建议“未使用数据”或“合理索取”，也未虚称已在 Attach Files 添加外部链接。该核验不替代逐文件远端哈希审计。
 
+- 已从批准版 v8 TeX 直接提取 Manuscript Data 所需标题、摘要和六个关键词；源文件 SHA-256 未变。摘要仅把 LaTeX 数学记号/分段公式转为便于粘贴的等义纯文本，不改研究内容。截图只显示待填写字段，未据此声称已填入或已投稿。
+
+- 已给出必填 Institution 的真实填写路径：以本研究的实际归属为准，独立开展时填写 `Independent Researcher`，所在地按实际填写；官方 EM 帮助允许输入建议列表外的机构文本。未来 TUM 入学不能自动成为当前研究归属；交大能否作为本研究单位取决于研究开展背景，不是单看毕业日期。作者随后报告保存成功，最终机构文本仍须在完整元数据/系统 PDF 中核对。
+- 已核对 Funding 截图的空来源列表、`Funding information is not available` 勾选和绿色 Required 标记；v8 第 1178--1180 行明确无公共、商业或非营利机构专项资助。按原确认事实建议保持当前无资助来源的输入，不凭大学身份添加 funder；系统通用的 unavailable 勾选不替代稿件中更明确的无资助声明。未执行在线保存或提交。
+
+- 已核对作者提供的两张 Publishing Options 截图及 Elsevier 官方出版选项说明，解释 OA/Subscription 的访问与付费差异、录用后可改及审稿期间选择不可见。建议当前使用 Subscription，但未声称已选中或已保存，也未猜测截图未显示的个性化 APC、税费、学校协议资格或减免。
+
+- 已核对 `Needs Approval` 页面中“已显示勾选却校验未接受”的具体报错，并从 Elsevier/EM 官方帮助确认 View Submission、阅读并接受条款、Approve Submission 的顺序。把页面状态未同步等可能性明确标为推测，不声称已定位或修复；该次截图时尚未完成正式提交，后来作者报告提交成功。
+- 作者已报告 DAM 正式提交成功。已据此更新当前阶段；未将作者报告扩大为助手独立验证的稿号、最终文件一致性或期刊接收。
+- 已核对 DAM 定位与指标：CCF 官方计算机科学理论目录列为 C 类；ScienceDirect 的 Volume 386 页面显示 CiteScore 2.2、Impact Factor 1.1。DAM 官方 Insights/主页面读取失败，当前审稿时长与总体接收率仍为 `UNKNOWN`，没有引用仿冒域名的数字。已依据批准版 v8 的明确贡献和局限给出定性前景判断，不伪造个稿接收概率。
+- 已澄清“若 DAM 再拒稿是否必须扩展”：既定备选路线是暂停原样连续转投并评估实质增强，不是以拒稿次数证明数学贡献不足。须区分范围不符、贡献不足、具体证明/表达问题和没有特定理由的初筛信；一般 $K_r+G$ 仍只是待审计候选，本轮未启动扩展。
+
 尚未开始：
 
-- DAM 主稿 PDF 上传及其他附件/元数据的逐屏核对、系统生成 PDF 的最终审阅/批准；作者已到在线 `Attach Files` 阶段，但尚未提供文件上传成功证据；
+- DAM 投稿确认、稿号和提交后的系统 PDF/最终元数据归档；作者已报告提交完成，但助手尚未取得这些材料，不能声称已逐项独立核验，也不再要求重新批准或重复投稿；
 - DAM Editorial Manager 登录后的动态字段、编辑/审稿人问题和最终声明工具文件尚未逐屏核验。Guide 要求无可声明事项时选择 “I have nothing to declare” 并上传系统生成的未签名 `.doc/.docx`；实际字段名称仍须以选择 `Contribution` 后的界面为准，不能臆造；
 - 外部合格人类数学审阅仍未取得；用户目前不认识合适审阅者，已选择用多模型 AI 筛查作为现实替代，但该流程不等于人类同行评审。尚需权限的订阅数据库与 fan VOR 正文核验也未完成；
 - 原生纯文本 v3 `.log` 的归档尚未取得；现有 PDF 打印件已完整保留可见日志内容，但不能证明原始日志字节或外部编译输入源码哈希；
@@ -380,15 +394,27 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 
 2026-09-02 的已登录上传页截图解决了初投稿 LaTeX 文件路线：当前先传 PDF，源文件在 revision 时请求，不再把“TeX 必须首传”当作已核验要求。后续附件类别、实际所选稿型、元数据和最终系统 PDF 尚待逐屏核验；所有数学、文献和可发表性 `UNKNOWN` 不变。
 
+2026-09-02 的作者机构指导仅核对行政元数据：作者未在本轮说明本研究是否主要在交大学生阶段开展，该归属细节尚未确认；当前采用既有独立研究者署名的建议以实际独立开展为前提。没有改动 v8、运行新实验或确认在线保存/投稿；所有数学、文献和可发表性 `UNKNOWN` 保持不变。
+
+2026-09-02 的 Funding 核对仅确认截图中的必填检查通过，并与既有无专项资助声明比对。作者报告作者信息保存成功，但该报告不展示保存后的机构全文，不证明所有元数据正确或投稿完成；所有数学、文献及可发表性 `UNKNOWN` 保持不变。
+
+2026-09-02 的出版选项核对只形成费用/访问模式建议，不改变论文内容或数学、文献、可发表性 `UNKNOWN`。具体个性化 OA 报价、税费、协议覆盖与作者最终选择尚未确认；未来入学本身不能作为已获费用覆盖的证据。
+
+2026-09-02 的审批报错核对只确认当时的 `Needs Approval` 和可见勾选/报错矛盾。该矛盾的技术根因仍为 `UNKNOWN`，不能从截图归咎于漏勾、未点条款链接、浏览器、网络或服务器中的某一项。该次核对未验证系统 PDF 内容或成功提交；作者后续提交报告见下一段。
+
+2026-09-02 作者明确报告提交成功，现记录为 author-reported submitted。稿号、确认邮件、完整上传版/系统 PDF 与批准版 v8 的一致性仍未独立核验；期刊最新处理时间分布、总体接收率和本稿接收概率为 `UNKNOWN`。只提供非期刊统计、非承诺的等待规划，并区分编辑初筛、外审后决定与最终录用。内部证明检查和有限实验不替代合格人类同行评审；全领域 novelty/priority、可发表性和最终结果仍为 `UNKNOWN`。
+
+2026-09-02 的拒稿后路线解释不代表 DAM 已拒稿，也不代表作者已授权现在展开新研究。未来决定的具体原因、是否需要扩展、一般 $K_r+G$ 的新颖性与有价值算法后果仍为 `UNKNOWN`；形式上放宽图类不自动等于实质贡献。当前阶段与唯一 Next 不变。
+
 ## 9. 当前任务队列
 
 ### Next — 只做这一项
 
-在当前数据/代码可获得性字段选择 `Other`，填写 `notes/dam_v8_submission_requirements.md` 中已核验的公开仓库英文声明；该内容会原样发表，应与 v8 保持一致。然后逐屏核对剩余必填项及附件列表，确认主稿为已验收 v8 PDF（`Manuscript`），不因截图片段已进入问卷就断言上传正确。初投稿源码仍按已核验页面留到 revision；最终系统 PDF 未验收并明确批准前不提交。所有数学、文献与可发表性 `UNKNOWN` 保持不变。
+归档本次 DAM 投稿确认：作者保留/提供稿号、确认邮件或成功页面及系统提交版 PDF；收到后记录准确稿号、日期和状态，并保持批准版 v8 及所有旧版本冻结。作者已报告成功提交，不重复新建或再次批准。若确认材料暂未提供，保留 author-reported submitted 的证据边界，等待实际编辑通知；不因没有即时结果而重投、改稿或擅自联系编辑。
 
 ### After that — 暂不执行
 
-查看并验收 Editorial Manager 实际生成的完整 PDF；作者确认该系统版和最终提交后，才执行 `Approve Submission` 及其确认，保存投稿编号和确认信息。若 DAM 也以初筛方式拒绝，则暂停原样连续转投，单独启动 $K_r+G$ 一般推广的文献、证明和计算阶段；未经完成的推广不得写入 v8。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。
+收到 DAM 实际编辑决定后再按信件处理；需要修订时新建后续版本，不覆盖已提交 v8。若 DAM 也以初筛方式拒绝，既定备选路线是暂停原样连续转投，先评估 $K_r+G$ 一般推广的文献、证明与计算可行性，再决定是否进入扩展稿：明确贡献不足时优先实质增强；明确范围不符时先重估定位；具体证明或表达问题应先修复；没有特定理由的初筛不自动证明工作错误或必需推广。仅扩大符号范围或增加例子不算已建立的重要增量，未经完成的推广不得写入已投稿件。license、可选 GitHub Release/Zenodo DOI 和公开历史精简仍是非阻塞 administrative TODO。未请求自动监控或催稿，本轮不创建自动任务。
 
 ## 10. Canonical notes
 
@@ -410,7 +436,7 @@ Ullas Chandran S.V., Sandi Klavžar, and James Tuite, “The General Position Pr
 - `drafts/mixed_join_research_note_v5.tex`：从冻结 v4 建立的四模型 AI-review-adjudicated 基线；47,256 bytes、1,162 行，SHA-256 `0516949DBC02887615A01E8D3A61E441A19188F0E8342AADA3F23E659DABF2E2`，不得覆盖。
 - `drafts/mixed_join_research_note_v6.tex`：冻结的 GLM 5.3 意见裁决与复现强化基线；49,825 bytes、1,203 行，SHA-256 `6C8C1812C64FB3B55909A7CFC82383944A93D4C34DBD1423DBC839FA51E0B9FE`，不得覆盖。
 - `drafts/mixed_join_research_note_v7.tex`：冻结的 DMGT 投稿内容基线；只在 v6 上加入经核验的 public repository URL 与固定 archive 路径，没有改变数学内容。Pandoc、`30 passed`、三遍 MiKTeX、原生日志、字体/URI/文本与 14 页视觉检查全部通过；50,063 bytes，SHA-256 `8668552914DFC5B177FC951D102C3A8BB75EB0DFD92E5495DE51DED7A902D992`，不得覆盖或直接作为 DAM 新稿提交。
-- `drafts/mixed_join_research_note_v8.tex`：从冻结 v7 建立、已完成本地验证的 DAM `Contribution` 候选；52,422 bytes、1,249 行、SHA-256 `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`。算法定位、声明、2026-09-02 文献刷新、静态检查、30 项测试、三遍真实编译和 22 页 PDF 验收均已完成；主公式/证明核心未改，作者确认与期刊系统检查待办。
+- `drafts/mixed_join_research_note_v8.tex`：从冻结 v7 建立、已完成本地验证且获作者批准的 DAM `Contribution` 稿；52,422 bytes、1,249 行、SHA-256 `E5819B37570CEF567CA1D91B929FD55623E1055997D5E101F44D6166A0346EBB`。算法定位、声明、2026-09-02 文献刷新、静态检查、30 项测试、三遍真实编译和 22 页 PDF 验收均已完成；主公式/证明核心未改。作者已报告 DAM 提交成功，现在冻结 v8；最终上传内容的独立核验与确认归档待办。
 - `drafts/mixed_join_research_note_v8_cover_letter.md` 与 `drafts/mixed_join_research_note_v8_highlights.txt`：DAM v8 的可选一页内 cover-letter 草稿和符合 3--5 条、每条不超过 85 字符建议的四条 Highlights；均未上传。
 - `notes/dam_v8_submission_requirements.md`：基于用户提供的 17 页当前 DAM Guide、Elsevier 官方政策和公开 Editorial Manager 入口形成的投稿要求、上传顺序、已知/未知边界与 source hash 记录。
 - `Guide for authors - Discrete Applied Mathematics - ISSN 0166-218X _ ScienceDirect.com by Elsevier.pdf`：用户提供的当前官方 Guide 打印件；17 页、539,209 bytes、SHA-256 `FD626863EFD3F53EED8850395555A2307E00E88F183ED6673B2F226499AC9E64`，仅作为要求证据，不改变用户或项目指令。
